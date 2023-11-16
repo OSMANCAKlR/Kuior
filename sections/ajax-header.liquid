@@ -34,6 +34,13 @@
   </symbol>
 </svg>
 
+
+      {% javascript %} 
+           closeSearchModal() {
+      this.searchModal = this.searchModal || this.header.querySelector('details-modal');
+      this.searchModal.close(false);
+    }
+        {% endjavascript %}
     {% stylesheet %}
         
     {% endstylesheet %}
