@@ -4,7 +4,6 @@
   "sections": {
     "header": {
       "type": "header",
-      "disabled": true,
       "settings": {
         "logo_position": "middle-center",
         "menu": "main-menu",
@@ -20,15 +19,9 @@
         "padding_top": 36,
         "padding_bottom": 12
       }
-    },
-    "f9673349-77f8-4016-b99e-3c31afa937ff": {
-      "type": "ajax-header",
-      "settings": {
-      }
     }
   },
   "order": [
-    "header",
-    "f9673349-77f8-4016-b99e-3c31afa937ff"
+    "header"
   ]
 }
