@@ -3514,3 +3514,34 @@ details-disclosure>details {
     /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+
+.cart__body {
+  opacity: 1;
+  transition: opacity .2s;
+}
+
+/* Make the cart content look visually disabled while updating */
+html.js-ajax-cart-processing .cart__body {
+  opacity: .7;
+}
+
+
+
+/* Make the "Add to cart" button look visually disabled while loading */
+ajax-cart-product-form[processing] [type="submit"] {
+  opacity: .7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+
+h1, h2, h3, h4, h5, figure, span, p {
+  margin: 0;
+  padding: 0;
+}
+
+select, option {
+  font-family: Inter;
+}
