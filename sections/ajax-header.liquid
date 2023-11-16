@@ -36,10 +36,14 @@
 
 
       {% javascript %} 
-           closeSearchModal() {
-      this.searchModal = this.searchModal || this.header.querySelector('details-modal');
-      this.searchModal.close(false);
+         closeMenuDisclosure() {
+      this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
+      this.disclosures.forEach(disclosure => disclosure.close());
     }
+                   closeSearchModal() {
+                        this.searchModal = this.searchModal || this.header.querySelector('details-modal');
+                        this.searchModal.close(false);
+            }
         {% endjavascript %}
     {% stylesheet %}
         
