@@ -134,14 +134,6 @@
     "content_for_index": [
 
     ],
-    "blocks": {
-      "12589213621310497366": {
-        "type": "shopify:\/\/apps\/instant-search-insearch\/blocks\/next-inSearch\/1634311b-d74d-48e3-806e-1d68177dc58a",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    },
     "color_schemes": {
       "background-1": {
         "settings": {
