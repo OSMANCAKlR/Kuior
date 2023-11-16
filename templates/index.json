@@ -69,15 +69,9 @@
       ],
       "settings": {
       }
-    },
-    "announcement-bar2": {
-      "type": "announcement-bar2",
-      "settings": {
-      }
     }
   },
   "order": [
-    "announcement-bar2",
     "featured_collection",
     "product-carousel"
   ]
