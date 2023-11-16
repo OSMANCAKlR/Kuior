@@ -18,118 +18,113 @@
 {% endschema %}
 
 
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+  <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
+  </symbol>
 
-{% stylesheet %}
-  .form__container {
-  position: relative;
-  max-width: 300px; /* Adjust as necessary */
-  margin: 0 auto;
-}
+  <symbol id="icon-reset" class="icon icon-close"  fill="none" viewBox="0 0 18 18" stroke="currentColor">
+    <circle r="8.5" cy="9" cx="9" stroke-opacity="0.2"/>
+    <path d="M6.82972 6.82915L1.17193 1.17097" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 5)"/>
+    <path d="M1.22896 6.88502L6.77288 1.11523" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 5)"/>
+  </symbol>
 
-.search-form {
-  display: flex;
-  border: 1px solid #ccc; /* Light grey border */
-  border-radius: 20px; /* Rounded corners */
-}
+  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+  </symbol>
+</svg>
 
-.search-input {
-  flex-grow: 1;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px; /* Adjust as necessary */
-}
 
-.search-input:focus {
-  outline: none;
-}
+    {% stylesheet %}
+         .form__container {
+    max-width: 600px; /* Adjust as necessary */
+    margin: auto;
+    position: relative;
+  }
 
-.search-button {
-  background: url('path-to-search-icon.png') no-repeat center; /* Add your search icon here */
-  border: none;
-  width: 40px; /* Adjust as necessary */
-  cursor: pointer;
-}
+  .form__container form {
+    display: flex;
+    margin-bottom: 20px;
+  }
 
-.search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  box-shadow: 0 6px 12px rgba(0,0,0,.175); /* Bootstrap-style dropdown shadow */
-  border: 1px solid #ccc;
-  border-top: none;
-  z-index: 1000; /* Ensure it's above other content */
-  display: none; /* Hide by default */
-}
+  .form__container input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px; /* Adjust as necessary */
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px; /* Rounded corners on the left side */
+  }
 
-.search-results.active {
-  display: block; /* Show when active */
-}
+  .form__container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #5c6ac4; /* Shopify blue */
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
+    cursor: pointer;
+  }
 
-/* Style for individual search result items, adjust as needed */
-.search-results-item {
-  padding: 10px 20px;
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
-}
+  .form__container input[type="submit"]:hover {
+    background-color: #3f4eae; /* A darker shade for hover effect */
+  }
 
-.search-results-item:last-child {
-  border-bottom: none;
-}
+  .search-results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.search-results-item:hover {
-  background-color: #f7f7f7;
-}
-{% endstylesheet %}
+  .search-results span {
+    display: block;
+  }
+
+  .search-result {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .search-result span {
+    margin-right: 10px;
+  }
+
+  .search-result .title {
+    font-weight: bold;
+  }
+
+  .search-result .price {
+    color: #333;
+    font-weight: normal;
+  }
+    {% endstylesheet %}
+
+
 
 <nav>
-  <div class="page-width">
-    <div class="nav__container">
-      <div class="nav__links"></div>
-      <figure>
-        <img src="" alt="">
-      </figure>
-      <div class="nav__icons">
-        <div class="form__container">
-          <form action="{{ routes.search_url }}" class="search-form">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search"
-              name="q"
-              value="{{ search.terms | escape }}"
-              autocomplete="off"
-              onkeyup="searchProducts(this.value)"
-            >
-            <input type="submit" class="search-button" value="">
-          </form>
-          <div id="searchResults" class="search-results"></div>
+    <div class="page-width">
+        <div class="nav__container">
+            <div class="nav__links">
+                
+            </div>
+            <figure>
+                <img src="" alt="">
+            </figure>
+            <div class="nav__icons">
+            <div class="form__container">
+  <form action="{{ routes.search_url }}">
+    <input type="text" placeholder="Search" name="q" value="{{ search.terms | escape }}">
+    <input type="submit" value="Search">
+  </form>
+  <ul class="search-results">
+    {% for item in search.results %}
+      <li class="search-result">
+        <span class="title"> {{ item.title }} </span>
+        <span class="price"> {{ item.price }} </span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </nav>
-
-
-
-<script> 
-function searchProducts(value) {
-  // Assume you have a function to get search results
-  getSearchResults(value).then(results => {
-    const searchResultsContainer = document.getElementById('searchResults');
-    searchResultsContainer.innerHTML = ''; // Clear previous results
-    results.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'search-results-item';
-      div.textContent = item.title; // Adjust to use your actual result properties
-      searchResultsContainer.appendChild(div);
-    });
-    if(results.length > 0) {
-      searchResultsContainer.classList.add('active');
-    } else {
-      searchResultsContainer.classList.remove('active');
-    }
-  });
-}
-</script>
