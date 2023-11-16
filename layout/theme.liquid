@@ -37,8 +37,26 @@
 
     {{ content_for_header }}
 
-    {%- liquid
+    <script type="application/json" data-ajax-cart-initial-state>
+    {{ cart | json }}
+  </script>
+  
+  <script type="module">
+    import '{{ "liquid-ajax-cart-v2.0.2.js" | asset_url }}';
+  </script>
+  
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+      {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_800 = settings.type_body_font | font_modify: 'weight', '800'
+      assign body_font_700 = settings.type_body_font | font_modify: 'weight', '700'
+      assign body_font_600 = settings.type_body_font | font_modify: 'weight', '600'
+      assign body_font_500 = settings.type_body_font | font_modify: 'weight', '500'
+      assign body_font_400 = settings.type_body_font | font_modify: 'weight', '400'
+      assign body_font_300 = settings.type_body_font | font_modify: 'weight', '300'
+      assign body_font_200 = settings.type_body_font | font_modify: 'weight', '200'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
@@ -46,10 +64,16 @@
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ body_font_800 | font_face: font_display: 'swap'}}
+      {{ body_font_700 | font_face: font_display: 'swap'}}
+      {{ body_font_600 | font_face: font_display: 'swap'}}
+      {{ body_font_500 | font_face: font_display: 'swap'}}
+      {{ body_font_400 | font_face: font_display: 'swap'}}
+      {{ body_font_300 | font_face: font_display: 'swap'}}
+      {{ body_font_200 | font_face: font_display: 'swap'}}
       {{ body_font_italic | font_face: font_display: 'swap' }}
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
-
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% if forloop.index == 1 -%}

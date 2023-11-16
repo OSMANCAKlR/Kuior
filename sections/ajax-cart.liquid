@@ -1,0 +1,662 @@
+{% stylesheet %}
+    #cart .product__container, .cart__header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+        color: white;
+        font-family: Newsreader,serif;
+        font-size: 18px;
+        font-weight: 500;
+      font-family: Inter, sans-serif;
+    }
+  
+    .cart__headerText {
+      color: #121212bf;
+      font-size: 1rem;
+      letter-spacing: .13rem;
+    line-height: calc(1 + .2 / var(--font-body-scale));
+      margin: 0px;
+      padding: 0px;
+      opacity: .85;
+      font-weight: 400;
+      font-family: Inter, sans-serif;
+    }
+  
+    .cart__body {
+        display: flex;
+        flex-direction: column;
+    }
+  
+      .remove__button {
+        text-decoration: none;
+        height: 1.7rem;
+        width: 1.7rem;
+            cursor: pointer;
+        appearance: none;
+        background-color: transparent;
+        color: black;
+      }
+  
+    .cart__empty {
+        margin-top: 24px;
+    }
+  
+  
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      margin-top: 34px;
+    }
+  
+    .delivery__notes {
+      width: 40%;
+    }
+  
+    .price__checkout--container {
+          width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  
+    .price__row {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+  
+  
+    .inputButton {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 14px;
+    }
+  
+    .postcode__input {
+        border: 1px solid grey;
+        border-radius: 4px;
+        height: 42px;
+        outline: none;
+        padding-left: 20px;
+    }
+  
+  
+    .search__button {
+        align-items: center;
+        background-color: #eaded4;
+        border: 1px solid grey;
+        border-left: none;
+        border-start-end-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        height: 42px;
+        justify-content: center;
+        width: 44px;
+    }
+  
+  
+    .product__container {
+        flex-direction: row;
+        padding: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+    }
+  
+  
+    .product__wrapperCart {
+        align-items: center;
+        display: flex;
+        width: 45%;
+    }
+  
+  
+    .cart__img {
+           height: 100%;
+        width: 100%;
+        object-fit: contain;
+      border-radius: 10px;
+    }
+  
+  
+    .product__information {
+     height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 24px;
+        justify-content: flex-start;
+    }
+  
+  
+    .cart__input {
+        display: flex;
+        justify-content: space-between;
+        width: 52%;
+      align-items: flex-start;
+    }
+  
+  
+    .modal__title {
+        margin-bottom: 14px;
+    }
+  
+    .modal__price {
+        margin-bottom: 8px;
+    }
+  
+  
+  
+    .product__list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-weight: bold;
+    }
+  
+    .price__text {
+        margin-bottom: 8px;
+    }
+  
+    .btn__checkout {
+        font-size: 16px;
+        margin-top: 14px;
+        padding: 12px 24px;
+        background-color: #415fff;
+        border: none;
+        border-radius: 4px;
+        color: white;
+    }
+  
+    .cart__arrow {
+        font-size: 34px;
+        margin-bottom: 14px;
+        color: #415fff;
+    }
+  
+    .empty__cart {
+        margin-bottom: 20px;
+      font-size: 14px;
+    }
+  
+    .cart__title {
+        font-size: 15px;
+        font-weight: 400;
+        font-family: Inter, sans-serif;
+       color: #121212;
+    }
+  
+    .delete__button {
+        background-color: transparent;
+        border: none;
+        color: #cf0000;
+        cursor: pointer;
+        margin-top: 24px;
+        padding-left: 0;
+        width: 48px;
+    }
+  
+    .cart__price {
+        color: #121212BF;
+      font-size: 16px;
+    }
+  
+      .item__price {
+        color: #121212Bf;
+      font-size: 14px;
+      }
+  
+    .modal__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+  
+    .modal__delivery {
+        margin-top: 14px;
+    }
+  
+    .product__button {
+        font-size: 16px;
+        margin-top: 14px;
+        padding: 12px 24px;
+        background-color: #005637;
+        border: none;
+        border-radius: 4px;
+        color: white;
+      text-decoration: none;
+    }
+  
+    .modal {
+        background-color: #fff; /* Modal background color */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+        max-width: 80%; /* Adjust the modal's maximum width as needed */
+        max-height: 80%; /* Adjust the modal's maximum height as needed */
+        overflow-y: auto; /* Allow scrolling if the content overflows */
+        position: relative;
+      }
+  
+      .close__button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 24px;
+      }
+  
+  
+      .cart__img--figure {
+            width: 30%;
+      }
+  
+      .cart__quantity--container {
+          display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px;
+        border: 1px solid #A9A9A9;
+  
+      }
+  
+      .quantity__buttons {
+        color: black;
+        width: 10px;
+        display: flex;
+        align-items: center;
+      }
+  
+      .price__total--cart {
+        text-align: right;
+        margin: 0;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: Inter, sans-serif;
+      }
+  
+      .shipping__messg {
+        font-size: 13px;
+        font-family: Inter, sans-serif;
+        color: #121212BF;
+            text-align: right;
+      }
+  
+      .checkout__button {
+           font-size: 16px;
+        margin-top: 14px;
+        padding: 12px 24px;
+        background-color: #005637;
+        border: none;
+        border-radius: 4px;
+        color: white;
+      text-decoration: none;
+        cursor: pointer;
+      }
+  
+      .error__message {
+        font-size: 10px;
+        font-weight: normal;
+        color: red;
+        margin-top: 8px;
+      }
+  
+      .cart_input {
+        border: none;
+         text-align: center;
+        -moz-appearance: textfield;
+  
+  
+      }
+  
+    .checkout__button:disabled {
+    background-color: #ccc; /* Example color */
+    cursor: not-allowed;
+  }
+    
+      .mobile__quantity {
+        display: none;
+      }
+  
+      @media screen and (max-width:760px) {
+  
+        #cart .page-width {
+          padding: 0 1rem;
+        }
+  
+        .product__container {
+          padding: 0px;
+        }
+        
+       .quantity__text {
+         display: none;
+       }
+         .mobile__quantity {
+        display: flex;
+               margin: 8px 0px;
+      }
+     .desktop__quantity {
+        display: none;
+      }
+  
+     .cart__input {
+        display: flex;
+        justify-content: flex-end;
+        width: 20%;
+        align-items: flex-start;
+    }
+  
+        .product__wrapperCart {
+        align-items: center;
+        display: flex;
+        width: 80%;
+    }
+  
+     
+  
+        .cart__title {
+        font-size: 13px;
+        font-weight: 400;
+        font-family: Inter,sans-serif;
+        color: #121212;
+    }
+  
+        .total {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        gap: 34px;
+    }
+  
+        .delivery__notes {
+          width: 100%;
+        }
+  
+  .price__checkout--container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+        .price__row {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+        .price__total--cart {
+        text-align: center;
+    }
+  
+        .shipping__messg {
+        text-align: center;
+    }
+  
+      }
+  {% endstylesheet %}
+  
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+  {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+  
+  <section id="cart"  data-ajax-cart-section>
+    <div class="page-width"> 
+    <h1 class="titleHeader">Cart</h1>
+  
+    <!-- Header for the cart items -->
+    <div class="cart__header">
+      <p class="cart__headerText">PRODUCT</p>
+      <p class="cart__headerText quantity__text">QUANTITY</p>
+      <p class="cart__headerText">TOTAL</p>
+    </div>
+  
+    <!-- Cart items -->
+    <div class="cart__body" >
+      {% for line_item in cart.items %}
+        {% assign line_item_index = forloop.index %}
+        <div class="product__container" key="{{ line_item.id }}">
+          <div class="product__wrapperCart">
+            <div class="cart-item__image-container gradient global-media-settings" style="border: none;">
+              <img
+                class="cart-item__image"
+                src="{{ line_item | img_url: '300x' }}"
+                alt="{{ line_item.title | escape }}"
+                width="150"
+                height="{{ 150 | divided_by: line_item.image.aspect_ratio | ceil }}"
+              >
+            </div>
+            <div class="product__information">
+              <span class="cart__title">{{ line_item.title | escape }}</span>
+              <span class="item__price">{{ line_item.final_price | money }}</span>
+              <ajax-cart-quantity class="mobile__quantity">
+                <div class="cart__quantity--container">
+                  <a
+                    data-ajax-cart-quantity-minus
+                    class="quantity__buttons"
+                    href="{{ routes.cart_change_url }}?line={{ line_item_index }}&quantity={{ line_item.quantity | minus: 1 }}"
+                  >
+                    {% render 'icon-minus' %}
+                  </a>
+                  <input
+                    class="cart_input"
+                    type="number"
+                    min="0"
+                    max="99"
+                    value="{{ line_item.quantity }}"
+                     data-ajax-cart-quantity-input="{{ line_item_index }}"
+                    data-line-item-key="{{ line_item.key }}"
+                  >
+                  <a
+                    data-ajax-cart-quantity-plus
+                    class="quantity__buttons"
+                    href="{{ routes.cart_change_url }}?line={{ line_item_index }}&quantity={{ line_item.quantity | plus: 1 }}"
+                  >
+                    {% render 'icon-plus' %}
+                  </a>
+                </div>
+              </ajax-cart-quantity>
+              <a class="remove__button" data-ajax-cart-request-button href="{{ line_item.url_to_remove }}">
+                {% render 'icon-remove' %}
+              </a>
+  
+              <div class="error__message" data-ajax-cart-errors="{{ line_item.key }}"></div>
+            </div>
+          </div>
+  
+          <!-- Quantity and price -->
+          <div class="cart__input">
+            <ajax-cart-quantity class="desktop__quantity">
+              <div class="cart__quantity--container">
+                <a
+                  data-ajax-cart-quantity-minus
+                  class="quantity__buttons"
+                  href="{{ routes.cart_change_url }}?line={{ line_item_index }}&quantity={{ line_item.quantity | minus: 1 }}"
+                >
+                  {% render 'icon-minus' %}
+                </a>
+                <input
+                  class="cart_input"
+                  type="number"
+                  min="0"
+                  max="99"
+                  value="{{ line_item.quantity }}"
+                  data-ajax-cart-quantity-input="{{ line_item_index }}"
+                  data-line-item-key="{{ line_item.key }}"
+                >
+                <a
+                  data-ajax-cart-quantity-plus
+                  class="quantity__buttons"
+                  href="{{ routes.cart_change_url }}?line={{ line_item_index }}&quantity={{ line_item.quantity | plus: 1 }}"
+                >
+                  {% render 'icon-plus' %}
+                </a>
+              </div>
+            </ajax-cart-quantity>
+            <span class="cart__price">{{ line_item.final_line_price | money }}</span>
+          </div>
+        </div>
+      {% endfor %}
+  
+      <!-- Empty cart message -->
+      {% if cart.item_count == 0 %}
+        <div class="cart__empty">
+          <h2 class="empty__cart">You don't have any items in your cart</h2>
+          <a href="/collections/meat-boxes" class="product__button">Browse Products</a>
+        </div>
+      {% endif %}
+  
+      <!-- Total price -->
+      <div class="total">
+        <div class="delivery__notes">
+         <cart-note class="cart__note field">
+            <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+            <textarea
+              class="text-area field__input"
+              name="note"
+              form="my-ajax-cart-form"
+              id="Cart-note"
+              placeholder="{{ 'sections.cart.note' | t }}"
+                data-ajax-cart-property-input
+            >{{ cart.note }}</textarea>
+          </cart-note>
+        </div>
+        <div class="price__checkout--container">
+        <div class="price__row">
+          <p class="price__total--cart">
+            Estimated Total <span class="total-price">{{ cart.total_price | money }}</span>
+          </p>
+          <span class="shipping__messg"
+            >Taxes, Discounts and <span href="/policies/shipping-policy"> shipping </span> calculated at checkout</span
+          >
+        </div>
+        {% form 'cart', cart, id: 'my-ajax-cart-form' %}
+          <button style="width: 100%" class="checkout__button" type="submit" name="checkout">Check out</button>
+        {% endform %}
+      </div>
+        </div>
+    </div>
+    </div>
+  </section>
+  
+  
+  <script>
+  
+  function runWhenInit() {
+    console.log("The current cart state is: ", window.liquidAjaxCart.cart);
+  }
+  
+  if (window.liquidAjaxCart?.init) {
+    // if Liquid Ajax Cart is already initialized
+    runWhenInit();
+  } else {
+    // wait for Liquid Ajax Cart to be initialized
+    document.addEventListener("liquid-ajax-cart:init", runWhenInit);
+  }
+    
+    // Function to update the state of the cart
+    function updateCartState() {
+      var totalPrice = window.liquidAjaxCart.cart.total_price;
+      var minPrice = 12000; // Assuming the price is in cents (i.e., $120.00)
+      var checkoutButton = document.querySelector('.checkout__button');
+      var messageContainer = document.getElementById('message-container');
+  
+      // Check if a message container exists, if not, create one
+      if (!messageContainer) {
+        messageContainer = document.createElement('div');
+        messageContainer.id = 'message-container';
+        checkoutButton.parentNode.insertBefore(messageContainer, checkoutButton.nextSibling);
+      }
+  
+      // Disable or enable the button and show/hide the message based on the total price
+      if (totalPrice < minPrice) {
+        checkoutButton.disabled = true; // Disable the checkout button
+        messageContainer.innerHTML = 'You need a <a style="color: red;" href="/collections/meat-boxes">box</a> to purchase these items!'; // Show the message
+      } else {
+        checkoutButton.disabled = false; // Enable the checkout button
+        messageContainer.innerHTML = ''; // Hide the message
+      }
+    }
+  
+    // Event listener for cart update events
+    document.addEventListener('liquid-ajax-cart:request-end', event => {
+      const { requestState } = event.detail;
+      if ((requestState.requestType === 'change' || requestState.requestType === 'add') && requestState.responseData?.ok) {
+        updateCartState();
+      }
+    });
+  
+    // Call the function on page load to initialize the state
+    if (window.liquidAjaxCart?.init) {
+      updateCartState();
+    } else {
+      document.addEventListener('liquid-ajax-cart:init', updateCartState);
+    }
+  </script>
+  {% schema %}
+  {
+    "name": "Cart Ajax",
+    "tag": "section",
+    "class": "section",
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Choose the product"
+          },
+           {
+            "type": "select",
+            "id": "picker_type",
+            "options": [
+              {
+                "value": "dropdown",
+                "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+              },
+              {
+                "value": "button",
+                "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+              }
+            ],
+            "default": "button",
+            "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cart Ajax",
+        "category": "Custom"
+      }
+    ]
+  }
+  {% endschema %}
+  
