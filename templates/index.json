@@ -31,6 +31,42 @@
     },
     "product-carousel": {
       "type": "product-carousel",
+      "blocks": {
+        "05828b97-128f-4d70-a55f-8bbce68638af": {
+          "type": "product",
+          "settings": {
+            "product": "3d-carlight™",
+            "picker_type": "button"
+          }
+        },
+        "7f602037-25bd-4fa1-8502-cf8f6a3be70c": {
+          "type": "product",
+          "settings": {
+            "product": "car-door-light-led-projector",
+            "picker_type": "button"
+          }
+        },
+        "d41c9562-ab21-4aba-99bb-f0dd98c9ebc8": {
+          "type": "product",
+          "settings": {
+            "product": "car-interior-led-ambient-lights",
+            "picker_type": "button"
+          }
+        },
+        "79f8713c-4257-4621-8f9d-0a5fa13dd5e2": {
+          "type": "product",
+          "settings": {
+            "product": "rgb-led-light-strip-for-car-interior-1m2m3m4m5m-usb-fiber-optic-atmosphere-lamp-support-app-control-ambient-neon-invisible-light",
+            "picker_type": "button"
+          }
+        }
+      },
+      "block_order": [
+        "05828b97-128f-4d70-a55f-8bbce68638af",
+        "7f602037-25bd-4fa1-8502-cf8f6a3be70c",
+        "d41c9562-ab21-4aba-99bb-f0dd98c9ebc8",
+        "79f8713c-4257-4621-8f9d-0a5fa13dd5e2"
+      ],
       "settings": {
       }
     }
