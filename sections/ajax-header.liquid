@@ -17,7 +17,6 @@
 }
 {% endschema %}
 
-
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
@@ -34,8 +33,7 @@
   </symbol>
 </svg>
 
-
-    {% stylesheet %}
+{% stylesheet %}
          .form__container {
     max-width: 600px; /* Adjust as necessary */
     margin: auto;
@@ -96,35 +94,59 @@
     color: #333;
     font-weight: normal;
   }
-    {% endstylesheet %}
-
-
+{% endstylesheet %}
 
 <nav>
-    <div class="page-width">
-        <div class="nav__container">
-            <div class="nav__links">
-                
+  <div class="page-width">
+    <div class="nav__container">
+      <div class="nav__links"></div>
+      <figure>
+        <img src="" alt="">
+      </figure>
+      <div class="nav__icons">
+        <div class="impresee-form" style="position:relative;padding: 0 10px; margin: 5px 0;">
+          <style>
+            .impresee-desktop {
+              display: none;
+            }
+            .impresee-form input:focus {
+              outline: none;
+            }
+            @media only screen and (min-width: 768px) {
+              .impresee-form,.impresee-form input {
+                min-width: 200px;
+              }
+              .impresee-form {
+                width: 100%;
+              }
+              .impresee-desktop {
+                display: inline-block;
+              }
+            }
+          </style>
+          <input
+            autocomplete="off"
+            style="text-indent: 35px; width: 100%; background-color: white; border-color: rgb(204, 204, 204);height:40px;"
+            type="text"
+            name="q"
+          >
+          <div class="impresee-icon" style="display: flex; position: absolute; right: 22px; top: 5px;">
+            <div class="impresee-sketch" style="margin-right:10px;">
+              <img src="https://api.impresee.com/icons/paint-gray.svg" height="30">
             </div>
-            <figure>
-                <img src="" alt="">
-            </figure>
-            <div class="nav__icons">
-            <div class="form__container">
-  <form action="{{ routes.search_url }}">
-    <input type="text" placeholder="Search" name="q" value="{{ search.terms | escape }}">
-    <input type="submit" value="Search">
-  </form>
-  <ul class="search-results">
-    {% for item in search.results %}
-      <li class="search-result">
-        <span class="title"> {{ item.title }} </span>
-        <span class="price"> {{ item.price }} </span>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+            <div class="impresee-photo">
+              <img src="https://api.impresee.com/icons/camera_grey.svg" height="30">
             </div>
+          </div>
+          <button
+            class="impresee-submit-button"
+            type="button"
+            style="position:absolute; left: 12px; top:5px; border:none; background-color:transparent;"
+          >
+            <img src="https://api.impresee.com/icons/search.svg" height="30">
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </nav>
