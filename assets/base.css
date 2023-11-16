@@ -3514,3 +3514,24 @@ details-disclosure>details {
     /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+
+.cart__body {
+  opacity: 1;
+  transition: opacity .2s;
+}
+
+html.js-ajax-cart-processing .cart__body {
+  opacity: .7;
+}
+
+ajax-cart-product-form[processing]:before {
+  display: block;
+}
+
+/* Make the "Add to cart" button look visually disabled while loading */
+ajax-cart-product-form[processing] [type="submit"] {
+  opacity: .7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
