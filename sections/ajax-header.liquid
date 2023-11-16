@@ -34,66 +34,7 @@
 </svg>
 
 {% stylesheet %}
-         .form__container {
-    max-width: 600px; /* Adjust as necessary */
-    margin: auto;
-    position: relative;
-  }
 
-  .form__container form {
-    display: flex;
-    margin-bottom: 20px;
-  }
-
-  .form__container input[type="text"] {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 16px; /* Adjust as necessary */
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px; /* Rounded corners on the left side */
-  }
-
-  .form__container input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #5c6ac4; /* Shopify blue */
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
-    cursor: pointer;
-  }
-
-  .form__container input[type="submit"]:hover {
-    background-color: #3f4eae; /* A darker shade for hover effect */
-  }
-
-  .search-results {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .search-results span {
-    display: block;
-  }
-
-  .search-result {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-
-  .search-result span {
-    margin-right: 10px;
-  }
-
-  .search-result .title {
-    font-weight: bold;
-  }
-
-  .search-result .price {
-    color: #333;
-    font-weight: normal;
-  }
 {% endstylesheet %}
 
 <nav>
@@ -104,7 +45,7 @@
         <img src="" alt="">
       </figure>
       <div class="nav__icons">
-        
+          {% render 'search-bar'%}
       </div>
     </div>
   </div>
