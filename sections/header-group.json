@@ -19,9 +19,15 @@
         "padding_top": 36,
         "padding_bottom": 12
       }
+    },
+    "260a257c-4f86-4c88-af14-abb1a64e90d7": {
+      "type": "ajax-header",
+      "settings": {
+      }
     }
   },
   "order": [
-    "header"
+    "header",
+    "260a257c-4f86-4c88-af14-abb1a64e90d7"
   ]
 }
