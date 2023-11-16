@@ -563,56 +563,7 @@
   
   <script>
   
-  function runWhenInit() {
-    console.log("The current cart state is: ", window.liquidAjaxCart.cart);
-  }
   
-  if (window.liquidAjaxCart?.init) {
-    // if Liquid Ajax Cart is already initialized
-    runWhenInit();
-  } else {
-    // wait for Liquid Ajax Cart to be initialized
-    document.addEventListener("liquid-ajax-cart:init", runWhenInit);
-  }
-    
-    // Function to update the state of the cart
-    function updateCartState() {
-      var totalPrice = window.liquidAjaxCart.cart.total_price;
-      var minPrice = 12000; // Assuming the price is in cents (i.e., $120.00)
-      var checkoutButton = document.querySelector('.checkout__button');
-      var messageContainer = document.getElementById('message-container');
-  
-      // Check if a message container exists, if not, create one
-      if (!messageContainer) {
-        messageContainer = document.createElement('div');
-        messageContainer.id = 'message-container';
-        checkoutButton.parentNode.insertBefore(messageContainer, checkoutButton.nextSibling);
-      }
-  
-      // Disable or enable the button and show/hide the message based on the total price
-      if (totalPrice < minPrice) {
-        checkoutButton.disabled = true; // Disable the checkout button
-        messageContainer.innerHTML = 'You need a <a style="color: red;" href="/collections/meat-boxes">box</a> to purchase these items!'; // Show the message
-      } else {
-        checkoutButton.disabled = false; // Enable the checkout button
-        messageContainer.innerHTML = ''; // Hide the message
-      }
-    }
-  
-    // Event listener for cart update events
-    document.addEventListener('liquid-ajax-cart:request-end', event => {
-      const { requestState } = event.detail;
-      if ((requestState.requestType === 'change' || requestState.requestType === 'add') && requestState.responseData?.ok) {
-        updateCartState();
-      }
-    });
-  
-    // Call the function on page load to initialize the state
-    if (window.liquidAjaxCart?.init) {
-      updateCartState();
-    } else {
-      document.addEventListener('liquid-ajax-cart:init', updateCartState);
-    }
   </script>
   {% schema %}
   {
