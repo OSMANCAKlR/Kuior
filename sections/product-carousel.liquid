@@ -99,25 +99,16 @@
                 .box__img {
                     height: 100%;
                     width: 100%;
-                  border-radius: 21.559px 21.559px 0px 0px;
+                  border-radius: 20px;
                   object-fit: cover;
                 }
     
                 .box__bottom {
-                    border-radius: 0px 0px 20px 20px;
-                border: 2px solid #D4AF37;
-                  border-top: none;
                 padding: 14px;
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
-                     height: 180px;
                 }
     
-                .box__bottom--container {
-                  position: relative;
-                  height: 100%
-                }
     
                 .product__title {
                     color: #242424;
@@ -127,6 +118,7 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: normal;
+                margin-bottom: 8px
                 }
     
                 .product__price {
@@ -143,9 +135,14 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                  position: absolute;
-                  bottom: 0;
                   width: 100%;
+                }
+
+                .dropdown__option {
+                    font-family: Inter;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
                 }
     
     
@@ -317,8 +314,10 @@
       .dropdown__menu {
         display: flex;
         align-items: center;
-        position: absolute;
-        top: 40px;
+        margin-bottom: 8px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
       }
     
       .dropdown__span{
@@ -389,109 +388,7 @@
         color: #69cba8;
             cursor: not-allowed;
       }
-              @media screen and (max-width:1048px) {
-    
-    
-                .container {
-                  padding : 0px;
-                }
-    
-                .boxmenu__title {
-                padding: 0px 26px;
-                }
-    
-                .carousel-arrows {
-                  padding: 0px 26px;
-                  }
-              }
-    
-    
-    
-    
-    
-              @media screen and (max-width:790px) {
-    
-                #boxmenu__wrapper .page-width {
-                  padding: 0;
-                }
-    
-                .buy__button {
-                  width: 100%;
-                }
-    
-    
-               .boxmenu__title {
-                  text-align: left;
-                 font-size: 40px;
-                 line-height: 1.25;
-    
-                }
-    
-                .title__line {
-                  display:none;
-                }
-    
-                .carousel-container {
-                margin: 48px auto 0;
-            }
-    
-                .box__bottom {
-                border-radius: 0 0 20px 20px;
-                border: 2px solid #D4AF37;
-                border-top: none;
-                padding: 14px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                height: 250px;
-            }
-    
-            .box__bottom--price {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-               position: absolute;
-                bottom: 0;
-                flex-direction: column;
-                width: 100%;
-                  gap: 21px;
-            }
-    
-                .buy__buttonscontainerCarousel {
-                width: 100%
-              }
-    
-              }
-    
-         @media screen and (max-width:743px) {
-    
-           #boxmenu__wrapper .page-width {
-             padding: 0 0.5rem;
-           }
-    
-               .product__title {
-                font-size: 20px;
-                }
-              }
-    
-               @media screen and (max-width:509px) {
-                  .product__title {
-                font-size: 18px;
-                }
-    
-                 .product__price--original {
-                   font-size: 14px;
-                 }
-    
-                 .product__price--sale {
-                   font-size: 16px;
-                 }
-    
-                 .box__price--container {
-    
-                gap: 2px;
-              }
-               }
+              
     {% endstylesheet %}
     
     {% javascript %}
@@ -534,7 +431,7 @@
     
           if (selectedOption) {
             const newPrice = selectedOption.getAttribute('data-price');
-            priceDisplay.textContent = newPrice + ' / box';
+            priceDisplay.textContent = newPrice ;
           }
     
           dropdown.addEventListener('change', function() {
@@ -543,7 +440,7 @@
     
             if (selectedOption) {
               const newPrice = selectedOption.getAttribute('data-price');
-              priceDisplay.textContent = newPrice + ' / box';
+              priceDisplay.textContent = newPrice ;
             }
           });
         });
@@ -585,7 +482,6 @@
                       <div>
                         <div
                           class="box__bottom"
-                          style="border: 2px solid {{ block.settings.product.metafields.custom.border_colour }}; border-top: none;"
                         >
                           <div class="box__bottom--container">
                             <h3 class="product__title">{{ block.settings.product.title }}</h3>
@@ -605,6 +501,7 @@
                                   <select class="dropdown" name="id" id="variant-dropdown-{{ block.id }}">
                                     {% for variant in block.settings.product.variants %}
                                       <option
+                                        style="font-family: Inter;"
                                         value="{{ variant.id }}"
                                         original-price="{{ variant.compare_at_price | money }}"
                                         data-price="{{ variant.price | money }}"
@@ -622,10 +519,10 @@
                                   <div class="box__price--container">
                                     {% if block.settings.product.compare_at_price != null %}
                                       <span class="product__price--compare product__price--original">
-                                        {{- block.settings.product.compare_at_price | money }} / box
+                                        {{- block.settings.product.compare_at_price | money }} 
                                       </span>
                                       <span class="product__price product__price--sale">
-                                        {{- block.settings.product.price | money }} / box</span
+                                        {{- block.settings.product.price | money }} </span
                                       >
                                     {% else %}
                                       <span class="product__price"></span>
