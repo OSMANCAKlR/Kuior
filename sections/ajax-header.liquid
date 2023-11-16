@@ -1,12 +1,41 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Ajax Header",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ajax Header",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
 
-{% stylesheet %}
-{% endstylesheet %}
 
-{% javascript %}
-{% endjavascript %}
+    {% stylesheet %}
+        
+    {% endstylesheet %}
+
+
+
+<nav>
+    <div class="page-width">
+        <div class="nav__container">
+            <div class="nav__links">
+                
+            </div>
+            <figure>
+                <img src="" alt="">
+            </figure>
+            <div class="nav__icons">
+                {% render 'header-search', input_id: 'Search-In-Modal' %}
+            </div>
+        </div>
+    </div>
+</nav>
