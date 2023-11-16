@@ -1,0 +1,59 @@
+{% schema %}
+{
+  "name": "announcement-bar2",
+  "settings": [
+    
+    ],
+      "presets": [
+        {
+          "name": "announcement-bar2",
+          "category": "Custom"
+        }
+      ]
+    }
+{% endschema %}
+
+   
+{% stylesheet %}
+   .announcement__container {
+      background:  #242424;
+      color: #FFF6EB;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .announcement {
+      display: flex;
+      align-items: center;
+    }
+
+    .annoucment__img {
+      width: 16px;
+    }
+
+    .annoucement__span {
+      color: var(--Cream, #FFF6EB);
+      font-family: Open Sans;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+
+{% endstylesheet %}
+<div class="announcement__container">
+  <div class="announcement">
+    <img class="annoucment__img" src="/assets/shipping.svg">
+    <span class="annoucement__span">Free delivery over $120</span>
+  </div>
+  <div class="announcement">
+    <img class="annoucment__img" src="/assets/chat__bubble.svg">
+    <span class="annoucement__span">Refer a freind and save</span>
+  </div>
+  <div class="announcement">
+    <img class="annoucment__img" src="/assets/megaphone.svg" alt="">
+    <span class="annoucement__span">Sign up to the newsletter</span>
+  </div>
+</div>
