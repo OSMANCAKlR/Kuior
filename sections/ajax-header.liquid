@@ -21,7 +21,8 @@
     {% stylesheet %}
         
     {% endstylesheet %}
-
+    
+<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
 
 <nav>
