@@ -51,9 +51,14 @@
                 <img src="" alt="">
             </figure>
             <div class="nav__icons">
-            <header class="header "> 
-                {% render 'header-search', input_id: 'Search-In-Modal' %}
-            </header>
+                  <form action="{{ routes.search_url }}">
+                    <input type="text"
+                      placeholder="Search"
+                      name="q"
+                      value="{{ search.terms | escape }}"
+                       >
+                  <input type="submit" value="Search">
+                </form>
             </div>
         </div>
     </div>
