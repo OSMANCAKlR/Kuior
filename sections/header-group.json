@@ -2,6 +2,11 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "b3d588a0-b0fb-4a7a-8bb6-02758b0bd74d": {
+      "type": "announcement-bar2",
+      "settings": {
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -19,15 +24,10 @@
         "padding_top": 36,
         "padding_bottom": 12
       }
-    },
-    "b3d588a0-b0fb-4a7a-8bb6-02758b0bd74d": {
-      "type": "announcement-bar2",
-      "settings": {
-      }
     }
   },
   "order": [
-    "header",
-    "b3d588a0-b0fb-4a7a-8bb6-02758b0bd74d"
+    "b3d588a0-b0fb-4a7a-8bb6-02758b0bd74d",
+    "header"
   ]
 }
