@@ -131,13 +131,24 @@
         }
       }
     },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "12589213621310497366": {
+        "type": "shopify:\/\/apps\/instant-search-insearch\/blocks\/next-inSearch\/1634311b-d74d-48e3-806e-1d68177dc58a",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    },
     "color_schemes": {
       "background-1": {
         "settings": {
           "background": "#ffffff",
           "background_gradient": "",
           "text": "#121212",
-          "button": "#FCE477",
+          "button": "#fce477",
           "button_label": "#121212",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
