@@ -9,6 +9,9 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        ".header__menu-item {color: var(--Text, #242424); font-family: Open Sans; font-size: 14px; font-style: normal; font-weight: 600; line-height: normal;}"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "menu": "main-menu",
