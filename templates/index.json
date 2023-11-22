@@ -59,14 +59,14 @@
         "e1389cd0-a0b7-49bd-9e8b-639b6429fa24": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "facial-exfoliant",
             "picker_type": "button"
           }
         },
         "586ade53-e2ce-4250-b1a6-af19d09d4f08": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "led-gua-sha",
             "picker_type": "button"
           }
         }
