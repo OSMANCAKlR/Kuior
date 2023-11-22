@@ -29,6 +29,16 @@
         "padding_bottom": 36
       }
     },
+    "landing-hero": {
+      "type": "landing-hero",
+      "settings": {
+      }
+    },
+    "call-to-action": {
+      "type": "call-to-action",
+      "settings": {
+      }
+    },
     "product-carousel": {
       "type": "product-carousel",
       "blocks": {
@@ -72,6 +82,8 @@
     }
   },
   "order": [
+    "landing-hero",
+    "call-to-action",
     "featured_collection",
     "product-carousel"
   ]

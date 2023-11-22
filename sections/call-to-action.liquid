@@ -1,0 +1,87 @@
+{% schema %}
+{
+  "name": "call to action",
+  "settings": [],
+  "presets": [
+    {
+      "name": "call to action",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  .landing__calltoaction--wrapper {
+    background: #5b6240;
+    width: 100%;
+    margin: 62px 13px;
+    padding: 67px 260px;
+    border-radius: 5.294px;
+  }
+
+  .landing__calltoaction--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 33px;
+  }
+
+  .landingcalltoaction__title {
+    color: var(--Cream, #f3eee9);
+    font-family: Glorify;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .landingcalltoaction__para {
+    color: var(--Cream, #f3eee9);
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .landing__calltoaction--button {
+    color: var(--Cream, #f3eee9);
+    font-family: Glorify;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    padding: 14px 26px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--Cream, #f3eee9);
+  }
+
+  .calltoaction__button--container {
+    display: flex;
+    gap: 34px;
+    align-items: center;
+  }
+
+  .calltoaction__title--container {
+    border-right: white 2px solid;
+    padding-right: 30px;
+  }
+{% endstylesheet %}
+
+<div class="landing__calltoaction--wrapper">
+  <div class="page-width landing__calltoaction--container ">
+    <div class="calltoaction__title--container">
+      <h2 class="landingcalltoaction__title">Black Friday sale</h2>
+    </div>
+    <div class="calltoaction__button--container">
+      <p class="landingcalltoaction__para">Huge Savings on Devices, Serums, and Best Sellers!</p>
+      <a class="landing__calltoaction--button">Shop Now</a>
+    </div>
+  </div>
+</div>

@@ -1,604 +1,574 @@
 {% schema %}
+{
+  "name": "menubox-carousel",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
     {
-      "name": "menubox-carousel",
-      "tag": "section",
-      "class": "section",
-      "blocks": [
-        {
-          "type": "@app"
-        },
+      "type": "@app"
+    },
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
         {
           "type": "product",
-          "name": "Product",
-          "settings": [
-            {
-              "type": "product",
-              "id": "product",
-              "label": "Choose the product"
-            },
-             {
-              "type": "select",
-              "id": "picker_type",
-              "options": [
-                {
-                  "value": "dropdown",
-                  "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
-                },
-                {
-                  "value": "button",
-                  "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
-                }
-              ],
-              "default": "button",
-              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
-            }
-          ]
-        }
-      ],
-      "presets": [
+          "id": "product",
+          "label": "Choose the product"
+        },
         {
-          "name": "Carousel New",
-          "category": "Custom"
+          "type": "select",
+          "id": "picker_type",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+            },
+            {
+              "value": "button",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+            }
+          ],
+          "default": "button",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
         }
       ]
     }
-    {% endschema %}
-    
-    {% stylesheet %}
-        .box__menu--wrapper {
-                  margin-bottom : 60px;
-                }
-    
-                .boxmenu__title {
-                    color: #242424;
-                text-align: center;
-                font-family: Inter;
-                font-size: 52px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 65.319px; /* 125.613% */
-                letter-spacing: -1.04px;
-                }
-    
-                .last__word {
-                    color: #D4AF37;
-                }
-    
-    
-                .last__word{
-                    position: relative;
-                }
-    
-                .title__line {
-                  position: absolute;
-                left: 50%;
-                transform: translate(40%);
-                margin-top: 10px;
-                }
-    
-                .boxmenu__container {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 42px;
-                }
-    
-                .box{
-                    display: flex;
-                    flex-direction: column;
-                }
-    
-                .box__img--figure {
-                        height: auto;
-                    width: 100%;
-                  display: flex;
-                  position: relative;
-                }
-    
-    
-    
-                .box__img {
-                    height: 100%;
-                    width: 100%;
-                  border-radius: 20px;
-                  object-fit: cover;
-                }
-    
-                .box__bottom {
-                padding: 14px;
-                display: flex;
-                flex-direction: column;
-                }
-    
-    
-                .product__title {
-                    color: #242424;
-                text-align: left;
-                font-family: Inter;
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
-                margin-bottom: 8px
-                }
-    
-                .product__price {
-                    color: rgba(36, 36, 36, 0.70);
-                text-align: center;
-                font-family: Inter;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: normal;
-                }
-    
-                .box__bottom--price {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                  width: 100%;
-                }
+  ],
+  "presets": [
+    {
+      "name": "Carousel New",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
 
-                .dropdown__option {
-                    font-family: Inter;
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    appearance: none;
-                }
-    
-    
-                .carousel-container {
-                    position: relative;
-                   margin: 58px auto 0;
-                }
-                .carousel-slide {
-          display: flex;
-          overflow: hidden;
-          transition: transform 0.3s ease-in-out; /* Add a transition for smooth sliding */
-          justify-content: space-evenly;
+{% stylesheet %}
+  .box__menu--wrapper {
+    margin-bottom: 60px;
+  }
+
+  .boxmenu__title {
+    color: #242424;
+    text-align: center;
+    font-family: Inter;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 65.319px; /* 125.613% */
+    letter-spacing: -1.04px;
+  }
+
+  .last__word {
+    color: #d4af37;
+  }
+
+  .last__word {
+    position: relative;
+  }
+
+  .title__line {
+    position: absolute;
+    left: 50%;
+    transform: translate(40%);
+    margin-top: 10px;
+  }
+
+  .boxmenu__container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 42px;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box__img--figure {
+    height: auto;
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 18.86px;
+    border-radius: 5.546px;
+    background: #f3eee9;
+  }
+
+  .box__img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5.546px;
+    object-fit: cover;
+  }
+
+  .box__bottom {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product__title {
+    color: var(--Text, #242424);
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 13.5px;
+  }
+
+  .product__price {
+    color: var(--Text, #242424);
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .box__bottom--price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .dropdown__option {
+    font-family: Inter;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .carousel-container {
+    position: relative;
+    margin: 58px auto 0;
+  }
+  .carousel-slide {
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; /* Add a transition for smooth sliding */
+    justify-content: space-evenly;
+  }
+  .carousel-box {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .carousel-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 34px;
+  }
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 86, 55, 0.4);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #005637;
+  }
+
+  .row {
+    width: 100%;
+    max-width: 1090px;
+    margin: 0 auto;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menubutton {
+    border-radius: 20px;
+    background: var(--Primary-1, #d4af37);
+    display: flex;
+    width: 318px;
+    height: 68px;
+    padding: 16.281px 54.783px;
+    justify-content: center;
+    align-items: center;
+    color: var(--Primary-2, #005637);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24.85px; /* 124.251% */
+    text-decoration: none;
+  }
+
+  .menubutton__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+  }
+
+  .arrowsbutton {
+    cursor: pointer;
+  }
+
+  .container {
+    padding: 26px;
+  }
+
+  .box__price--container {
+    display: flex;
+    gap: 7px;
+  }
+
+  .product__price--original {
+    color: var(--Sunrise, #f26820);
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: line-through;
+  }
+
+  .product__price--sale {
+    color: var(--Text, #242424);
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .carousel-button {
+    padding-right: 40px;
+  }
+
+  .rightbutton {
+    padding-right: 0px;
+    padding-left: 40px;
+  }
+
+  .mainproduct__img--a {
+    cursor: pointer;
+  }
+
+  .product__tag {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    padding: 1.946px 11.675px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 14.594px 0px 0px;
+    border: 6.5px solid #fff;
+    color: #fff;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16.18px; /* 134.832% */
+    text-transform: uppercase;
+    left: 2px;
+  }
+
+  .menubox__title {
+    margin-bottom: 34px;
+  }
+
+  .swiper-pagination-bullet {
+    background: #005637 !important; /* Replace 'your-color' with your desired color */
+    opacity: 0.7; /* You can adjust the opacity if needed */
+  }
+  /* Change the active (current) pagination bullet color */
+  .swiper-pagination-bullet-active {
+    background: #005637 !important; /* Replace 'your-active-color' with your desired color for the active bullet */
+  }
+
+  .navigation__arrows--container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 34px;
+    align-items: center;
+    padding: 0px 24px;
+  }
+
+  
+  .buy__button {
+    display: flex;
+    width: 100%;
+    padding: 15.815px 29.37px;
+    justify-content: center;
+    align-items: center;
+    gap: 45.184px;
+    border-radius: 5.648px;
+    background: #5b6240;
+    color: var(--Cream, #f3eee9);
+    font-family: Glorify DEMO;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+  }
+
+  .error__container {
+    background-color: white;
+    z-index: 4;
+    position: fixed;
+    width: 100%;
+    transform: translateY(70px);
+    max-width: 350px;
+  }
+
+  .out-of-stock {
+    background: #e9eaeb;
+    color: #69cba8;
+    cursor: not-allowed;
+  }
+
+  .productcarousel__title {
+    color: var(--Text, #242424);
+    font-family: Glorify;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 9px;
+  }
+
+  .productcarousel__span {
+    color: var(--Text, #242424);
+    font-family: Open Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  var mySwiper = new Swiper('.mySwiper', {
+    watchSlidesProgress: true,
+    slidesPerView: 1.5,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    breakpoints: {
+      920: {
+        slidesPerView: 3,
+      },
+      1267: {
+        slidesPerView: 4,
+        spaceBetween: 29,
+      },
+    },
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Select all dropdown elements within each product
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(function (dropdown) {
+      // Find the parent product element for this dropdown
+      const productContainer = dropdown.closest('.carousel-box');
+
+      // Find the price display element within the product container
+      const priceDisplay = productContainer.querySelector('.product__price');
+      const originalDisplay = productContainer.querySelector('.product__price--compare');
+
+      // Determine the selected option within the current dropdown (default option)
+      const selectedOption = dropdown.querySelector('option:checked');
+
+      if (selectedOption) {
+        const newPrice = selectedOption.getAttribute('data-price');
+        priceDisplay.textContent = 'from ' + newPrice;
+      }
+
+      dropdown.addEventListener('change', function () {
+        // Determine the selected option within the current dropdown
+        const selectedOption = dropdown.querySelector('option:checked');
+
+        if (selectedOption) {
+          const newPrice = selectedOption.getAttribute('data-price');
+          priceDisplay.textContent = 'from ' + newPrice;
         }
-                .carousel-box {
-                    width: 90%;
-                    text-align: center;
-                    box-sizing: border-box;
-                }
-                .carousel-arrows {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 34px;
-                }
-                .carousel-dots {
-                    display: flex;
-                    justify-content: center;
-                }
-                .dot {
-                    width: 10px;
-                    height: 10px;
-                    background-color: rgba(0, 86, 55, 0.40);
-                    border-radius: 50%;
-                    margin: 0 5px;
-                    cursor: pointer;
-                }
-    
-                .dot.active {
-                    background-color: #005637;
-                }
-    
-                .row {
-                  width: 100%;
-                  max-width: 1090px;
-                  margin: 0 auto;
-                  align-items: center;
-                  transition: transform 0.3s ease-in-out;
-                }
-    
-                .menubutton {
-                  border-radius: 20px;
-                  background: var(--Primary-1, #D4AF37);
-                  display: flex;
-                  width: 318px;
-                  height: 68px;
-                  padding: 16.281px 54.783px;
-                  justify-content: center;
-                  align-items: center;
-                  color: var(--Primary-2, #005637);
-              font-family: Inter;
-              font-size: 20px;
-              font-style: normal;
-              font-weight: 500;
-              line-height: 24.85px; /* 124.251% */
-                  text-decoration: none;
-                }
-    
-                .menubutton__container {
-                  display: flex;
-                  justify-content: center;
-                      align-items: center;
-                  margin-top: 14px;
-                }
-    
-                .arrowsbutton {
-                  cursor: pointer;
-                }
-    
-              .container {
-                 padding: 26px;
-              }
-    
-              .box__price--container {
-                display: flex;
-                flex-direction: column;
-                    align-items: flex-start;
-                gap: 4px;
-              }
-    
-              .product__price--original {
-                color: rgba(36, 36, 36, 0.70);
-                text-align: center;
-                font-family: Inter;
-                font-size: 15.492px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: normal;
-                text-decoration: line-through;
-              }
-    
-              .product__price--sale {
-                color: var(--Primary-3, #800020);
-            text-align: center;
-            font-family: Inter;
-            font-size: 17.696px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-              }
-    
-            .carousel-button {
-              padding-right: 40px;
-            }
-    
-            .rightbutton  {
-                padding-right: 0px;
-              padding-left: 40px;
-            }
-    
-            .mainproduct__img--a {
-              cursor: pointer;
-            }
-    
-    
-            .product__tag {
-              position: absolute;
-              bottom: 0;
-              display: flex;
-              padding: 1.946px 11.675px;
-              justify-content: center;
-              align-items: center;
-              border-radius: 0px 14.594px 0px 0px;
-              border: 6.5px solid #FFF;
-              color: #FFF;
-          text-align: center;
-          font-feature-settings: 'clig' off, 'liga' off;
-          font-family: Inter;
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 16.18px; /* 134.832% */
-          text-transform: uppercase;
-                  left: 2px;
-            }
-    
-        .menubox__title {
-          margin-bottom: 42px;
-        }
-    
-        .swiper-pagination-bullet {
-          background: #005637 !important; /* Replace 'your-color' with your desired color */
-          opacity: 0.7; /* You can adjust the opacity if needed */
-      }
-      /* Change the active (current) pagination bullet color */
-      .swiper-pagination-bullet-active {
-          background: #005637 !important; /* Replace 'your-active-color' with your desired color for the active bullet */
-      }
-    
-        .navigation__arrows--container {
-              display: flex;
-          justify-content: space-between;
-          flex-direction: row-reverse;
-              margin-top: 34px;
-          align-items: center;
-              padding: 0px 24px;
-        }
-    
-    
-    
-      .dropdown__menu {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
-    
-      .dropdown__span{
-        color: rgba(36, 36, 36, 0.70);
-        font-family: Inter;
-        font-size: 15.492px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        margin-right: 11px;
-      }
-    
-    
-      .dropdown {
-        border-radius: 10px;
-        border: 1px solid var(--light-mode-04-neutrals-grayscale-300, #E9EAEB);
-        background: var(--light-mode-04-neutrals-white, #FFF);
-        box-shadow: 0px 0.5px 4px 0px rgba(96, 97, 112, 0.18) inset;
-        color: var(--light-mode-04-neutrals-grayscale-900, #212121);
-        font-family: Inter;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px; /* 171.429% */
-        padding: 8px 8px;
-        width: 100%
-      }
-    
-      .dropdown__value {
-        border-radius: 4px;
-        background: #FFF;
-        box-shadow: 0px 2.58658px 5.17316px 0px rgba(0, 0, 0, 0.12);
-        color: var(--light-mode-01-primary-900, #0A0A33);
-        font-family: Inter;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 22.476px; /* 160.543% */
-      }
-    
-      .buy__button{
-        border-radius: 20px;
-        background: var(--Secondart, rgba(0, 86, 55, 0.2));
-        color: var(--Primary-2, #005637);
-        text-align: center;
-        font-family: Inter;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        height: 58px;
-        border: none;
-            padding: 0 34px;
-        cursor: pointer;
-      }
-    
-      .error__container {
-        background-color: white;
-        z-index: 4;
-        position: fixed;
-        width: 100%;
-       transform: translateY(70px);
-        max-width: 350px;
-      }
-    
-      .out-of-stock {
-        background: #E9EAEB;
-        color: #69cba8;
-            cursor: not-allowed;
-      }
-              
-    {% endstylesheet %}
-    
-    {% javascript %}
-        var mySwiper = new Swiper(".mySwiper", {
-          watchSlidesProgress: true,
-          slidesPerView: 1.5,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          pagination: {
-            el: ".swiper-pagination",
-          },
-          breakpoints: {
-            // when window width is >= 320px
-            920: {
-              slidesPerView: 2
-            },
-            1267: {
-              slidesPerView: 3
-            }
-          }
-        });
-    
-    
-      document.addEventListener('DOMContentLoaded', function() {
-        // Select all dropdown elements within each product
-        const dropdowns = document.querySelectorAll('.dropdown');
-    
-        dropdowns.forEach(function(dropdown) {
-          // Find the parent product element for this dropdown
-          const productContainer = dropdown.closest('.carousel-box');
-    
-          // Find the price display element within the product container
-          const priceDisplay = productContainer.querySelector('.product__price');
-          const originalDisplay = productContainer.querySelector('.product__price--compare')
-    
-          // Determine the selected option within the current dropdown (default option)
-          const selectedOption = dropdown.querySelector('option:checked');
-    
-          if (selectedOption) {
-            const newPrice = selectedOption.getAttribute('data-price');
-            priceDisplay.textContent = newPrice ;
-          }
-    
-          dropdown.addEventListener('change', function() {
-            // Determine the selected option within the current dropdown
-            const selectedOption = dropdown.querySelector('option:checked');
-    
-            if (selectedOption) {
-              const newPrice = selectedOption.getAttribute('data-price');
-              priceDisplay.textContent = newPrice ;
-            }
-          });
-        });
       });
-    {% endjavascript %}
-    
-    <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
-    
-    <section id="boxmenu__wrapper">
-      <div class="page-width">
-        <div class="menubox__title">
-        </div>
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            {% for block in section.blocks %}
-              {% if block.type == 'product' %}
-                <div class="swiper-slide" style="display:flex; justify-content: center;">
-                  <div class="carousel-box">
-                    <div class="box">
-                      <a class="mainproduct__img--a" href="{{  block.settings.product.url }}">
-                        <figure class="box__img--figure">
-                          <img
-                            src="{{ block.settings.product.featured_image | image_url }}"
-                            class="box__img"
-                          >
-                          {% if block.settings.product.metafields.custom.product_tagline != null %}
-                            <div
-                              class="product__tag"
-                              style="background-color:{{ block.settings.product.metafields.custom.border_colour }};"
-                            >
-                              <span>{{ block.settings.product.metafields.custom.product_tagline }}</span>
-                            </div>
-                          {% endif %}
-                        </figure>
-                      </a>
-                      <div>
+    });
+  });
+{% endjavascript %}
+
+<script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+
+<section id="boxmenu__wrapper">
+  <div class="page-width">
+    <div class="menubox__title">
+      <h2 class="productcarousel__title">Best Sellers</h2>
+      <p class="productcarousel__span">Shop the world’s most trusted beauty gadgets.</p>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.type == 'product' %}
+            <div class="swiper-slide" style="display:flex; justify-content: center;">
+              <div class="carousel-box">
+                <div class="box">
+                  <a class="mainproduct__img--a" href="{{  block.settings.product.url }}">
+                    <figure class="box__img--figure">
+                      <img
+                        src="{{ block.settings.product.featured_image | image_url }}"
+                        class="box__img"
+                      >
+                      {% if block.settings.product.metafields.custom.product_tagline != null %}
                         <div
-                          class="box__bottom"
+                          class="product__tag"
+                          style="background-color:{{ block.settings.product.metafields.custom.border_colour }};"
                         >
-                          <div class="box__bottom--container">
-                            <h3 class="product__title">{{ block.settings.product.title }}</h3>
-    
-                            <ajax-cart-product-form>
-                              {% form 'product', block.settings.product, novalidate: 'novalidate' %}
-                                {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
-                                <div
-                                  class="dropdown__menu"
-                                  {% if block.settings.product.variants.size == 1
-                                    and block.settings.product.variants.first.title == 'Default Title'
-                                  %}
-                                    style="display: none;"
-                                  {% endif %}
-                                >
-                                  <span class="dropdown__span">With </span>
-                                  <select class="dropdown" name="id" id="variant-dropdown-{{ block.id }}">
-                                    {% for variant in block.settings.product.variants %}
-                                      <option
-                                        style="font-family: Inter;"
-                                        value="{{ variant.id }}"
-                                        original-price="{{ variant.compare_at_price | money }}"
-                                        data-price="{{ variant.price | money }}"
-                                        {% if variant == current_variant %}
-                                          selected="selected"
-                                        {% endif %}
-                                      >
-                                        {{ variant.title }}
-                                      </option>
-                                    {% endfor %}
-                                  </select>
-                                </div>
-    
-                                <div class="box__bottom--price">
-                                  <div class="box__price--container">
-                                    {% if block.settings.product.compare_at_price != null %}
-                                      <span class="product__price--compare product__price--original">
-                                        {{- block.settings.product.compare_at_price | money }} 
-                                      </span>
-                                      <span class="product__price product__price--sale">
-                                        {{- block.settings.product.price | money }} </span
-                                      >
-                                    {% else %}
-                                      <span class="product__price"></span>
-                                    {% endif %}
-                                  </div>
-                                  <div class="error__container" data-ajax-cart-errors="form"></div>
-                                  <div class="buy__buttonscontainerCarousel">
-                                    <input style="display: none;" type="number" name="quantity" value="1" min="1">
-                                    <button
-                                      class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
-                                      type="submit"
-                                      name="add"
-                                      {% if current_variant.inventory_quantity == 0 %}
-                                        disabled
-                                      {% endif %}
-                                    >
-                                      {% if current_variant.inventory_quantity > 0 %}
-                                        Add to order
-                                      {% else %}
-                                        Out of Stock
-                                      {% endif %}
-                                    </button>
-                                  </div>
-                                </div>
-                              {% endform %}
-                            </ajax-cart-product-form>
-                          </div>
+                          <span>{{ block.settings.product.metafields.custom.product_tagline }}</span>
                         </div>
+                      {% endif %}
+                    </figure>
+                  </a>
+                  <div>
+                    <div
+                      class="box__bottom"
+                    >
+                      <div class="box__bottom--container">
+                        <h3 class="product__title">{{ block.settings.product.title }}</h3>
+
+                        <ajax-cart-product-form>
+                          {% form 'product', block.settings.product, novalidate: 'novalidate' %}
+                            {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
+                            <div
+                              class="dropdown__menu"
+                              {% if block.settings.product.variants.size == 1
+                                and block.settings.product.variants.first.title == 'Default Title'
+                              %}
+                                style="display: none;"
+                              {% endif %}
+                            >
+                              <span class="dropdown__span">With </span>
+                              <select class="dropdown" name="id" id="variant-dropdown-{{ block.id }}">
+                                {% for variant in block.settings.product.variants %}
+                                  <option
+                                    style="font-family: Inter;"
+                                    value="{{ variant.id }}"
+                                    original-price="{{ variant.compare_at_price | money }}"
+                                    data-price="{{ variant.price | money }}"
+                                    {% if variant == current_variant %}
+                                      selected="selected"
+                                    {% endif %}
+                                  >
+                                    {{ variant.title }}
+                                  </option>
+                                {% endfor %}
+                              </select>
+                            </div>
+
+                            <div class="box__bottom--price">
+                              <div class="box__price--container">
+                                {% if block.settings.product.compare_at_price != null %}
+                                  <span class="product__price product__price--sale">
+                                    {{- block.settings.product.price | money }}
+                                  </span>
+                                  <span class="product__price--compare product__price--original">
+                                    {{- block.settings.product.compare_at_price | money }}
+                                  </span>
+                                {% else %}
+                                  <span class="product__price"></span>
+                                {% endif %}
+                              </div>
+                              <div class="error__container" data-ajax-cart-errors="form"></div>
+                            </div>
+                            <div class="buy__buttonscontainerCarousel">
+                              <input style="display: none;" type="number" name="quantity" value="1" min="1">
+                              <button
+                                class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
+                                type="submit"
+                                name="add"
+                                {% if current_variant.inventory_quantity == 0 %}
+                                  disabled
+                                {% endif %}
+                              >
+                                {% if current_variant.inventory_quantity > 0 %}
+                                  Add to Basket
+                                {% else %}
+                                  Out of Stock
+                                {% endif %}
+                              </button>
+                            </div>
+                          {% endform %}
+                        </ajax-cart-product-form>
                       </div>
                     </div>
                   </div>
                 </div>
-              {% endif %}
-            {% endfor %}
-          </div>
-          <div class="navigation__arrows--container">
-            <div
-              style="position: inherit; display: block; color: #005637; --swiper-navigation-size: 25px;"
-              class="swiper-button-next"
-            ></div>
-            <div style="position: inherit; " class="swiper-pagination"></div>
-            <div
-              style="position: inherit; display: block; color: #005637; --swiper-navigation-size: 25px;"
-              class="swiper-button-prev"
-            ></div>
-          </div>
-        </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
-      <div class="menubutton__container">
-        <a href="/collections/meat-boxes" class="menubutton">Browse All</a>
+      <div class="navigation__arrows--container">
+        <div
+          style="position: inherit; display: block; color: #005637; --swiper-navigation-size: 25px;"
+          class="swiper-button-next"
+        ></div>
+        <div style="position: inherit; " class="swiper-pagination"></div>
+        <div
+          style="position: inherit; display: block; color: #005637; --swiper-navigation-size: 25px;"
+          class="swiper-button-prev"
+        ></div>
       </div>
-    </section>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        var addToCartButtons = document.querySelectorAll('.buy__button');
-    
-        addToCartButtons.forEach(function(button) {
-          button.addEventListener('click', function() {
-            // Add a class to indicate processing
-            button.classList.add('processing');
-            button.textContent = 'Adding...';
-    
-            // Simulate an AJAX call with setTimeout
-            setTimeout(function() {
-              // Change the text to 'Added!' once the AJAX call is complete
-              button.textContent = 'Added!';
-              button.classList.remove('processing');
-              button.classList.add('added');
-              // Change the text back to 'Add to order' after some time
-              setTimeout(function() {
-                button.textContent = 'Add to order';
-                button.classList.remove('added');
-              }, 2000);
-            }, 1000);
-          });
-        });
+    </div>
+  </div>
+  <div class="menubutton__container">
+    <a href="/collections/meat-boxes" class="menubutton">Browse All</a>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var addToCartButtons = document.querySelectorAll('.buy__button');
+
+    addToCartButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        // Add a class to indicate processing
+        button.classList.add('processing');
+        button.textContent = 'Adding...';
+
+        // Simulate an AJAX call with setTimeout
+        setTimeout(function () {
+          // Change the text to 'Added!' once the AJAX call is complete
+          button.textContent = 'Added!';
+          button.classList.remove('processing');
+          button.classList.add('added');
+          // Change the text back to 'Add to order' after some time
+          setTimeout(function () {
+            button.textContent = 'Add to order';
+            button.classList.remove('added');
+          }, 2000);
+        }, 1000);
       });
-    </script>
-    
+    });
+  });
+</script>

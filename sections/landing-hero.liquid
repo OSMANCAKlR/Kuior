@@ -1,0 +1,118 @@
+{% schema %}
+{
+  "name": "landing hero",
+  "settings": [],
+  "presets": [
+    {
+      "name": "landing hero",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}
+{% stylesheet %}
+  #landing {
+    background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/1080pheroimg_1.jpg?v=1700627227') no-repeat
+      center center;
+    background-size: cover;
+    width: 100%;
+    height: 541px;
+    position: relative;
+  }
+
+  
+  .landing__text--container {
+    color: white;
+    max-width: 405px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .landing__title {
+    color: var(--White, #fff);
+    font-family: Glorify;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 19px;
+  }
+
+  .landing__para {
+    color: var(--White, #fff);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 19px;
+  }
+
+  .landing__icon--container {
+    display: flex;
+    margin-bottom: 38px;
+  }
+
+  .icon__container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .icon__span {
+    color: #fff;
+    font-family: Open Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .landing__button {
+    display: flex;
+    max-width: 225px;
+    padding: 14px 26px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: var(--Cream, #f3eee9);
+    color: #36312b;
+    font-family: Glorify;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+{% endstylesheet %}
+
+<section id="landing">
+  <div class="page-width">
+    <div class="landing__text--container">
+      <h1 class="landing__title">Where Beauty Tech Meets Home Comfort</h1>
+      <p class="landing__para">
+        Discover KOUIR's advanced beauty devices for at-home salon treatments. Our user-friendly tech ensures
+        effortless, professional skincare.
+      </p>
+      <div class="landing__icon--container">
+        <div class="icon__container">
+          <img
+            class="icon__img"
+            src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/scientific.svg?v=1700195204"
+          >
+          <span class="icon__span">Proven by Scientific Research</span>
+        </div>
+        <div class="icon__container">
+          <img class="icon__img" src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/quality.svg?v=1700195413">
+          <span class="icon__span">Premium Quality & Potency</span>
+        </div>
+      </div>
+      <a class="landing__button" href="/">Shop Now</a>
+    </div>
+  </div>
+</section>
