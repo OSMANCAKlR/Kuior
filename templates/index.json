@@ -155,6 +155,9 @@
     },
     "results": {
       "type": "results",
+      "custom_css": [
+        ".line {display: block;}"
+      ],
       "settings": {
       }
     }
