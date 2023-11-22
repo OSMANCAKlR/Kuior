@@ -1,0 +1,177 @@
+{% schema %}
+{
+  "name": "benefits",
+  "settings": [],
+  "presets": [
+    {
+      "name": "benefits ",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+  const kuoirLeftImage = new Image();
+  kuoirLeftImage.onload = function () {
+    const height = this.height;
+    document.getElementById('benefit-left').style.height = height + 'px';
+  };
+  kuoirLeftImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/kuoir-green.jpg?v=1700628922';
+{% endjavascript %}
+
+{% stylesheet %}
+  .benefits__title {
+    color: var(--Text, #242424);
+    font-family: Glorify;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 630px;
+  }
+
+  #benefits {
+    margin: 80px 0px;
+  }
+
+  .benefits__container {
+    margin-top: 33px;
+    display: flex;
+    gap: 7.41px;
+  }
+
+  .benefit-left {
+    width: 50%;
+    background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/kuoir-green.jpg?v=1700628922') no-repeat
+      center center;
+    background-size: cover;
+    border-radius: 6.611px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  .benefit-right,
+  .benefit-right-1,
+  .benefit-right-2 {
+    width: 50%;
+  }
+
+  .benefit-left__span {
+    color: var(--White, #fff);
+    font-family: Glorify;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 339px;
+    bottom: 3%;
+    left: 3%;
+  }
+
+  .number__container {
+    border-radius: 999px;
+    border: 1.5px solid var(--White, #fff);
+    color: var(--White, #fff);
+    font-family: Glorify;
+    font-size: 33.845px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 72.204px;
+    height: 73.332px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .benefit-right {
+    display: flex;
+    gap: 7.41px;
+  }
+
+  .benefit-right-1,
+  .benefit-right-2 {
+    border-radius: 5.294px;
+    background: #5b6240;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  .benefit__text--container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .benefit__header {
+    color: #f3eee9;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .benefit__para {
+    color: #f3eee9;
+    font-family: Open Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .number-2 {
+    background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/benefit2.png?v=1700630274') no-repeat center
+      center;
+      border: none; 
+  }
+
+  .number-3 {
+    background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/benefit_3.png?v=1700630275') no-repeat
+      center center;
+    border: none;
+    }
+{% endstylesheet %}
+
+<section id="benefits">
+  <div class="page-width">
+    <div class="benefits__wrapper">
+      <h2 class="benefits__title">Benefits on the mask here. Comprehensive Approach for a Radiant Complexion.</h2>
+      <div class="benefits__container">
+        <div class="benefit-left" id="benefit-left">
+          <div class="number__container">1</div>
+          <p class="benefit-left__span">Researched and clinically acclaimed for radiant, youthful skin.</p>
+        </div>
+        <div class="benefit-right">
+          <div class="benefit-right-1">
+            <div class="number__container number-2">2</div>
+            <div class="benefit__text--container">
+              <p class="benefit__header">LED Light Mask Therapy</p>
+              <p class="benefit__para">
+                Harness scientifically-proven wavelengths—blue light for acne control, red for collagen stimulation, and
+                green to reduce pigmentation—for a healthier, more balanced complexion.
+              </p>
+            </div>
+          </div>
+          <div class="benefit-right-2">
+            <div class="number__container number-3">3</div>
+            <div class="benefit__text--container ">
+              <p class="benefit__header">Microcurrent Face Toning</p>
+              <p class="benefit__para">
+                Utilize EMS technology for deep skin stimulation, enhancing muscle tone and collagen production, leading
+                to smoother, naturally lifted skin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

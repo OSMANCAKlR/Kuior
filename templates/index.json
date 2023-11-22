@@ -79,12 +79,18 @@
       ],
       "settings": {
       }
+    },
+    "benefits": {
+      "type": "benefits",
+      "settings": {
+      }
     }
   },
   "order": [
     "landing-hero",
     "call-to-action",
     "featured_collection",
-    "product-carousel"
+    "product-carousel",
+    "benefits"
   ]
 }
