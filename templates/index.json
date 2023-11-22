@@ -124,7 +124,8 @@
         "a008b3cd-ca6e-4697-944f-63148729dc4b"
       ],
       "custom_css": [
-        ".menubox__title {display: none;}"
+        ".menubox__title {display: none;}",
+        ".box__img--figure {padding: 0px;}"
       ],
       "settings": {
       }
