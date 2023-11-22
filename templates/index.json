@@ -123,6 +123,9 @@
         "e75491de-fb20-4851-bf88-0be3efbe693c",
         "a008b3cd-ca6e-4697-944f-63148729dc4b"
       ],
+      "custom_css": [
+        ".menubox__title {display: none;}"
+      ],
       "settings": {
       }
     },
