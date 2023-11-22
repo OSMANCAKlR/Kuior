@@ -85,6 +85,47 @@
       "settings": {
       }
     },
+    "f18ed5df-ba19-43ad-94ef-3002ffbcd9f4": {
+      "type": "product-carousel",
+      "blocks": {
+        "435b7b59-2b49-41fb-9c04-f0e5af11ea07": {
+          "type": "product",
+          "settings": {
+            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
+            "picker_type": "button"
+          }
+        },
+        "0ff764db-672e-4065-b28e-fdef9a836b6f": {
+          "type": "product",
+          "settings": {
+            "product": "acne-pimple-invisible-patch",
+            "picker_type": "button"
+          }
+        },
+        "e75491de-fb20-4851-bf88-0be3efbe693c": {
+          "type": "product",
+          "settings": {
+            "product": "facial-exfoliant",
+            "picker_type": "button"
+          }
+        },
+        "a008b3cd-ca6e-4697-944f-63148729dc4b": {
+          "type": "product",
+          "settings": {
+            "product": "led-gua-sha",
+            "picker_type": "button"
+          }
+        }
+      },
+      "block_order": [
+        "435b7b59-2b49-41fb-9c04-f0e5af11ea07",
+        "0ff764db-672e-4065-b28e-fdef9a836b6f",
+        "e75491de-fb20-4851-bf88-0be3efbe693c",
+        "a008b3cd-ca6e-4697-944f-63148729dc4b"
+      ],
+      "settings": {
+      }
+    },
     "amplify": {
       "type": "amplify",
       "blocks": {
@@ -115,6 +156,7 @@
     "featured_collection",
     "product-carousel",
     "benefits",
+    "f18ed5df-ba19-43ad-94ef-3002ffbcd9f4",
     "amplify"
   ]
 }
