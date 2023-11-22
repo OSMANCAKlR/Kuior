@@ -84,6 +84,11 @@
       "type": "benefits",
       "settings": {
       }
+    },
+    "amplify": {
+      "type": "amplify",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -91,6 +96,7 @@
     "call-to-action",
     "featured_collection",
     "product-carousel",
-    "benefits"
+    "benefits",
+    "amplify"
   ]
 }

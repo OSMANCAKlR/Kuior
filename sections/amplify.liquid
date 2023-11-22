@@ -1,0 +1,242 @@
+{% schema %}
+{
+  "name": "amplify",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Choose the product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "amplify",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+  const amplifyImage = new Image();
+  amplifyImage.onload = function () {
+    const height = this.height;
+    document.getElementById('amplify').style.height = height + 'px';
+  };
+  amplifyImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify.jpg?v=1700632099';
+
+  var mySwiperAmplify = new Swiper('.mySwiperAmplify', {
+    watchSlidesProgress: true,
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-nextAmplify',
+      prevEl: '.swiper-button-prevAmplify',
+    },
+    pagination: {
+      el: '.swiper-paginationAmplify',
+    },
+  });
+{% endjavascript %}
+
+{% stylesheet %}
+  #amplify {
+    width: 100%;
+    background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify.jpg?v=1700632099') no-repeat center
+      center;
+    background-size: cover;
+  }
+
+  .amplify__header--container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: var(--Cream, #f3eee9);
+    font-family: Open Sans;
+    font-size: 7.463px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .amplify__container {
+    padding: 56px 81px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .amplify__text--container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .amplify__carousel {
+    width: 40%;
+  }
+
+  .amplify__title {
+    color: var(--Cream, #f3eee9);
+    font-family: Glorify;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .amplify__text--top {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .amplify__para {
+    color: var(--Cream, #f3eee9);
+    font-family: Open Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 290px;
+  }
+
+  .amplify__button {
+    color: var(--Cream, #f3eee9);
+    font-family: Glorify;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    max-width: 220.664px;
+    padding: 15.815px 29.37px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5.648px;
+    background: #5b6240;
+    text-decoration: none;
+  }
+
+  .amplify__header--bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+
+  .amplify__figure {
+    height: 300px;
+  }
+
+  .amplify__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .amplify__bottom {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 0px 5px 5px;
+    background: var(--Emerald, #5b6240);
+    padding: 20px;
+  }
+
+  .amplify__name {
+    color: var(--White, #fff);
+    font-family: Open Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .amplify__name--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+  
+
+
+{% endstylesheet %}
+
+<div class="page-width">
+  <section id="amplify">
+    <div class="amplify__container">
+      <div class="amplify__text--container">
+        <div class="amplify__text--top">
+          <div class="amplify__header--container">
+            <span>COLLECTION</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="39" height="2" viewBox="0 0 39 2" fill="none">
+              <path d="M0 0.644043H39" stroke="#F3EEE9"/>
+            </svg>
+            <span>Skin Revival Series</span>
+          </div>
+          <p class="amplify__title">
+            Amplify the benefits of your LED mask and microcurrent device with our targeted formulas.
+          </p>
+        </div>
+        <div class="amplify__header--bottom">
+          <p class="amplify__para">
+            Pair your LED light mask and microcurrent face toning device with our expertly crafted serums. Each formula
+            is designed to synergize with your treatments, amplifying results and ensuring your skin receives the full
+            spectrum of benefits.
+          </p>
+          <a class="amplify__button" href="/">VIEW ALL COLLECTIONS</a>
+        </div>
+      </div>
+      <div class="amplify__carousel">
+        <div class="swiper mySwiperAmplify">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% if block.type == 'product' %}
+                <div class="swiper-slide" style="display:flex; justify-content: center;">
+                  <div class="amplify__product">
+                    <figure class="amplify__figure">
+                      <img class="amplify__img" src="{{ block.settings.product.featured_image | image_url }}" alt="">
+                    </figure>
+                    <div class="amplify__bottom">
+                      <div class="amplify__name--container">
+                        <p class="amplify__name">
+                          {{ block.settings.product.title }}
+                        </p>
+                        <a class="amplify__product--link" href="{{  block.settings.product.url }}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 8 9" fill="none">
+                            <path d="M0.145162 7.82416C0.00274433 7.99856 0.02867 8.25539 0.203068 8.39781C0.377466 8.54022 0.634296 8.5143 0.776713 8.3399L0.145162 7.82416ZM6.92014 0.628137C6.89752 0.404115 6.69758 0.240841 6.47356 0.263454L2.82291 0.63197C2.59888 0.654584 2.43561 0.854522 2.45822 1.07854C2.48084 1.30257 2.68078 1.46584 2.9048 1.44323L6.14983 1.11566L6.4774 4.36068C6.50001 4.58471 6.69995 4.74798 6.92397 4.72537C7.14799 4.70275 7.31127 4.50282 7.28865 4.27879L6.92014 0.628137ZM0.776713 8.3399L6.83028 0.926952L6.19873 0.411214L0.145162 7.82416L0.776713 8.3399Z" fill="white"/>
+                          </svg>
+                        </a>
+                      </div>
+                      <div class="amplify__price--container">
+                        {% if block.settings.product.compare_at_price != null %}
+                          <span class="product__price product__price--sale">
+                            {{- block.settings.product.price | money }}
+                          </span>
+                          <span class="product__price--compare product__price--original">
+                            {{- block.settings.product.compare_at_price | money }}
+                          </span>
+                        {% else %}
+                          <span class="product__price"></span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
