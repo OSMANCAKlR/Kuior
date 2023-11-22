@@ -152,6 +152,11 @@
       ],
       "settings": {
       }
+    },
+    "results": {
+      "type": "results",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -161,6 +166,7 @@
     "product-carousel",
     "benefits",
     "f18ed5df-ba19-43ad-94ef-3002ffbcd9f4",
-    "amplify"
+    "amplify",
+    "results"
   ]
 }

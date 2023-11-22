@@ -1,0 +1,234 @@
+{% schema %}
+{
+  "name": "amplify",
+  "settings": [],
+  "presets": [
+    {
+      "name": "amplify",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  #results {
+    margin: 80px 0px;
+  }
+  .results__title {
+    color: var(--Text, #242424);
+    text-align: center;
+    font-family: Glorify;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .results__para {
+    color: var(--Text, #242424);
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 564px;
+  }
+
+  .results__title--container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 49px;
+  }
+
+  .results__container {
+    display: flex;
+    gap: 5.47px;
+  }
+
+  .result {
+    border-radius: 5.472px;
+    background: #f1ede8;
+    height: 459px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 3);
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box; /* This ensures padding is included in width */
+  }
+
+  .result__text--container {
+    display: flex;
+    align-items: center;
+  }
+
+  .results__button {
+    border-radius: 5.648px;
+    background: #5b6240;
+    display: flex;
+    max-width: 251px;
+    padding: 15.815px 29.37px;
+    justify-content: center;
+    align-items: center;
+    color: #f3eee9;
+    font-family: Glorify;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20%;
+  }
+
+  .result1__img {
+    position: absolute;
+    right: 0;
+    width: 100px;
+  }
+
+  .text__container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: right;
+  }
+
+  .result__figure {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+  }
+
+  .result__img {
+    width: 100%;
+    padding: 8px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Creates a circular image */
+    border: 1.094px solid var(--Coral, #ff6f61);
+  }
+
+  .line {
+    flex-grow: 1; /* Allows the lines to expand to fill available space */
+    height: 1.094px;
+    background-color: var(--Coral, #ff6f61);
+  }
+
+  .line__container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .result__span {
+    color: #f3eee9;
+    font-family: Open Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    padding: 3.283px 10.943px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1.094px solid var(--Emerald, #5b6240);
+    background: var(--Emerald, #5b6240);
+    position: absolute;
+    top: 12%;
+  }
+
+  .result__price {
+    color: var(--Text, #242424);
+    font-family: Glorify;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    bottom: 12%;
+    position: absolute;
+    text-align: center;
+  }
+
+  .result__price--small {
+    color: var(--Text, #242424);
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+{% endstylesheet %}
+
+<section id="results">
+  <div class="page-width">
+    <div class="results__title--container">
+      <h2 class="results__title">Professional-grade results at a fraction of the cost.</h2>
+      <p class="results__para">
+        Enjoy the same LED technology used by dermatologists, right in your home, offering significant savings and a
+        great return on investment.
+      </p>
+    </div>
+    <div class="results__container">
+      <div class="result">
+        <div class="result__text--container">
+          <div class="text__container">
+            <span>LED Light Mask Therapy</span>
+            <span>Microcurrent Face Toning</span>
+          </div>
+          <img
+            class="result1__img"
+            src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/results1.svg?v=1700635876"
+            alt=""
+          >
+        </div>
+        <a class="results__button" href="/">VIEW ALL COLLECTION</a>
+      </div>
+      <div class="result">
+        <div class="line__container">
+          <p class="result__span">Cost of a Dermatologist Visit*</p>
+          <div class="line"></div>
+          <figure class="result__figure">
+            <img
+              class="result__img"
+              src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/dermavisit.png?v=1700636548"
+              alt=""
+            >
+          </figure>
+          <div class="line"></div>
+        </div>
+        <p class="result__price">$3,600+</p>
+      </div>
+      <div class="result">
+        <div class="line__container">
+          <p class="result__span">Cost of our KOUIR LED Face Mask</p>
+          <div class="line"></div>
+          <figure class="result__figure">
+            <img
+              class="result__img"
+              src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/ledfacemask.png?v=1700637944"
+              alt=""
+            >
+          </figure>
+          <div class="line"></div>
+        </div>
+        <p style=" transform: translateY(50%);" class="result__price">
+          $395 <br>
+          <span class="result__price--small">one time fee</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
