@@ -157,8 +157,13 @@
       "type": "results",
       "custom_css": [
         ".line {display: block;}",
-        ".result1__img {transform: translateY(3px);}"
+        ".result1__img {transform: translateY(2.1px);}"
       ],
+      "settings": {
+      }
+    },
+    "percentages": {
+      "type": "percentages",
       "settings": {
       }
     }
@@ -171,6 +176,7 @@
     "benefits",
     "f18ed5df-ba19-43ad-94ef-3002ffbcd9f4",
     "amplify",
-    "results"
+    "results",
+    "percentages"
   ]
 }

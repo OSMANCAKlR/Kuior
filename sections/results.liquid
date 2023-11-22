@@ -90,7 +90,7 @@
   .result1__img {
     position: absolute;
     right: 0;
-    width: 100px;
+    width: 20%;
   }
 
   .text__container {
@@ -170,6 +170,24 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  .result__text1 {
+    color: var(--Coral, #ff6f61);
+    font-family: Glorify;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .result__text2 {
+    color: var(--Text, #242424);
+    font-family: Glorify;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 {% endstylesheet %}
 
 <section id="results">
@@ -185,8 +203,8 @@
       <div class="result">
         <div class="result__text--container">
           <div class="text__container">
-            <span>LED Light Mask Therapy</span>
-            <span>Microcurrent Face Toning</span>
+            <span class="result__text1">LED Light Mask Therapy</span>
+            <span class="result__text2">Microcurrent Face Toning</span>
           </div>
           <img
             class="result1__img"
@@ -222,7 +240,7 @@
               alt=""
             >
           </figure>
-          <div class="line"></div>
+          <div class="line" style="height: 0px;"></div>
         </div>
         <p style=" transform: translateY(50%);" class="result__price">
           $395 <br>
