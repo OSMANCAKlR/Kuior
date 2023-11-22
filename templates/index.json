@@ -1,5 +1,15 @@
 {
   "sections": {
+    "landing-hero": {
+      "type": "landing-hero",
+      "settings": {
+      }
+    },
+    "call-to-action": {
+      "type": "call-to-action",
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "disabled": true,
@@ -29,53 +39,43 @@
         "padding_bottom": 36
       }
     },
-    "landing-hero": {
-      "type": "landing-hero",
-      "settings": {
-      }
-    },
-    "call-to-action": {
-      "type": "call-to-action",
-      "settings": {
-      }
-    },
     "product-carousel": {
       "type": "product-carousel",
       "blocks": {
-        "05828b97-128f-4d70-a55f-8bbce68638af": {
+        "0b6003c4-cf01-415f-87e3-026c088ec7f1": {
           "type": "product",
           "settings": {
-            "product": "3d-carlight™",
+            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
             "picker_type": "button"
           }
         },
-        "7f602037-25bd-4fa1-8502-cf8f6a3be70c": {
+        "fd0a674b-99f3-487a-921e-b5dc667ad6cc": {
           "type": "product",
           "settings": {
-            "product": "car-door-light-led-projector",
+            "product": "acne-pimple-invisible-patch",
             "picker_type": "button"
           }
         },
-        "d41c9562-ab21-4aba-99bb-f0dd98c9ebc8": {
+        "e1389cd0-a0b7-49bd-9e8b-639b6429fa24": {
           "type": "product",
           "settings": {
-            "product": "car-interior-led-ambient-lights",
+            "product": "",
             "picker_type": "button"
           }
         },
-        "79f8713c-4257-4621-8f9d-0a5fa13dd5e2": {
+        "586ade53-e2ce-4250-b1a6-af19d09d4f08": {
           "type": "product",
           "settings": {
-            "product": "rgb-led-light-strip-for-car-interior-1m2m3m4m5m-usb-fiber-optic-atmosphere-lamp-support-app-control-ambient-neon-invisible-light",
+            "product": "",
             "picker_type": "button"
           }
         }
       },
       "block_order": [
-        "05828b97-128f-4d70-a55f-8bbce68638af",
-        "7f602037-25bd-4fa1-8502-cf8f6a3be70c",
-        "d41c9562-ab21-4aba-99bb-f0dd98c9ebc8",
-        "79f8713c-4257-4621-8f9d-0a5fa13dd5e2"
+        "0b6003c4-cf01-415f-87e3-026c088ec7f1",
+        "fd0a674b-99f3-487a-921e-b5dc667ad6cc",
+        "e1389cd0-a0b7-49bd-9e8b-639b6429fa24",
+        "586ade53-e2ce-4250-b1a6-af19d09d4f08"
       ],
       "settings": {
       }
