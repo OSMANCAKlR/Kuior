@@ -156,7 +156,8 @@
     "results": {
       "type": "results",
       "custom_css": [
-        ".line {display: block;}"
+        ".line {display: block;}",
+        ".result1__img {transform: translateY(3px);}"
       ],
       "settings": {
       }
