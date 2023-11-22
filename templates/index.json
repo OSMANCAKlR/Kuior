@@ -87,6 +87,24 @@
     },
     "amplify": {
       "type": "amplify",
+      "blocks": {
+        "27e95dea-f536-4f76-b1b4-42ddc0064563": {
+          "type": "product",
+          "settings": {
+            "product": "facial-exfoliant"
+          }
+        },
+        "a001fbf8-a233-4d00-8836-f32432697abe": {
+          "type": "product",
+          "settings": {
+            "product": "led-gua-sha"
+          }
+        }
+      },
+      "block_order": [
+        "27e95dea-f536-4f76-b1b4-42ddc0064563",
+        "a001fbf8-a233-4d00-8836-f32432697abe"
+      ],
       "settings": {
       }
     }
