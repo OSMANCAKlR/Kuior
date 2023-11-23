@@ -2,57 +2,66 @@
   <div class="footer__wrapper">
     <div class="footer__top">
       <div class="newsletter__wrapper">
-      <div class="footer-column--nav">
-        <li class="footer__list--navigation">
-          <h3 class="footer__header"> Sign up to our mailing list and get $10 off your first subscription order. </h3>
-          {% form 'customer', id: 'footer-newsletter' %}
-            <input type="hidden" name="contact[tags]" value="newsletter">
-            <div class="sucscribeletter__email--container">
-              <input
-                class="suscribeletter__email--input"
-                name="contact[email]"
-                type="email"
-                placeholder="Your Email address"
-              >
-            <svg  type="submit" class="footer__arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none">
-  <path d="M19.0303 6.54937C19.3232 6.25648 19.3232 5.78161 19.0303 5.48871L14.2574 0.715742C13.9645 0.422849 13.4896 0.422849 13.1967 0.715742C12.9038 1.00864 12.9038 1.48351 13.1967 1.7764L17.4393 6.01904L13.1967 10.2617C12.9038 10.5546 12.9038 11.0295 13.1967 11.3223C13.4896 11.6152 13.9645 11.6152 14.2574 11.3223L19.0303 6.54937ZM0.5 6.76904H18.5V5.26904H0.5V6.76904Z" fill="#5B6240"/>
-</svg>
+        <div class="footer-column--nav">
+          <li class="footer__list--navigation">
+            <h3 class="footer__header">Sign up to our mailing list and get $10 off your first subscription order.</h3>
+            {% form 'customer', id: 'footer-newsletter' %}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="sucscribeletter__email--container">
+                <input
+                  class="suscribeletter__email--input"
+                  name="contact[email]"
+                  type="email"
+                  placeholder="Your Email address"
+                >
+                <svg
+                  type="submit"
+                  class="footer__arrow"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="12"
+                  viewBox="0 0 20 12"
+                  fill="none"
+                >
+                  <path d="M19.0303 6.54937C19.3232 6.25648 19.3232 5.78161 19.0303 5.48871L14.2574 0.715742C13.9645 0.422849 13.4896 0.422849 13.1967 0.715742C12.9038 1.00864 12.9038 1.48351 13.1967 1.7764L17.4393 6.01904L13.1967 10.2617C12.9038 10.5546 12.9038 11.0295 13.1967 11.3223C13.4896 11.6152 13.9645 11.6152 14.2574 11.3223L19.0303 6.54937ZM0.5 6.76904H18.5V5.26904H0.5V6.76904Z" fill="#5B6240"/>
+                </svg>
+              </div>
+              {% if form.posted_successfully? %}
+                <p class="footer-column-news-message">Thank you for subscribing!</p>
+              {% endif %}
+              {% if form.errors %}
+                <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
+              {% endif %}
+            {% endform %}
+          </li>
+        </div>
+      </div>
+      <div class="nav_links">
+        {% for block in section.blocks %}
+          {% if block.type == 'navigation' %}
+            <div class="footer_column footer-column--nav">
+              <h2 class="footer__nav--title">{{ block.settings.linklist.title }}</h2>
+              {% for link in block.settings.linklist.links %}
+                <li class="footer__list--navigation">
+                  <a class="footer__link" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
             </div>
-            {% if form.posted_successfully? %}
-              <p class="footer-column-news-message">Thank you for subscribing!</p>
-            {% endif %}
-            {% if form.errors %}
-              <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
-            {% endif %}
-          {% endform %}
-        </li>
+          {% elsif block.type == 'text' %}
+            <div class="footer-column footer-column--text">
+              <h2>{{ block.settings.heading }}</h2>
+              {{ block.settings.text }}
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
-      </div>
-       <div class="nav_links"> 
-      {% for block in section.blocks %}
-        {% if block.type == 'navigation' %}
-          <div class="footer_column footer-column--nav">
-            <h2 class="footer__nav--title">{{ block.settings.linklist.title }}</h2>
-            {% for link in block.settings.linklist.links %}
-              <li class="footer__list--navigation">
-                <a class="footer__link" href="{{ link.url }}">{{ link.title }}</a>
-              </li>
-            {% endfor %}
-          </div>
-        {% elsif block.type == 'text' %}
-          <div class="footer-column footer-column--text">
-            <h2>{{ block.settings.heading }}</h2>
-            {{ block.settings.text }}
-          </div>
-        {% endif %}
-      {% endfor %}
-       </div>
     </div>
 
     <div class="footer-bottom">
       <p class="copyright__text">Copyright © 2023 Kuoir</p>
       <div class="footer__socials--container">
-          {% comment %} <a  href="{{ section.settings.insta_link }}"
+        {% comment %}
+          <a  href="{{ section.settings.insta_link }}"
             target="_blank"
             class="social__link">
             <img src="https://cdn.shopify.com/s/files/1/0801/6599/4812/files/instagram_logo.svg?v=1693128956" class="social__icon">
@@ -66,208 +75,211 @@
             target="_blank"
             class="social__link">
             <img src="https://cdn.shopify.com/s/files/1/0801/6599/4812/files/tiktok.svg?v=1693129221" class="social__icon">
-          </a> {% endcomment %}
+          </a>
+        {% endcomment %}
       </div>
     </div>
   </div>
 </footer>
 
 {% stylesheet %}
-
-  .footer__socials--container {
-    display:flex;
-    gap: 21px;
-  }
-  .social__icon {
-    width: 18.17px;
-    height: 18.17px;
-  }
-   .suscribeletter__email--input::placeholder {
-  color: var(--Emerald, #5B6240);
-font-family: Open Sans;
-font-size: 10px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
- 
-  .copyright__text {
-    margin: 0px;
-    margin-top: 37px;
-    color: rgba(255, 255, 255, 0.80);
-    font-size: 13.845px;
-font-style: normal;
-font-weight: 400;
-line-height: 18.491px; /* 133.558% */
-  }
-
-  .socials__text {
-    margin: 0px;
-    color: rgba(255, 255, 255, 0.80);
-    font-size: 13.845px;
-font-style: normal;
-font-weight: 400;
-line-height: 18.491px; /* 133.558% */
-  }
-
-  .footer__socials--container {
-    margin-top: 37px;
-  }
-  .sucscribeletter__email--container {
-    width: 435px;
-    height: 57.56px;
-    border-radius: 10px;
-    position: relative;
-  }
-
-   
-  .suscribeletter__email--input {
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid var(--Cream, #F3EEE9);
-  background: #F1EDE8;
-  padding: 16px 21px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }
-
-  .footer__arrow {
-   position: absolute;
-  right: 4%;
-  height: 100%;
-  top: 0;
-  }
-
-  .footer__header {
-   color: var(--Cream, #F3EEE9);
-  font-family: Open Sans;
-font-size: 10px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-    margin-bottom: 10px;
-  }
-
-  .yellow {
-    color: #D4AF37;
-  }
-  .footer__top {
-    display: flex;
-   justify-content: space-between;
-    padding-bottom: 34px;
-  }
-
-  .footer-column-news-message {
-  color: white;
-    margin: 0px;
-    padding: 0px;
-    margin-top: 14px;
-  }
-
-    .footer__nav--title {
-      font-size: 13.84px;
-      color: white;
-      font-weight: 600;
+    .footer__socials--container {
+      display:flex;
+      gap: 21px;
     }
-
-  .footer__list--navigation {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-
+    .social__icon {
+      width: 18.17px;
+      height: 18.17px;
+    }
+     .suscribeletter__email--input::placeholder {
+    color: var(--Emerald, #5B6240);
+  font-family: Open Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   }
 
-  .nav_links {
-    display: flex;
-    gap: 75px;
-  }
-
-
-
-
-
-
-
-  .footer__link {
-    color: rgba(255, 255, 255, 0.90);
-  font-family: Inter;
-  font-size: 13.845px;
+    .copyright__text {
+      margin: 0px;
+      margin-top: 37px;
+      color: rgba(255, 255, 255, 0.80);
+      font-size: 13.845px;
   font-style: normal;
   font-weight: 400;
   line-height: 18.491px; /* 133.558% */
-    text-decoration: none;
-    margin-bottom: 17px;
-  }
-  .footer {
-    padding: 40px;
-    background: var(--Emerald, #5B6240);
-  }
-
-  .footer-bottom {
-    border-top: solid 1px #DDDDDD;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-  }
-
-  @media screen and (max-width:1082px) {
-
-   
-
-    .sucscribeletter__email--container {
-    width: 100%;
-    }
-    .footer {
-        padding: 40px 5rem;
-      border-radius: 0px;
-    }
-    .footer__top {
-      flex-direction: column;
-      gap: 22px;
-      padding-bottom: 0px;
     }
 
-    .footer__header {
-      margin: 0 0 24px;
-    }
-
-    .copyright__text {
-    margin: 24px 0 0;
+    .socials__text {
+      margin: 0px;
+      color: rgba(255, 255, 255, 0.80);
+      font-size: 13.845px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18.491px; /* 133.558% */
     }
 
     .footer__socials--container {
-    margin-top: 24px;
+      margin-top: 37px;
     }
-    
-    .nav_links {
-      flex-direction: column;
-      gap: 20px;
+    .sucscribeletter__email--container {
+      width: 435px;
+      height: 57.56px;
+      border-radius: 10px;
+      position: relative;
     }
 
-    .footer_column {
-      border-bottom: solid 1px #DDDDDD;
+
+    .suscribeletter__email--input {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--Cream, #F3EEE9);
+    background: #F1EDE8;
+    padding: 16px 21px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
-    
-    
-    
-   
+
+    .footer__arrow {
+     position: absolute;
+    right: 4%;
+    height: 100%;
+    top: 0;
+    }
 
     .footer__header {
-      font-size: 40px;
-      max-width: none;
+     color: var(--Cream, #F3EEE9);
+    font-family: Open Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+      margin-bottom: 10px;
     }
-  }
+
+    .yellow {
+      color: #D4AF37;
+    }
+    .footer__top {
+      display: flex;
+     justify-content: space-between;
+      padding-bottom: 34px;
+    }
+
+    .footer-column-news-message {
+    color: white;
+      margin: 0px;
+      padding: 0px;
+      margin-top: 14px;
+    }
+
+      .footer__nav--title {
+        color: var(--Cream, #F3EEE9);
+        font-family: Open Sans;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 20px;
+      }
+
+    .footer__list--navigation {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .nav_links {
+      display: flex;
+      gap: 75px;
+    }
 
 
-     @media screen and (max-width:749px) {
-       .footer {
-         padding: 40px 3.5rem;
+
+
+
+
+
+    .footer__link {
+      color: rgba(255, 255, 255, 0.90);
+    font-family: Inter;
+    font-size: 13.845px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18.491px; /* 133.558% */
+      text-decoration: none;
+      margin-bottom: 17px;
+    }
+    .footer {
+      padding: 40px;
+      background: var(--Emerald, #5B6240);
+    }
+
+    .footer-bottom {
+      border-top: solid 1px #DDDDDD;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+    }
+
+    @media screen and (max-width:1082px) {
+
+
+
+      .sucscribeletter__email--container {
+      width: 100%;
+      }
+      .footer {
+          padding: 40px 5rem;
+        border-radius: 0px;
+      }
+      .footer__top {
+        flex-direction: column;
+        gap: 22px;
+        padding-bottom: 0px;
+      }
+
+      .footer__header {
+        margin: 0 0 24px;
+      }
+
+      .copyright__text {
+      margin: 24px 0 0;
+      }
+
+      .footer__socials--container {
+      margin-top: 24px;
+      }
+
+      .nav_links {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer_column {
+        border-bottom: solid 1px #DDDDDD;
+      }
+
+
+
+
+
+      .footer__header {
+        font-size: 40px;
+        max-width: none;
+      }
+    }
+
+
+       @media screen and (max-width:749px) {
+         .footer {
+           padding: 40px 3.5rem;
+         }
        }
-     }
-    
 {% endstylesheet %}
 
 {% schema %}
@@ -311,4 +323,3 @@ line-height: normal;
   ]
 }
 {% endschema %}
-
