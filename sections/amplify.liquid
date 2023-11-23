@@ -36,8 +36,8 @@
     watchSlidesProgress: true,
     slidesPerView: 1,
     navigation: {
-      nextEl: '.amplify',
-      prevEl: '.swiper-button-prevAmplify',
+      nextEl: '.amplifynext',
+      prevEl: '.amplifyprev',
     },
     pagination: {
       el: '.swiper-paginationAmplify',
@@ -202,7 +202,9 @@
       <div class="amplify__carousel">
         <div class="swiper mySwiperAmplify">
           <div class="swiper-wrapper">
-            <div class="swiper-button-prevAmplify"></div>
+            <div class="amplifynext"> <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
+  <path d="M26.4243 5.38288C26.6586 5.14857 26.6586 4.76867 26.4243 4.53435L22.6059 0.715977C22.3716 0.481663 21.9917 0.481663 21.7574 0.715977C21.523 0.950292 21.523 1.33019 21.7574 1.56451L25.1515 4.95862L21.7574 8.35273C21.523 8.58705 21.523 8.96694 21.7574 9.20126C21.9917 9.43557 22.3716 9.43557 22.6059 9.20126L26.4243 5.38288ZM0 5.55862H26V4.35862H0V5.55862Z" fill="white"/>
+</svg></div>
             {% for block in section.blocks %}
               {% if block.type == 'product' %}
                 
@@ -240,7 +242,7 @@
               {% endif %}
             {% endfor %}
           </div>
-             <div class="swiper-button-next amplify"></div>
+             <div class="swiper-button-next amplifynext"></div>
         </div>
       </div>
     </div>
