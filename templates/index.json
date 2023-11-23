@@ -166,6 +166,11 @@
       "type": "percentages",
       "settings": {
       }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -177,6 +182,7 @@
     "f18ed5df-ba19-43ad-94ef-3002ffbcd9f4",
     "amplify",
     "results",
-    "percentages"
+    "percentages",
+    "testimonials"
   ]
 }
