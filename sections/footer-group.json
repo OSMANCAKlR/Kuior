@@ -1,1 +1,42 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","blocks":{"brand-information":{"type":"brand_information","settings":{"show_social":true}}},"block_order":["brand-information"],"settings":{"color_scheme":"background-1","newsletter_enable":false,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":false,"show_social":false,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":56,"padding_bottom":52}}},"order":["footer"]}
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "9a286609-c830-4a11-be2e-3f8ea7732904": {
+          "type": "navigation",
+          "settings": {
+            "linklist": "footer"
+          }
+        },
+        "322b7477-7ccd-4b66-abf7-795cef965f54": {
+          "type": "navigation",
+          "settings": {
+            "linklist": "footer"
+          }
+        },
+        "918f73c1-f32b-4173-9365-07a58c29acb6": {
+          "type": "navigation",
+          "settings": {
+            "linklist": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "9a286609-c830-4a11-be2e-3f8ea7732904",
+        "322b7477-7ccd-4b66-abf7-795cef965f54",
+        "918f73c1-f32b-4173-9365-07a58c29acb6"
+      ],
+      "settings": {
+        "insta_link": "",
+        "facebook_link": "",
+        "tiktok_link": ""
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
