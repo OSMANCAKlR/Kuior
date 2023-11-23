@@ -199,12 +199,12 @@
       </div>
       <div class="amplify__carousel">
         <div class="swiper mySwiperAmplify">
-          <div class="swiper-wrapper">
             <div class="amplifyprev">
               <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
                 <path d="M0.575735 5.38288C0.341421 5.14857 0.341421 4.76867 0.575735 4.53435L4.39411 0.715977C4.62843 0.481663 5.00833 0.481663 5.24264 0.715977C5.47696 0.950292 5.47696 1.33019 5.24264 1.56451L1.84853 4.95862L5.24264 8.35273C5.47696 8.58705 5.47696 8.96694 5.24264 9.20126C5.00833 9.43557 4.62843 9.43557 4.39411 9.20126L0.575735 5.38288ZM27 5.55862H1V4.35862H27V5.55862Z" fill="white"/>
               </svg>
             </div>
+          <div class="swiper-wrapper">
             {% for block in section.blocks %}
               {% if block.type == 'product' %}
                 <div class="swiper-slide" style="display:flex; justify-content: center;">
