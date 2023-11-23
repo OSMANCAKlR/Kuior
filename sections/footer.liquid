@@ -14,7 +14,9 @@
                 type="email"
                 placeholder="Email address"
               >
-              <button class="subscribeletter__button" type="submit">Subscribe</button>
+            <svg class="footer__arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none">
+  <path d="M19.0303 6.54937C19.3232 6.25648 19.3232 5.78161 19.0303 5.48871L14.2574 0.715742C13.9645 0.422849 13.4896 0.422849 13.1967 0.715742C12.9038 1.00864 12.9038 1.48351 13.1967 1.7764L17.4393 6.01904L13.1967 10.2617C12.9038 10.5546 12.9038 11.0295 13.1967 11.3223C13.4896 11.6152 13.9645 11.6152 14.2574 11.3223L19.0303 6.54937ZM0.5 6.76904H18.5V5.26904H0.5V6.76904Z" fill="#5B6240"/>
+</svg>
             </div>
             {% if form.posted_successfully? %}
               <p class="footer-column-news-message">Thank you for subscribing!</p>
@@ -118,24 +120,7 @@ line-height: 18.491px; /* 133.558% */
     position: relative;
   }
 
-    .subscribeletter__button {
-    position: absolute;
-    background-color: #D4AF37;
-    right: 0;
-    height: 100%;
-    border-radius: 10px;
-    border: 1.796px solid #D4AF37;
-    border-left: none;
-    padding: 7px 20px;
-    color: #242424;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px; /* 112.5% */
-    border-radius: 0px 10px 10px 0px;
-      font-family: Inter;
-  }
-
+   
   .suscribeletter__email--input {
     height: 100%;
     width: 100%;
@@ -143,6 +128,12 @@ line-height: 18.491px; /* 133.558% */
     border: 1px solid var(--Cream, #F3EEE9);
     background: #F1EDE8;
     padding: 16px 21px;
+    position: relative;
+  }
+
+  .footer__arrow {
+    position: absolute;
+    right: 0;
   }
 
   .footer__header {
