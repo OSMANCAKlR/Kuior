@@ -188,6 +188,12 @@
     font-weight: 600;
     line-height: normal;
   }
+
+  .product__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 {% endstylesheet %}
 
 {% javascript %}
@@ -250,8 +256,8 @@
                       <span class="testimonial__product--name">{{ block.settings.product.title }} </span>
                       <span class="testimonial__product--price">{{ block.settings.product.price | money }} </span>
                     </div>
-                    <a href="{{ block.settings.product.url }}">
-                      
+                    <a class="product__link" href="{{ block.settings.product.url }}">
+                       
                     <svg
                       class="testimonial__product--link"
                       xmlns="http://www.w3.org/2000/svg"
