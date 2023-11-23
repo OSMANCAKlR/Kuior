@@ -219,6 +219,11 @@
       ],
       "settings": {
       }
+    },
+    "call-to-action2": {
+      "type": "call-to-action2",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -231,6 +236,7 @@
     "amplify",
     "results",
     "percentages",
-    "testimonials"
+    "testimonials",
+    "call-to-action2"
   ]
 }
