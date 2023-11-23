@@ -202,8 +202,10 @@
       <div class="amplify__carousel">
         <div class="swiper mySwiperAmplify">
           <div class="swiper-wrapper">
+            <div class="swiper-button-prevAmplify"></div>
             {% for block in section.blocks %}
               {% if block.type == 'product' %}
+                
                 <div class="swiper-slide" style="display:flex; justify-content: center;">
                   <div class="amplify__product">
                     <figure class="amplify__figure">
