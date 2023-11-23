@@ -150,6 +150,9 @@
         "27e95dea-f536-4f76-b1b4-42ddc0064563",
         "a001fbf8-a233-4d00-8836-f32432697abe"
       ],
+      "custom_css": [
+        "#amplifysection {margin-top: 80px;}"
+      ],
       "settings": {
       }
     },
