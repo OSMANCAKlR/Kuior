@@ -166,7 +166,10 @@
     align-items: center;
     margin-bottom: 16px;
 }
-  
+
+  .white {
+    color: white;
+  }
 
 
 {% endstylesheet %}
@@ -219,14 +222,14 @@
                       </div>
                       <div class="amplify__price--container">
                         {% if block.settings.product.compare_at_price != null %}
-                          <span class="product__price product__price--sale">
+                          <span class="product__price product__price--sale white">
                             {{- block.settings.product.price | money }}
                           </span>
-                          <span class="product__price--compare product__price--original">
+                          <span class="product__price--compare product__price--original white">
                             {{- block.settings.product.compare_at_price | money }}
                           </span>
                         {% else %}
-                          <span class="product__price">{{ block.settings.product.price | money }} </span>
+                          <span class="product__price white">{{ block.settings.product.price | money }} </span>
                         {% endif %}
                       </div>
                     </div>
