@@ -170,6 +170,10 @@
     .white {
       color: white !important;
     }
+
+  .swiper__container {
+    display: flex;
+  }
 {% endstylesheet %}
 
 <div class="page-width" id="amplifysection">
@@ -199,52 +203,54 @@
       </div>
       <div class="amplify__carousel">
         <div class="swiper mySwiperAmplify">
-            <div class="amplifyprev">
-              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
-                <path d="M0.575735 5.38288C0.341421 5.14857 0.341421 4.76867 0.575735 4.53435L4.39411 0.715977C4.62843 0.481663 5.00833 0.481663 5.24264 0.715977C5.47696 0.950292 5.47696 1.33019 5.24264 1.56451L1.84853 4.95862L5.24264 8.35273C5.47696 8.58705 5.47696 8.96694 5.24264 9.20126C5.00833 9.43557 4.62843 9.43557 4.39411 9.20126L0.575735 5.38288ZM27 5.55862H1V4.35862H27V5.55862Z" fill="white"/>
-              </svg>
-            </div>
           <div class="swiper-wrapper">
-            {% for block in section.blocks %}
-              {% if block.type == 'product' %}
-                <div class="swiper-slide" style="display:flex; justify-content: center;">
-                  <div class="amplify__product">
-                    <figure class="amplify__figure">
-                      <img class="amplify__img" src="{{ block.settings.product.featured_image | image_url }}" alt="">
-                    </figure>
-                    <div class="amplify__bottom">
-                      <div class="amplify__name--container">
-                        <p class="amplify__name">
-                          {{ block.settings.product.title }}
-                        </p>
-                        <a class="amplify__product--link" href="{{  block.settings.product.url }}">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 8 9" fill="none">
-                            <path d="M0.145162 7.82416C0.00274433 7.99856 0.02867 8.25539 0.203068 8.39781C0.377466 8.54022 0.634296 8.5143 0.776713 8.3399L0.145162 7.82416ZM6.92014 0.628137C6.89752 0.404115 6.69758 0.240841 6.47356 0.263454L2.82291 0.63197C2.59888 0.654584 2.43561 0.854522 2.45822 1.07854C2.48084 1.30257 2.68078 1.46584 2.9048 1.44323L6.14983 1.11566L6.4774 4.36068C6.50001 4.58471 6.69995 4.74798 6.92397 4.72537C7.14799 4.70275 7.31127 4.50282 7.28865 4.27879L6.92014 0.628137ZM0.776713 8.3399L6.83028 0.926952L6.19873 0.411214L0.145162 7.82416L0.776713 8.3399Z" fill="white"/>
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="amplify__price--container">
-                        {% if block.settings.product.compare_at_price != null %}
-                          <span class="product__price product__price--sale white">
-                            {{- block.settings.product.price | money }}
-                          </span>
-                          <span class="product__price--compare product__price--original white">
-                            {{- block.settings.product.compare_at_price | money }}
-                          </span>
-                        {% else %}
-                          <span class="product__price white">{{ block.settings.product.price | money }} </span>
-                        {% endif %}
+            <div class="swiper__container">
+              <div class="amplifyprev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
+                  <path d="M0.575735 5.38288C0.341421 5.14857 0.341421 4.76867 0.575735 4.53435L4.39411 0.715977C4.62843 0.481663 5.00833 0.481663 5.24264 0.715977C5.47696 0.950292 5.47696 1.33019 5.24264 1.56451L1.84853 4.95862L5.24264 8.35273C5.47696 8.58705 5.47696 8.96694 5.24264 9.20126C5.00833 9.43557 4.62843 9.43557 4.39411 9.20126L0.575735 5.38288ZM27 5.55862H1V4.35862H27V5.55862Z" fill="white"/>
+                </svg>
+              </div>
+              {% for block in section.blocks %}
+                {% if block.type == 'product' %}
+                  <div class="swiper-slide" style="display:flex; justify-content: center;">
+                    <div class="amplify__product">
+                      <figure class="amplify__figure">
+                        <img class="amplify__img" src="{{ block.settings.product.featured_image | image_url }}" alt="">
+                      </figure>
+                      <div class="amplify__bottom">
+                        <div class="amplify__name--container">
+                          <p class="amplify__name">
+                            {{ block.settings.product.title }}
+                          </p>
+                          <a class="amplify__product--link" href="{{  block.settings.product.url }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 8 9" fill="none">
+                              <path d="M0.145162 7.82416C0.00274433 7.99856 0.02867 8.25539 0.203068 8.39781C0.377466 8.54022 0.634296 8.5143 0.776713 8.3399L0.145162 7.82416ZM6.92014 0.628137C6.89752 0.404115 6.69758 0.240841 6.47356 0.263454L2.82291 0.63197C2.59888 0.654584 2.43561 0.854522 2.45822 1.07854C2.48084 1.30257 2.68078 1.46584 2.9048 1.44323L6.14983 1.11566L6.4774 4.36068C6.50001 4.58471 6.69995 4.74798 6.92397 4.72537C7.14799 4.70275 7.31127 4.50282 7.28865 4.27879L6.92014 0.628137ZM0.776713 8.3399L6.83028 0.926952L6.19873 0.411214L0.145162 7.82416L0.776713 8.3399Z" fill="white"/>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="amplify__price--container">
+                          {% if block.settings.product.compare_at_price != null %}
+                            <span class="product__price product__price--sale white">
+                              {{- block.settings.product.price | money }}
+                            </span>
+                            <span class="product__price--compare product__price--original white">
+                              {{- block.settings.product.compare_at_price | money }}
+                            </span>
+                          {% else %}
+                            <span class="product__price white">{{ block.settings.product.price | money }} </span>
+                          {% endif %}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              {% endif %}
-            {% endfor %}
-          </div>
-          <div class="amplifynext">
-            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
-              <path d="M26.4243 5.38288C26.6586 5.14857 26.6586 4.76867 26.4243 4.53435L22.6059 0.715977C22.3716 0.481663 21.9917 0.481663 21.7574 0.715977C21.523 0.950292 21.523 1.33019 21.7574 1.56451L25.1515 4.95862L21.7574 8.35273C21.523 8.58705 21.523 8.96694 21.7574 9.20126C21.9917 9.43557 22.3716 9.43557 22.6059 9.20126L26.4243 5.38288ZM0 5.55862H26V4.35862H0V5.55862Z" fill="white"/>
-            </svg>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="amplifynext">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
+                <path d="M26.4243 5.38288C26.6586 5.14857 26.6586 4.76867 26.4243 4.53435L22.6059 0.715977C22.3716 0.481663 21.9917 0.481663 21.7574 0.715977C21.523 0.950292 21.523 1.33019 21.7574 1.56451L25.1515 4.95862L21.7574 8.35273C21.523 8.58705 21.523 8.96694 21.7574 9.20126C21.9917 9.43557 22.3716 9.43557 22.6059 9.20126L26.4243 5.38288ZM0 5.55862H26V4.35862H0V5.55862Z" fill="white"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
