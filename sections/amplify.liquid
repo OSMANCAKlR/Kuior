@@ -25,12 +25,14 @@
 {% endschema %}
 
 {% javascript %}
-  const amplifyImage = new Image();
-  amplifyImage.onload = function () {
-    const height = this.height;
-    document.getElementById('amplify').style.height = height + 'px';
-  };
-  amplifyImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify.jpg?v=1700632099';
+  if (window.innerWidth > 930) {
+    const amplifyImage = new Image();
+    amplifyImage.onload = function () {
+      const height = this.height;
+      document.getElementById('amplify').style.height = height + 'px';
+    };
+    amplifyImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify.jpg?v=1700632099';
+  }
 
   var mySwiperAmplify = new Swiper('.mySwiperAmplify', {
     watchSlidesProgress: true,
@@ -46,69 +48,219 @@
 {% endjavascript %}
 
 {% stylesheet %}
-    #amplify {
+  #amplify {
+    width: 100%;
+    background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify.jpg?v=1700632099') no-repeat center
+      center;
+    background-size: cover;
+  }
+
+  .amplify__header--container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: var(--Cream, #f3eee9);
+    font-family: Open Sans;
+    font-size: 7.463px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .amplify__container {
+    padding: 56px 81px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .amplify__text--container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .amplify__carousel {
+    width: 40%;
+  }
+
+  .amplify__title {
+    color: var(--Cream, #f3eee9);
+    font-family: Glorify;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .amplify__text--top {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .amplify__para {
+    color: var(--Cream, #f3eee9);
+    font-family: Open Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 290px;
+  }
+
+  .amplify__button {
+    color: var(--Cream, #f3eee9);
+    font-family: Glorify;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    max-width: 220.664px;
+    padding: 15.815px 29.37px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5.648px;
+    background: #5b6240;
+    text-decoration: none;
+  }
+
+  .amplify__header--bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+
+  .amplify__figure {
+    height: 300px;
+  }
+
+  .amplify__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .amplify__bottom {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 0px 5px 5px;
+    background: var(--Emerald, #5b6240);
+    padding: 20px;
+  }
+
+  .amplify__name {
+    color: var(--White, #fff);
+    font-family: Open Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .amplify__name--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .white {
+    color: white !important;
+  }
+
+  .amplify__product--link {
+    padding: 14px;
+    border-radius: 50%;
+    border: 0.8px solid var(--White, #fff);
+    display: flex;
+  }
+
+  .amplify__figure--mobile {
+    display: none;
+  }
+  .line__mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 930px) {
+    .amplify__figure--mobile {
+      display: flex;
       width: 100%;
-      background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify.jpg?v=1700632099') no-repeat center
-        center;
-      background-size: cover;
+      height: auto;
     }
 
-    .amplify__header--container {
-      display: flex;
-      gap: 5px;
-      align-items: center;
-      color: var(--Cream, #f3eee9);
-      font-family: Open Sans;
-      font-size: 7.463px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
+    .amplify__img--mobile {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px 5px 0px 0px;
+    }
+
+    #amplify {
+      background: url(none);
     }
 
     .amplify__container {
-      padding: 56px 81px;
+      padding: 38px 21px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       height: 100%;
+      border-radius: 5px;
+      background: var(--Cream, #f3eee9);
+      gap: 23px;
     }
 
     .amplify__text--container {
-      width: 40%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .amplify__carousel {
-      width: 40%;
+      width: 100%;
     }
 
     .amplify__title {
-      color: var(--Cream, #f3eee9);
+      color: var(--Text, #242424);
       font-family: Glorify;
-      font-size: 30px;
+      font-size: 24.745px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-    }
-
-    .amplify__text--top {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
+      margin-bottom: 20px;
     }
 
     .amplify__para {
-      color: var(--Cream, #f3eee9);
+      color: var(--Text, #242424);
       font-family: Open Sans;
-      font-size: 12px;
+      font-size: 14px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      max-width: 290px;
+      max-width: none;
+    }
+
+    .amplify__header--container {
+      color: var(--Text, #242424);
+      font-family: Open Sans;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .line__mobile {
+      display: block;
+    }
+
+    .line__dekstop {
+      display: none;
     }
 
     .amplify__button {
+      max-width: none;
+      padding: 28.815px 29.37px;
       color: var(--Cream, #f3eee9);
       font-family: Glorify;
       font-size: 12px;
@@ -116,78 +268,59 @@
       font-weight: 400;
       line-height: normal;
       text-transform: uppercase;
-      display: flex;
-      max-width: 220.664px;
-      padding: 15.815px 29.37px;
-      justify-content: center;
-      align-items: center;
-      border-radius: 5.648px;
-      background: #5b6240;
-      text-decoration: none;
     }
 
     .amplify__header--bottom {
-      display: flex;
-      flex-direction: column;
-      gap: 19px;
+      gap: 42px;
+    }
+
+    .amplify__carousel {
+      width: 100%;
+    }
+
+    .amplify__product{
+      width: 100%;
     }
 
     .amplify__figure {
-      height: 300px;
-    }
-
-    .amplify__img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 5px 5px 0px 0px;
-    }
-
-    .amplify__bottom {
-      display: flex;
-      flex-direction: column;
-      border-radius: 0px 0px 5px 5px;
-      background: var(--Emerald, #5b6240);
-      padding: 20px;
-    }
-
-    .amplify__name {
-      color: var(--White, #fff);
-      font-family: Open Sans;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-    }
-
-    .amplify__name--container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-  }
-
-    .white {
-      color: white !important;
-    }
-
-  .amplify__product--link {
-    padding: 14px;
-   border-radius: 50%;
-border: 0.8px solid var(--White, #FFF);
-    display: flex;
-
+  height: 300px;
+  display: flex;
+}
   }
 {% endstylesheet %}
 
 <div class="page-width" id="amplifysection">
   <section id="amplify">
+    <figure class="amplify__figure--mobile">
+      <img
+        loading="lazy"
+        class="amplify__img--mobile"
+        src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify.jpg?v=1700632099"
+      >
+    </figure>
     <div class="amplify__container">
       <div class="amplify__text--container">
         <div class="amplify__text--top">
           <div class="amplify__header--container">
             <span>COLLECTION</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="39" height="2" viewBox="0 0 39 2" fill="none">
+            <svg
+              class="line__mobile"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="3"
+              viewBox="0 0 24 3"
+              fill="none"
+            >
+              <path d="M0.40332 1.44165H23.4033" stroke="#242424" stroke-width="1.40906"/>
+            </svg>
+            <svg
+              class="line__dekstop"
+              xmlns="http://www.w3.org/2000/svg"
+              width="39"
+              height="2"
+              viewBox="0 0 39 2"
+              fill="none"
+            >
               <path d="M0 0.644043H39" stroke="#F3EEE9"/>
             </svg>
             <span>Skin Revival Series</span>
@@ -208,11 +341,13 @@ border: 0.8px solid var(--White, #FFF);
       <div class="amplify__carousel">
         <div class="swiper mySwiperAmplify">
           <div class="swiper-wrapper">
-            <!-- <div class="amplifyprev">
-              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
-                <path d="M0.575735 5.38288C0.341421 5.14857 0.341421 4.76867 0.575735 4.53435L4.39411 0.715977C4.62843 0.481663 5.00833 0.481663 5.24264 0.715977C5.47696 0.950292 5.47696 1.33019 5.24264 1.56451L1.84853 4.95862L5.24264 8.35273C5.47696 8.58705 5.47696 8.96694 5.24264 9.20126C5.00833 9.43557 4.62843 9.43557 4.39411 9.20126L0.575735 5.38288ZM27 5.55862H1V4.35862H27V5.55862Z" fill="white"/>
-              </svg>
-            </div> -->
+            <!--
+              <div class="amplifyprev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
+                  <path d="M0.575735 5.38288C0.341421 5.14857 0.341421 4.76867 0.575735 4.53435L4.39411 0.715977C4.62843 0.481663 5.00833 0.481663 5.24264 0.715977C5.47696 0.950292 5.47696 1.33019 5.24264 1.56451L1.84853 4.95862L5.24264 8.35273C5.47696 8.58705 5.47696 8.96694 5.24264 9.20126C5.00833 9.43557 4.62843 9.43557 4.39411 9.20126L0.575735 5.38288ZM27 5.55862H1V4.35862H27V5.55862Z" fill="white"/>
+                </svg>
+              </div>
+            -->
             {% for block in section.blocks %}
               {% if block.type == 'product' %}
                 <div class="swiper-slide" style="display:flex; justify-content: center;">
@@ -249,11 +384,13 @@ border: 0.8px solid var(--White, #FFF);
               {% endif %}
             {% endfor %}
           </div>
-          <!-- <div class="amplifynext">
-            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
-              <path d="M26.4243 5.38288C26.6586 5.14857 26.6586 4.76867 26.4243 4.53435L22.6059 0.715977C22.3716 0.481663 21.9917 0.481663 21.7574 0.715977C21.523 0.950292 21.523 1.33019 21.7574 1.56451L25.1515 4.95862L21.7574 8.35273C21.523 8.58705 21.523 8.96694 21.7574 9.20126C21.9917 9.43557 22.3716 9.43557 22.6059 9.20126L26.4243 5.38288ZM0 5.55862H26V4.35862H0V5.55862Z" fill="white"/>
-            </svg>
-          </div> -->
+          <!--
+            <div class="amplifynext">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="10" viewBox="0 0 27 10" fill="none">
+                <path d="M26.4243 5.38288C26.6586 5.14857 26.6586 4.76867 26.4243 4.53435L22.6059 0.715977C22.3716 0.481663 21.9917 0.481663 21.7574 0.715977C21.523 0.950292 21.523 1.33019 21.7574 1.56451L25.1515 4.95862L21.7574 8.35273C21.523 8.58705 21.523 8.96694 21.7574 9.20126C21.9917 9.43557 22.3716 9.43557 22.6059 9.20126L26.4243 5.38288ZM0 5.55862H26V4.35862H0V5.55862Z" fill="white"/>
+              </svg>
+            </div>
+          -->
         </div>
       </div>
     </div>

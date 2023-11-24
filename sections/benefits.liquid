@@ -12,12 +12,14 @@
 {% endschema %}
 
 {% javascript %}
-  const kuoirLeftImage = new Image();
-  kuoirLeftImage.onload = function () {
-    const height = this.height;
-    document.getElementById('benefit-left').style.height = height + 'px';
-  };
-  kuoirLeftImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/kuoir-green.jpg?v=1700628922';
+  if (window.innerWidth > 550) {
+    const kuoirLeftImage = new Image();
+    kuoirLeftImage.onload = function () {
+      const height = this.height;
+      document.getElementById('benefit-left').style.height = height + 'px';
+    };
+    kuoirLeftImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/kuoir-green.jpg?v=1700628922';
+  }
 {% endjavascript %}
 
 {% stylesheet %}
@@ -131,14 +133,74 @@
   .number-2 {
     background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/benefit2.png?v=1700630274') no-repeat center
       center;
-      border: none; 
+    border: none;
   }
 
   .number-3 {
     background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/benefit_3.png?v=1700630275') no-repeat
       center center;
     border: none;
+  }
+
+  @media screen and (max-width: 550px) {
+    #benefits {
+      margin: 20px 0px;
     }
+
+    .benefits__container {
+      margin-top: 17px;
+      flex-direction: column;
+    }
+
+    .benefit-left {
+      width: 100%;
+    }
+
+    .benefit-left {
+      width: 100%;
+      background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/kuoir-green-mobile.jpg?v=1700801114')
+        no-repeat center center;
+      background-size: auto;
+      background-size: cover;
+      border-radius: 6.611px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 33px;
+    }
+
+    .number__container {
+      color: var(--White, #fff);
+      text-align: center;
+      font-family: Glorify;
+      font-size: 24.288px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      width: 51.815px;
+      height: 52.625px;
+      margin-bottom: 24px;
+    }
+
+    .benefit-left__span {
+      color: var(--White, #fff);
+      font-family: Glorify;
+      font-size: 21.529px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .benefit-right {
+      flex-direction: column;
+      width: 100%;
+    }
+        .benefit-right-1, .benefit-right-2 {
+        width: 100%;
+        padding: 33px;
+    }
+
+  }
 {% endstylesheet %}
 
 <section id="benefits">
