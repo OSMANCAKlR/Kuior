@@ -215,6 +215,25 @@
         "padding_bottom": 36
       }
     },
+    "a50d5e89-16ba-4685-b4b6-20f5521fee89": {
+      "type": "testimonials",
+      "blocks": {
+        "fd80d719-cd52-4b8c-89d2-813e9caf4aae": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "text": "",
+            "name": "",
+            "industry": ""
+          }
+        }
+      },
+      "block_order": [
+        "fd80d719-cd52-4b8c-89d2-813e9caf4aae"
+      ],
+      "settings": {
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -239,6 +258,7 @@
     "52961bdf-6598-46f3-bd17-9e3012cb67b0",
     "47231b26-b825-40bb-8309-a277838f52cb",
     "a9dee486-0be9-49e4-a852-d917a35a4fe6",
+    "a50d5e89-16ba-4685-b4b6-20f5521fee89",
     "related-products"
   ]
 }
