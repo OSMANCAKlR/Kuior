@@ -221,15 +221,27 @@
         "fd80d719-cd52-4b8c-89d2-813e9caf4aae": {
           "type": "testimonial",
           "settings": {
-            "product": "",
-            "text": "",
-            "name": "",
-            "industry": ""
+            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
+            "text": "Great LED mask many options seems to be working great! Super Fast delivery thank you 🙏",
+            "name": "Bethany",
+            "industry": "",
+            "image": "shopify:\/\/shop_images\/Ae54915e1b229473dbe29672ad2da3ccaK.jpg_220x220_82e94be9-945d-4a6c-ad5d-7f26ce55e468.webp"
+          }
+        },
+        "459e024d-4e57-4b5a-a139-75d61c3d7ae7": {
+          "type": "testimonial",
+          "settings": {
+            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
+            "text": "amazing mask - exactly as described, the pieces are separate. my head is a bit big and the straps are a bit snug\/tight but other than that everything else is great. good communication with seller about questions. I highly highly recommend this!",
+            "name": "Grace M",
+            "industry": "Beauty",
+            "image": "shopify:\/\/shop_images\/benefit2.png"
           }
         }
       },
       "block_order": [
-        "fd80d719-cd52-4b8c-89d2-813e9caf4aae"
+        "fd80d719-cd52-4b8c-89d2-813e9caf4aae",
+        "459e024d-4e57-4b5a-a139-75d61c3d7ae7"
       ],
       "settings": {
       }
