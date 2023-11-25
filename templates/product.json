@@ -237,11 +237,22 @@
             "industry": "Beauty",
             "image": "shopify:\/\/shop_images\/benefit2.png"
           }
+        },
+        "6bf641be-be44-4694-8ca1-9c678cc9e8fd": {
+          "type": "testimonial",
+          "settings": {
+            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
+            "text": "I 've been using it for 3 days and I can say that the brightest skin is noticeable. The seller is excellent, send the product fast and the communication was great",
+            "name": "Petra",
+            "industry": "",
+            "image": "shopify:\/\/shop_images\/Af3f530a64a704d05b3ec3a0fcdf5fd13D.webp"
+          }
         }
       },
       "block_order": [
         "fd80d719-cd52-4b8c-89d2-813e9caf4aae",
-        "459e024d-4e57-4b5a-a139-75d61c3d7ae7"
+        "459e024d-4e57-4b5a-a139-75d61c3d7ae7",
+        "6bf641be-be44-4694-8ca1-9c678cc9e8fd"
       ],
       "settings": {
       }
