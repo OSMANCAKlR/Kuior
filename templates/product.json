@@ -90,7 +90,7 @@
         "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>We recommend three to five<br\/>10-minute treatments per week for four to six weeks, followed by maintenance as<br\/>desired.<\/p><ol><li>Charge your controller & then connect it to the device<\/li><li>Prepare your skin<\/li><li>Secure the device to your head using the velcro straps<\/li><li>Start the 10-minute treatment<\/li><li>Remove the mask and apply moisturizer to the skin<\/li><li>Gently wipe down the mask<\/li><\/ol><p><\/p><p><strong>Setting Information<\/strong><\/p><ul><li><strong>Red light:<\/strong> 630nm-anti-aging,promote collagen,<br\/>tighteness, increase elasticity;<\/li><li><strong>The first light is displayed, and the operation screen displays R.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Blue light: <\/strong>460nm-kill<br\/>bacteria, acne bacteria, reduce inflammation and scar, increase skin oxygen;<\/li><li><strong>The second light is displayed, and the operation screen displays B.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Yellow light:<\/strong> 590nm-balance skin texture,stimulate red<br\/>blood cells to reduce redness and fine lines.<\/li><li><strong>The third light is displayed, and the operation screen displays Y.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Near-Infrared light:<\/strong> 850nm-repair the skin, improve blood<br\/>circulation, increase skin moisture<\/li><li><strong>The operation screen displays Y and NiR, which are invisible to the naked eye and can be used together with other light<\/strong><\/li><\/ul>",
+            "text": "<p><strong>We recommend three to five 10-minute treatments per week for four to six weeks, followed by maintenance as desired.<\/strong><\/p><ol><li>Charge your controller & then connect it to the device<\/li><li>Prepare your skin<\/li><li>Secure the device to your head using the velcro straps<\/li><li>Start the 10-minute treatment<\/li><li>Remove the mask and apply moisturizer to the skin<\/li><li>Gently wipe down the mask<\/li><\/ol><p><\/p><p><strong>Setting Information<\/strong><\/p><ul><li><strong>Red light:<\/strong> 630nm-anti-aging,promote collagen,<br\/>tighteness, increase elasticity;<\/li><li><strong>The first light is displayed, and the operation screen displays R.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Blue light: <\/strong>460nm-kill<br\/>bacteria, acne bacteria, reduce inflammation and scar, increase skin oxygen;<\/li><li><strong>The second light is displayed, and the operation screen displays B.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Yellow light:<\/strong> 590nm-balance skin texture,stimulate red<br\/>blood cells to reduce redness and fine lines.<\/li><li><strong>The third light is displayed, and the operation screen displays Y.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Near-Infrared light:<\/strong> 850nm-repair the skin, improve blood<br\/>circulation, increase skin moisture<\/li><li><strong>The operation screen displays Y and NiR, which are invisible to the naked eye and can be used together with other light<\/strong><\/li><\/ul>",
             "text_style": "body"
           }
         },
@@ -175,14 +175,14 @@
         "template--15977525641316__52961bdf-6598-46f3-bd17-9e3012cb67b0-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "Protect Your Most Valuable Asset",
             "heading_size": "h1"
           }
         },
         "template--15977525641316__52961bdf-6598-46f3-bd17-9e3012cb67b0-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Aging and sun exposure can create unwanted effects on our skin – from wrinkles and pigmentation to redness and uneven texture. Advanced light therapy by Omnilux allows you to treat the visible signs of aging and damaged skin with professional grade technology right from home.<\/p><ul><li>Stimulate collagen production for firmer, more youthful-looking skin<\/li><li>Refine skin texture and tone for an effortless glow<\/li><li>A non-invasive and natural option<\/li><li>Maintain and improve in-clinic treatments<\/li><\/ul>",
             "text_style": "body"
           }
         },
