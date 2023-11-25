@@ -65,6 +65,7 @@
   .result__text--container {
     display: flex;
     align-items: center;
+    transform: translateX(-20px);
   }
 
   .results__button {
@@ -188,7 +189,161 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  .mobile__choice {
+    display: none;
+  }
+  @media screen and (max-width: 1214px) {
+    .result1__img {
+      display: none;
+    }
+
+    .result__text--container {
+      display: flex;
+      align-items: center;
+      transform: translate(0px);
+    }
+  }
+
+  @media screen and (max-width: 856px) {
+    .results__title--container {
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .mobile__choice {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
+    .choice {
+      padding: 40px;
+      width: 50%;
+      border-radius: 5px;
+      background: var(--Cream, #f3eee9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--Text, #242424);
+      text-align: center;
+      font-family: Glorify;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 122.1%; /* 17.094px */
+      cursor: pointer;
+    }
+
+    .active {
+      background: var(--Coral, #ff6f61);
+      color: var(--Cream, #f3eee9);
+    }
+
+    #results {
+      margin: 28px 0;
+    }
+    .results__title {
+      color: var(--Text, #242424);
+      text-align: left;
+      font-family: Glorify;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 8.64px;
+    }
+
+    .results__para {
+      color: var(--Text, #242424);
+      text-align: left;
+      font-family: Open Sans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      max-width: 564px;
+    }
+
+    .result {
+      width: 100%;
+    }
+
+    .mobile_line {
+    height: 0px;
+  }
+  }
+
+
 {% endstylesheet %}
+
+{% javascript %}
+ document.addEventListener("DOMContentLoaded", function() {
+    // Function to check if the window size is below 856px
+    function isMobileView() {
+        return window.innerWidth < 857;
+    }
+
+    // Select all choices and results
+    const choices = document.querySelectorAll('.mobile__choice .choice');
+    const results = document.querySelectorAll('.results__container .result');
+
+    // Function to remove active class from all choices
+    function removeActiveClasses() {
+        choices.forEach(choice => {
+            choice.classList.remove('active');
+        });
+    }
+
+    // Function to hide all results
+    function hideAllResults() {
+        results.forEach(result => {
+            result.style.display = 'none';
+        });
+    }
+
+    // Function to set the default active choice and result
+    function setDefaultActive() {
+        if (isMobileView()) {
+            removeActiveClasses();
+            hideAllResults();
+
+            // Set the second choice as active
+            choices[0].classList.add('active');
+
+            // Show the corresponding result
+            if (results[1]) {
+                results[1].style.display = 'flex';
+            }
+        }
+    }
+
+    // Add click event listener to each choice
+    choices.forEach((choice, index) => {
+        choice.addEventListener('click', () => {
+            if (isMobileView()) {
+                removeActiveClasses();
+                hideAllResults();
+
+                // Add active class to clicked choice
+                choice.classList.add('active');
+
+                // Show corresponding result (index + 1 because first result is related to the second choice)
+                if (results[index + 1]) {
+                    results[index + 1].style.display = 'flex';
+                }
+            }
+        });
+    });
+
+    // Set default active choice and result on load
+    setDefaultActive();
+
+    // Adjust default choice and result on window resize
+    window.addEventListener('resize', setDefaultActive);
+});
+
+{% endjavascript %}
 
 <section id="results">
   <div class="page-width">
@@ -199,6 +354,10 @@
         great return on investment.
       </p>
     </div>
+    <div class="mobile__choice">
+      <div class="choice active">LED Light Mask Therapy</div>
+      <div class="choice">Microcurrent Face Toning</div>
+    </div>
     <div class="results__container">
       <div class="result">
         <div class="result__text--container">
@@ -206,18 +365,18 @@
             <span class="result__text1">LED Light Mask Therapy</span>
             <span class="result__text2">Microcurrent Face Toning</span>
           </div>
-          <img
-            class="result1__img"
-            src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/results1.svg?v=1700635876"
-            alt=""
-          >
         </div>
         <a class="results__button" href="/">VIEW ALL COLLECTION</a>
+        <img
+          class="result1__img"
+          src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/results1.svg?v=1700635876"
+          alt=""
+        >
       </div>
       <div class="result">
         <div class="line__container">
           <p class="result__span">Cost of a Dermatologist Visit*</p>
-          <div class="line"></div>
+          <div class="line mobile_line"></div>
           <figure class="result__figure">
             <img
               class="result__img"

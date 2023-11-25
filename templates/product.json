@@ -13,11 +13,6 @@
           "settings": {
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -36,12 +31,9 @@
             "show_gift_card_recipient": true
           }
         },
-        "33121846-6ef9-4d7e-8b8e-74910b6f0089": {
-          "type": "text",
-          "disabled": true,
+        "description": {
+          "type": "description",
           "settings": {
-            "text": "Text block",
-            "text_style": "body"
           }
         },
         "share": {
@@ -54,207 +46,26 @@
       "block_order": [
         "title",
         "price",
-        "description",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "33121846-6ef9-4d7e-8b8e-74910b6f0089",
+        "description",
         "share"
       ],
       "settings": {
         "enable_sticky_info": false,
         "color_scheme": "background-1",
-        "media_size": "small",
-        "constrain_to_viewport": true,
+        "media_size": "large",
+        "constrain_to_viewport": false,
         "media_fit": "contain",
-        "gallery_layout": "thumbnail_slider",
+        "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 20,
+        "padding_top": 16,
         "padding_bottom": 0
-      }
-    },
-    "52961bdf-6598-46f3-bd17-9e3012cb67b0": {
-      "type": "image-with-text",
-      "blocks": {
-        "template--15977525641316__52961bdf-6598-46f3-bd17-9e3012cb67b0-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Protect Your Most Valuable Asset",
-            "heading_size": "h1"
-          }
-        },
-        "template--15977525641316__52961bdf-6598-46f3-bd17-9e3012cb67b0-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Aging and sun exposure can create unwanted effects on our skin – from wrinkles and pigmentation to redness and uneven texture. Advanced light therapy by Omnilux allows you to treat the visible signs of aging and damaged skin with professional grade technology right from home.<\/p><ul><li>Stimulate collagen production for firmer, more youthful-looking skin<\/li><li>Refine skin texture and tone for an effortless glow<\/li><li>A non-invasive and natural option<\/li><li>Maintain and improve in-clinic treatments<\/li><\/ul>",
-            "text_style": "body"
-          }
-        },
-        "template--15977525641316__52961bdf-6598-46f3-bd17-9e3012cb67b0-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "template--15977525641316__52961bdf-6598-46f3-bd17-9e3012cb67b0-heading-1",
-        "template--15977525641316__52961bdf-6598-46f3-bd17-9e3012cb67b0-text-1",
-        "template--15977525641316__52961bdf-6598-46f3-bd17-9e3012cb67b0-button-1"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "47231b26-b825-40bb-8309-a277838f52cb": {
-      "type": "image-with-text",
-      "blocks": {
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Instructions",
-            "heading_size": "h1"
-          }
-        },
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>We recommend three to five 10-minute treatments per week for four to six weeks, followed by maintenance as desired.<\/strong><\/p><ol><li>Charge your controller & then connect it to the device<\/li><li>Prepare your skin<\/li><li>Secure the device to your head using the velcro straps<\/li><li>Start the 10-minute treatment<\/li><li>Remove the mask and apply moisturizer to the skin<\/li><li>Gently wipe down the mask<\/li><\/ol><p><\/p><p><strong>Setting Information<\/strong><\/p><ul><li><strong>Red light:<\/strong> 630nm-anti-aging,promote collagen,<br\/>tighteness, increase elasticity;<\/li><li><strong>The first light is displayed, and the operation screen displays R.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Blue light: <\/strong>460nm-kill<br\/>bacteria, acne bacteria, reduce inflammation and scar, increase skin oxygen;<\/li><li><strong>The second light is displayed, and the operation screen displays B.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Yellow light:<\/strong> 590nm-balance skin texture,stimulate red<br\/>blood cells to reduce redness and fine lines.<\/li><li><strong>The third light is displayed, and the operation screen displays Y.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Near-Infrared light:<\/strong> 850nm-repair the skin, improve blood<br\/>circulation, increase skin moisture<\/li><li><strong>The operation screen displays Y and NiR, which are invisible to the naked eye and can be used together with other light<\/strong><\/li><\/ul>",
-            "text_style": "body"
-          }
-        },
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-heading-1",
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-text-1",
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-button-1"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "right",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "a9dee486-0be9-49e4-a852-d917a35a4fe6": {
-      "type": "image-with-text",
-      "blocks": {
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Specifications",
-            "heading_size": "h1"
-          }
-        },
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>LED TYPE<\/strong><\/p><ul><li>Red and near-infrared, Blue & Yellow light settings<\/li><\/ul><p><strong>WAVELENGTHS<\/strong><\/p><ul><li>630nm (red) - Enhance elasticity & resist fine lines<\/li><li>850nm (near-infrared) -Repair skin & promote blood circulation<\/li><li>Blue Light: 460nm -Sensitive repair - balance grease & oil levels in the skin<\/li><li>Yellow Light: 590nm - Brighten skin and improve dark circle & skin<\/li><\/ul><p><strong>NUMBER OF LEDS<\/strong><\/p><ul><li>240 LED Lamp Beads (2per Bulb)<\/li><li>66 LED bulbs<\/li><\/ul><p><strong>Where should you use this device?<\/strong><\/p><ul><li>Face<\/li><\/ul><p><strong>CERTIFICATIONS<\/strong><\/p><ul><li>FDA, CE, TGA<\/li><\/ul><p><strong>WARRANTY<\/strong><\/p><ul><li>2 years: device<\/li><li>1 year: controller<\/li><\/ul>",
-            "text_style": "body"
-          }
-        },
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-heading-1",
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-text-1",
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-button-1"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "a50d5e89-16ba-4685-b4b6-20f5521fee89": {
-      "type": "testimonials",
-      "blocks": {
-        "fd80d719-cd52-4b8c-89d2-813e9caf4aae": {
-          "type": "testimonial",
-          "settings": {
-            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
-            "text": "Great LED mask many options seems to be working great! Super Fast delivery thank you 🙏",
-            "name": "Bethany",
-            "industry": "",
-            "image": "shopify:\/\/shop_images\/Ae54915e1b229473dbe29672ad2da3ccaK.jpg_220x220_82e94be9-945d-4a6c-ad5d-7f26ce55e468.webp"
-          }
-        },
-        "459e024d-4e57-4b5a-a139-75d61c3d7ae7": {
-          "type": "testimonial",
-          "settings": {
-            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
-            "text": "amazing mask - exactly as described, the pieces are separate. my head is a bit big and the straps are a bit snug\/tight but other than that everything else is great. good communication with seller about questions. I highly highly recommend this!",
-            "name": "Grace M",
-            "industry": "Beauty",
-            "image": "shopify:\/\/shop_images\/benefit2.png"
-          }
-        },
-        "6bf641be-be44-4694-8ca1-9c678cc9e8fd": {
-          "type": "testimonial",
-          "settings": {
-            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
-            "text": "I 've been using it for 3 days and I can say that the brightest skin is noticeable. The seller is excellent, send the product fast and the communication was great",
-            "name": "Petra",
-            "industry": "",
-            "image": "shopify:\/\/shop_images\/Af3f530a64a704d05b3ec3a0fcdf5fd13D.webp"
-          }
-        }
-      },
-      "block_order": [
-        "fd80d719-cd52-4b8c-89d2-813e9caf4aae",
-        "459e024d-4e57-4b5a-a139-75d61c3d7ae7",
-        "6bf641be-be44-4694-8ca1-9c678cc9e8fd"
-      ],
-      "settings": {
       }
     },
     "related-products": {
@@ -278,10 +89,6 @@
   },
   "order": [
     "main",
-    "52961bdf-6598-46f3-bd17-9e3012cb67b0",
-    "47231b26-b825-40bb-8309-a277838f52cb",
-    "a9dee486-0be9-49e4-a852-d917a35a4fe6",
-    "a50d5e89-16ba-4685-b4b6-20f5521fee89",
     "related-products"
   ]
 }

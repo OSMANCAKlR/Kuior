@@ -18,6 +18,7 @@
     margin: 62px 13px;
     padding: 67px 260px;
     border-radius: 5.294px;
+    position: relative;
   }
 
   .landing__calltoaction--container {
@@ -73,7 +74,21 @@
     padding-right: 30px;
   }
 
-  
+  .svg_left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+  }
+
+  .svg_right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+  }
+
+
   
 
   @media screen and (max-width: 1050px) {
@@ -105,9 +120,24 @@
       line-height: normal;
     }
   }
+
+
+  @media screen and (max-width: 538px ) {
+    .svg_left {
+   
+    width: 150px;
+  }
+
+  .svg_right {
+   
+    width: 150px;
+  }
+  }
 {% endstylesheet %}
 
 <div class="landing__calltoaction--wrapper">
+  <img class="svg_left" src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/2.svg?v=1700944736" alt="">
+  <img class="svg_right" src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/Frame_1000001931.svg?v=1700944735" alt="">
   <div class="page-width landing__calltoaction--container ">
     <div class="calltoaction__title--container">
       <h2 class="landingcalltoaction__title">Black Friday sale</h2>
