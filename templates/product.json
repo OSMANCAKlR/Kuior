@@ -77,98 +77,6 @@
         "padding_bottom": 0
       }
     },
-    "47231b26-b825-40bb-8309-a277838f52cb": {
-      "type": "image-with-text",
-      "blocks": {
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Instructions",
-            "heading_size": "h1"
-          }
-        },
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>We recommend three to five 10-minute treatments per week for four to six weeks, followed by maintenance as desired.<\/strong><\/p><ol><li>Charge your controller & then connect it to the device<\/li><li>Prepare your skin<\/li><li>Secure the device to your head using the velcro straps<\/li><li>Start the 10-minute treatment<\/li><li>Remove the mask and apply moisturizer to the skin<\/li><li>Gently wipe down the mask<\/li><\/ol><p><\/p><p><strong>Setting Information<\/strong><\/p><ul><li><strong>Red light:<\/strong> 630nm-anti-aging,promote collagen,<br\/>tighteness, increase elasticity;<\/li><li><strong>The first light is displayed, and the operation screen displays R.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Blue light: <\/strong>460nm-kill<br\/>bacteria, acne bacteria, reduce inflammation and scar, increase skin oxygen;<\/li><li><strong>The second light is displayed, and the operation screen displays B.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Yellow light:<\/strong> 590nm-balance skin texture,stimulate red<br\/>blood cells to reduce redness and fine lines.<\/li><li><strong>The third light is displayed, and the operation screen displays Y.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Near-Infrared light:<\/strong> 850nm-repair the skin, improve blood<br\/>circulation, increase skin moisture<\/li><li><strong>The operation screen displays Y and NiR, which are invisible to the naked eye and can be used together with other light<\/strong><\/li><\/ul>",
-            "text_style": "body"
-          }
-        },
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-heading-1",
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-text-1",
-        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-button-1"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "a9dee486-0be9-49e4-a852-d917a35a4fe6": {
-      "type": "image-with-text",
-      "blocks": {
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Specifications",
-            "heading_size": "h1"
-          }
-        },
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>LED TYPE<\/strong><\/p><ul><li>Red and near-infrared, Blue & Yellow light settings<\/li><\/ul><p><strong>WAVELENGTHS<\/strong><\/p><ul><li>630nm (red) - Enhance elasticity & resist fine lines<\/li><li>850nm (near-infrared) -Repair skin & promote blood circulation<\/li><li>Blue Light: 460nm -Sensitive repair - balance grease & oil levels in the skin<\/li><li>Yellow Light: 590nm - Brighten skin and improve dark circle & skin<\/li><\/ul><p><strong>NUMBER OF LEDS<\/strong><\/p><ul><li>240 LED Lamp Beads (2per Bulb)<\/li><li>66 LED bulbs<\/li><\/ul><p><strong>Where should you use this device?<\/strong><\/p><ul><li>Face<\/li><\/ul><p><strong>CERTIFICATIONS<\/strong><\/p><ul><li>FDA, CE, TGA<\/li><\/ul><p><strong>WARRANTY<\/strong><\/p><ul><li>2 years: device<\/li><li>1 year: controller<\/li><\/ul>",
-            "text_style": "body"
-          }
-        },
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-heading-1",
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-text-1",
-        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-button-1"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "52961bdf-6598-46f3-bd17-9e3012cb67b0": {
       "type": "image-with-text",
       "blocks": {
@@ -215,6 +123,98 @@
         "padding_bottom": 36
       }
     },
+    "47231b26-b825-40bb-8309-a277838f52cb": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Instructions",
+            "heading_size": "h1"
+          }
+        },
+        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>We recommend three to five 10-minute treatments per week for four to six weeks, followed by maintenance as desired.<\/strong><\/p><ol><li>Charge your controller & then connect it to the device<\/li><li>Prepare your skin<\/li><li>Secure the device to your head using the velcro straps<\/li><li>Start the 10-minute treatment<\/li><li>Remove the mask and apply moisturizer to the skin<\/li><li>Gently wipe down the mask<\/li><\/ol><p><\/p><p><strong>Setting Information<\/strong><\/p><ul><li><strong>Red light:<\/strong> 630nm-anti-aging,promote collagen,<br\/>tighteness, increase elasticity;<\/li><li><strong>The first light is displayed, and the operation screen displays R.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Blue light: <\/strong>460nm-kill<br\/>bacteria, acne bacteria, reduce inflammation and scar, increase skin oxygen;<\/li><li><strong>The second light is displayed, and the operation screen displays B.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Yellow light:<\/strong> 590nm-balance skin texture,stimulate red<br\/>blood cells to reduce redness and fine lines.<\/li><li><strong>The third light is displayed, and the operation screen displays Y.<\/strong><\/li><\/ul><p><\/p><ul><li><strong>Near-Infrared light:<\/strong> 850nm-repair the skin, improve blood<br\/>circulation, increase skin moisture<\/li><li><strong>The operation screen displays Y and NiR, which are invisible to the naked eye and can be used together with other light<\/strong><\/li><\/ul>",
+            "text_style": "body"
+          }
+        },
+        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-heading-1",
+        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-text-1",
+        "template--15977525641316__47231b26-b825-40bb-8309-a277838f52cb-button-1"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "right",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "a9dee486-0be9-49e4-a852-d917a35a4fe6": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Specifications",
+            "heading_size": "h1"
+          }
+        },
+        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>LED TYPE<\/strong><\/p><ul><li>Red and near-infrared, Blue & Yellow light settings<\/li><\/ul><p><strong>WAVELENGTHS<\/strong><\/p><ul><li>630nm (red) - Enhance elasticity & resist fine lines<\/li><li>850nm (near-infrared) -Repair skin & promote blood circulation<\/li><li>Blue Light: 460nm -Sensitive repair - balance grease & oil levels in the skin<\/li><li>Yellow Light: 590nm - Brighten skin and improve dark circle & skin<\/li><\/ul><p><strong>NUMBER OF LEDS<\/strong><\/p><ul><li>240 LED Lamp Beads (2per Bulb)<\/li><li>66 LED bulbs<\/li><\/ul><p><strong>Where should you use this device?<\/strong><\/p><ul><li>Face<\/li><\/ul><p><strong>CERTIFICATIONS<\/strong><\/p><ul><li>FDA, CE, TGA<\/li><\/ul><p><strong>WARRANTY<\/strong><\/p><ul><li>2 years: device<\/li><li>1 year: controller<\/li><\/ul>",
+            "text_style": "body"
+          }
+        },
+        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-heading-1",
+        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-text-1",
+        "template--15977525641316__a9dee486-0be9-49e4-a852-d917a35a4fe6-button-1"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -236,9 +236,9 @@
   },
   "order": [
     "main",
+    "52961bdf-6598-46f3-bd17-9e3012cb67b0",
     "47231b26-b825-40bb-8309-a277838f52cb",
     "a9dee486-0be9-49e4-a852-d917a35a4fe6",
-    "52961bdf-6598-46f3-bd17-9e3012cb67b0",
     "related-products"
   ]
 }
