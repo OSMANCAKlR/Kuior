@@ -3,7 +3,7 @@
     "main": {
       "type": "main-login",
       "custom_css": [
-        "h1 {font-family: Glorify; text-align: left;}"
+        "h1 {font-family: Glorify;}"
       ],
       "settings": {
         "padding_top": 36,
