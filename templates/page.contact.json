@@ -14,7 +14,7 @@
     "form": {
       "type": "contact-form",
       "custom_css": [
-        ".title {font-family: Glorify;}"
+        ".title {font-family: Glorify; color: var(--Text, #242424);}"
       ],
       "settings": {
         "heading": "Contact Us",
