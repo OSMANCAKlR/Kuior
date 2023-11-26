@@ -652,26 +652,20 @@
 </script>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
-  function equalizeContainerHeights(className) {
-    var containers = document.querySelectorAll(className);
-    var maxHeight = 0;
+  $(document).ready(function() {
+    // Variable to store the maximum height
+    var maxheight = 0;
 
-    // First, find the tallest container
-    containers.forEach(function (container) {
-      if (container.offsetHeight > maxHeight) {
-        maxHeight = container.offsetHeight;
-      }
+    // Iterate over each element with the class .box__bottom--container
+    $('.box__bottom--container').each(function() {
+      // Update maxheight with the height of the current element if it's larger
+      maxheight = Math.max(maxheight, $(this).height());
     });
 
-    // Then, set all containers to the height of the tallest one
-    containers.forEach(function (container) {
-      container.style.minHeight = maxHeight + 'px';
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    // Equalize heights for .box__bottom--container elements
-    equalizeContainerHeights('.box__bottom');
+    // Set the height of all .box__bottom--container elements to maxheight
+    $('.box__bottom--container').height(maxheight);
   });
 </script>
