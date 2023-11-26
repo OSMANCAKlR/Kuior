@@ -556,7 +556,7 @@
                                 {% for variant in block.settings.product.variants %}
                                   <div
                                     class="color-swatch"
-                                    style="background-color: {{ variant.metafields.custom.variantcolour }};"
+                                    style="background-image: url('{{ variant.featured__image.src | img_url: 'master' }}'); background-size: cover;"
                                     value="{{ variant.id }}"
                                     original-price="{{ variant.compare_at_price | money }}"
                                     data-price="{{ variant.price | money }}"
