@@ -84,7 +84,6 @@
   .box {
     display: flex;
     flex-direction: column;
-    position: relative;
   }
 
   .box__img--figure {
@@ -105,11 +104,9 @@
   }
 
   .box__bottom {
+    padding: 14px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-top: 13.68px;
-    flex-grow: 1; 
   }
 
   .product__title {
@@ -122,8 +119,6 @@
     line-height: normal;
     margin-bottom: 13.5px;
   }
-
-  
 
   .product__price {
     color: var(--Text, #242424);
@@ -141,7 +136,6 @@
     align-items: center;
     width: 100%;
     margin-bottom: 12px;
-     min-height: 2em;
   }
 
   .dropdown__option {
@@ -312,6 +306,7 @@
 
   .buy__button {
     display: flex;
+    width: 100%;
     padding: 15.815px 29.37px;
     justify-content: center;
     align-items: center;
@@ -327,9 +322,6 @@
     text-transform: uppercase;
     cursor: pointer;
     border: none;
-    position: absolute;
-    bottom: 0; 
-    width: 100%; 
   }
 
   .error__container {
@@ -366,31 +358,6 @@
     line-height: normal;
   }
 
-  .color-swatch {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #000;
-    cursor: pointer;
-    border-radius: 50px;
-  }
-
-  .box__bottom--container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .color-swatch.selected {
-    border: 2px solid #000; /* Example style for selected swatch */
-  }
-
-  .variant__selector {
-    display: flex;
-    gap: 2.85px;
-    justify-content: center;
-    margin-bottom: 6.87px;
-  }
-
   @media screen and (max-width: 1050px) {
     #boxmenu__wrapper {
       margin-top: 28px;
@@ -411,7 +378,6 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-       min-height: 3em;
     }
 
     .buy__button {
@@ -433,6 +399,8 @@
 {% endstylesheet %}
 
 {% javascript %}
+
+  
   var mySwiper = new Swiper('.mySwiper', {
     watchSlidesProgress: true,
     slidesPerView: 2,
@@ -455,6 +423,7 @@
       },
     },
   });
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Function to set all elements to the same height based on the tallest one
@@ -480,48 +449,38 @@ document.addEventListener('DOMContentLoaded', function () {
   // You can also equalize the heights for product prices or any other elements as needed
   // equalizeElementHeights('.product__price');
 });
+
+
   
   document.addEventListener('DOMContentLoaded', function () {
-    const colorSwatches = document.querySelectorAll('.color-swatch');
-    const forms = document.querySelectorAll('.shopify-product-form');
+    // Select all dropdown elements within each product
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-    forms.forEach(function (form) {
-      // Create a hidden input field for each form
-      const hiddenVariantInput = document.createElement('input');
-      hiddenVariantInput.type = 'hidden';
-      hiddenVariantInput.name = 'id';
-      form.appendChild(hiddenVariantInput);
+    dropdowns.forEach(function (dropdown) {
+      // Find the parent product element for this dropdown
+      const productContainer = dropdown.closest('.carousel-box');
 
-      form.querySelectorAll('.color-swatch').forEach(function (swatch) {
-        const productContainer = swatch.closest('.carousel-box');
-        const priceDisplay = productContainer.querySelector('.product__price');
-        const originalDisplay = productContainer.querySelector('.product__price--compare');
+      // Find the price display element within the product container
+      const priceDisplay = productContainer.querySelector('.product__price');
+      const originalDisplay = productContainer.querySelector('.product__price--compare');
 
-        swatch.addEventListener('click', function () {
-          const variantId = swatch.getAttribute('value');
-          hiddenVariantInput.value = variantId; // Update the hidden input with the selected variant ID
+      // Determine the selected option within the current dropdown (default option)
+      const selectedOption = dropdown.querySelector('option:checked');
 
-          const newPrice = swatch.getAttribute('data-price');
-          const originalPrice = swatch.getAttribute('original-price');
-
-          if (newPrice) {
-            priceDisplay.textContent = 'from ' + newPrice;
-          }
-
-          if (originalPrice) {
-            originalDisplay.textContent = originalPrice;
-          }
-
-          productContainer.querySelectorAll('.color-swatch').forEach((s) => s.classList.remove('selected'));
-          swatch.classList.add('selected');
-        });
-      });
-
-      // Set the first variant as the default selected for each product
-      const firstSwatch = form.querySelector('.color-swatch');
-      if (firstSwatch) {
-        firstSwatch.click();
+      if (selectedOption) {
+        const newPrice = selectedOption.getAttribute('data-price');
+        priceDisplay.textContent = 'from ' + newPrice;
       }
+
+      dropdown.addEventListener('change', function () {
+        // Determine the selected option within the current dropdown
+        const selectedOption = dropdown.querySelector('option:checked');
+
+        if (selectedOption) {
+          const newPrice = selectedOption.getAttribute('data-price');
+          priceDisplay.textContent = 'from ' + newPrice;
+        }
+      });
     });
   });
 {% endjavascript %}
@@ -564,6 +523,8 @@ document.addEventListener('DOMContentLoaded', function () {
                       class="box__bottom"
                     >
                       <div class="box__bottom--container">
+                        <h3 class="product__title">{{ block.settings.product.title }}</h3>
+
                         <ajax-cart-product-form>
                           {% form 'product', block.settings.product, novalidate: 'novalidate' %}
                             {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
@@ -575,23 +536,23 @@ document.addEventListener('DOMContentLoaded', function () {
                                 style="display: none;"
                               {% endif %}
                             >
-                              <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
+                              <span class="dropdown__span">With </span>
+                              <select class="dropdown" name="id" id="variant-dropdown-{{ block.id }}">
                                 {% for variant in block.settings.product.variants %}
-                                  <div
-                                    class="color-swatch"
-                                    style="background-color: {{ variant.metafields.custom.variantcolour }};"
+                                  <option
+                                    style="font-family: Inter;"
                                     value="{{ variant.id }}"
                                     original-price="{{ variant.compare_at_price | money }}"
                                     data-price="{{ variant.price | money }}"
                                     {% if variant == current_variant %}
                                       selected="selected"
                                     {% endif %}
-                                  ></div>
+                                  >
+                                    {{ variant.title }}
+                                  </option>
                                 {% endfor %}
-                              </div>
+                              </select>
                             </div>
-
-                            <h3 class="product__title">{{ block.settings.product.title }}</h3>
 
                             <div class="box__bottom--price">
                               <div class="box__price--container">
@@ -614,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
                                 type="submit"
                                 name="add"
-                                {% if current_variant.inventory_quantity <= 0 %}
+                                {% if current_variant.inventory_quantity == 0 %}
                                   disabled
                                 {% endif %}
                               >
@@ -654,7 +615,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 
 <script>
- 
   document.addEventListener('DOMContentLoaded', function () {
     var addToCartButtons = document.querySelectorAll('.buy__button');
 
