@@ -104,9 +104,10 @@
   }
 
   .box__bottom {
-    padding: 14px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin-top: 13.68px;
   }
 
   .product__title {
@@ -119,6 +120,8 @@
     line-height: normal;
     margin-bottom: 13.5px;
   }
+
+  
 
   .product__price {
     color: var(--Text, #242424);
@@ -358,6 +361,31 @@
     line-height: normal;
   }
 
+  .color-swatch {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+
+  .box__bottom--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .color-swatch.selected {
+    border: 2px solid #000; /* Example style for selected swatch */
+  }
+
+  .variant__selector {
+    display: flex;
+    gap: 2.85px;
+    justify-content: center;
+    margin-bottom: 6.87px;
+  }
+
   @media screen and (max-width: 1050px) {
     #boxmenu__wrapper {
       margin-top: 28px;
@@ -399,8 +427,6 @@
 {% endstylesheet %}
 
 {% javascript %}
-
-  
   var mySwiper = new Swiper('.mySwiper', {
     watchSlidesProgress: true,
     slidesPerView: 2,
@@ -423,64 +449,47 @@
       },
     },
   });
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Function to set all elements to the same height based on the tallest one
-  function equalizeElementHeights(selector) {
-    let elements = document.querySelectorAll(selector);
-    let maxHeight = 0;
-
-    // First, find the tallest element
-    elements.forEach(function (element) {
-      let elementHeight = element.offsetHeight;
-      maxHeight = Math.max(maxHeight, elementHeight);
-    });
-
-    // Then, set all elements to the height of the tallest one
-    elements.forEach(function (element) {
-      element.style.minHeight = maxHeight + 'px';
-    });
-  }
-
-  // Equalize heights for product titles
-  equalizeElementHeights('.product__title');
-
-  // You can also equalize the heights for product prices or any other elements as needed
-  // equalizeElementHeights('.product__price');
-});
-
-
-  
   document.addEventListener('DOMContentLoaded', function () {
-    // Select all dropdown elements within each product
-    const dropdowns = document.querySelectorAll('.dropdown');
+    const colorSwatches = document.querySelectorAll('.color-swatch');
+    const forms = document.querySelectorAll('.shopify-product-form');
 
-    dropdowns.forEach(function (dropdown) {
-      // Find the parent product element for this dropdown
-      const productContainer = dropdown.closest('.carousel-box');
+    forms.forEach(function (form) {
+      // Create a hidden input field for each form
+      const hiddenVariantInput = document.createElement('input');
+      hiddenVariantInput.type = 'hidden';
+      hiddenVariantInput.name = 'id';
+      form.appendChild(hiddenVariantInput);
 
-      // Find the price display element within the product container
-      const priceDisplay = productContainer.querySelector('.product__price');
-      const originalDisplay = productContainer.querySelector('.product__price--compare');
+      form.querySelectorAll('.color-swatch').forEach(function (swatch) {
+        const productContainer = swatch.closest('.carousel-box');
+        const priceDisplay = productContainer.querySelector('.product__price');
+        const originalDisplay = productContainer.querySelector('.product__price--compare');
 
-      // Determine the selected option within the current dropdown (default option)
-      const selectedOption = dropdown.querySelector('option:checked');
+        swatch.addEventListener('click', function () {
+          const variantId = swatch.getAttribute('value');
+          hiddenVariantInput.value = variantId; // Update the hidden input with the selected variant ID
 
-      if (selectedOption) {
-        const newPrice = selectedOption.getAttribute('data-price');
-        priceDisplay.textContent = 'from ' + newPrice;
-      }
+          const newPrice = swatch.getAttribute('data-price');
+          const originalPrice = swatch.getAttribute('original-price');
 
-      dropdown.addEventListener('change', function () {
-        // Determine the selected option within the current dropdown
-        const selectedOption = dropdown.querySelector('option:checked');
+          if (newPrice) {
+            priceDisplay.textContent = 'from ' + newPrice;
+          }
 
-        if (selectedOption) {
-          const newPrice = selectedOption.getAttribute('data-price');
-          priceDisplay.textContent = 'from ' + newPrice;
-        }
+          if (originalPrice) {
+            originalDisplay.textContent = originalPrice;
+          }
+
+          productContainer.querySelectorAll('.color-swatch').forEach((s) => s.classList.remove('selected'));
+          swatch.classList.add('selected');
+        });
       });
+
+      // Set the first variant as the default selected for each product
+      const firstSwatch = form.querySelector('.color-swatch');
+      if (firstSwatch) {
+        firstSwatch.click();
+      }
     });
   });
 {% endjavascript %}
@@ -523,8 +532,6 @@ document.addEventListener('DOMContentLoaded', function () {
                       class="box__bottom"
                     >
                       <div class="box__bottom--container">
-                        <h3 class="product__title">{{ block.settings.product.title }}</h3>
-
                         <ajax-cart-product-form>
                           {% form 'product', block.settings.product, novalidate: 'novalidate' %}
                             {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
@@ -536,23 +543,23 @@ document.addEventListener('DOMContentLoaded', function () {
                                 style="display: none;"
                               {% endif %}
                             >
-                              <span class="dropdown__span">With </span>
-                              <select class="dropdown" name="id" id="variant-dropdown-{{ block.id }}">
+                              <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
                                 {% for variant in block.settings.product.variants %}
-                                  <option
-                                    style="font-family: Inter;"
+                                  <div
+                                    class="color-swatch"
+                                    style="background-color: {{ variant.metafields.custom.variantcolour }};"
                                     value="{{ variant.id }}"
                                     original-price="{{ variant.compare_at_price | money }}"
                                     data-price="{{ variant.price | money }}"
                                     {% if variant == current_variant %}
                                       selected="selected"
                                     {% endif %}
-                                  >
-                                    {{ variant.title }}
-                                  </option>
+                                  ></div>
                                 {% endfor %}
-                              </select>
+                              </div>
                             </div>
+
+                            <h3 class="product__title">{{ block.settings.product.title }}</h3>
 
                             <div class="box__bottom--price">
                               <div class="box__price--container">
@@ -575,7 +582,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
                                 type="submit"
                                 name="add"
-                                {% if current_variant.inventory_quantity == 0 %}
+                                {% if current_variant.inventory_quantity <= 0 %}
                                   disabled
                                 {% endif %}
                               >
@@ -615,6 +622,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 
 <script>
+ 
   document.addEventListener('DOMContentLoaded', function () {
     var addToCartButtons = document.querySelectorAll('.buy__button');
 
