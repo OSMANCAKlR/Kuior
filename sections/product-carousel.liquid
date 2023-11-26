@@ -122,7 +122,7 @@
     margin-bottom: 13.5px;
   }
 
-  
+
 
   .product__price {
     color: var(--Text, #242424);
@@ -543,7 +543,7 @@
                           {% form 'product', block.settings.product, novalidate: 'novalidate' %}
                             {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
                             <h3 class="product__title">{{ block.settings.product.title }}</h3>
-                            
+
                             <div
                               class="dropdown__menu"
                               {% if block.settings.product.variants.size == 1
@@ -556,7 +556,11 @@
                                 {% for variant in block.settings.product.variants %}
                                   <div
                                     class="color-swatch"
-                                    style="background-image: url('{{ variant.featured__image.src | img_url: 'master' }}'); background-size: cover;"
+                                    {% if variant.image %}
+                                      style="background-image: url('{{ variant.image.src | img_url: 'master' }}'); background-size: cover;"
+                                    {% else %}
+                                      style="background-color: {{ variant.metafields.custom.variantcolour }};"
+                                    {% endif %}
                                     value="{{ variant.id }}"
                                     original-price="{{ variant.compare_at_price | money }}"
                                     data-price="{{ variant.price | money }}"
@@ -567,7 +571,6 @@
                                 {% endfor %}
                               </div>
                             </div>
-
 
                             <div class="box__bottom--price">
                               <div class="box__price--container">
@@ -630,7 +633,7 @@
 </section>
 
 <script>
- 
+
   document.addEventListener('DOMContentLoaded', function () {
     var addToCartButtons = document.querySelectorAll('.buy__button');
 
@@ -656,8 +659,6 @@
     });
   });
 </script>
-
-
 
 <script>
   $(document).ready(function() {
