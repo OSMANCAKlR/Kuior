@@ -511,117 +511,117 @@
       <h2 class="productcarousel__title">Best Sellers</h2>
       <p class="productcarousel__span">Shop the world’s most trusted beauty gadgets.</p>
     </div>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          {% if block.type == 'product' %}
-            <div class="swiper-slide" style="display:flex; justify-content: center;">
-              <div class="carousel-box">
-                <div class="box">
-                  <a class="mainproduct__img--a" href="{{  block.settings.product.url }}">
-                    <figure class="box__img--figure">
-                      <img
-                        src="{{ block.settings.product.featured_image | image_url }}"
-                        class="box__img"
-                        alt="{{ block.settings.product.title }}"
-                        width="265.542px"
-                        height="262.292px"
-                      >
-                      {% if block.settings.product.metafields.custom.product_tagline != null %}
-                        <div
-                          class="product__tag"
-                          style="background-color:{{ block.settings.product.metafields.custom.border_colour }};"
+    <div class="wrapper__products">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'product' %}
+              <div class="swiper-slide" style="display:flex; justify-content: center;">
+                <div class="carousel-box">
+                  <div class="box">
+                    <a class="mainproduct__img--a" href="{{  block.settings.product.url }}">
+                      <figure class="box__img--figure">
+                        <img
+                          src="{{ block.settings.product.featured_image | image_url }}"
+                          class="box__img"
+                          alt="{{ block.settings.product.title }}"
+                          width="265.542px"
+                          height="262.292px"
                         >
-                          <span>{{ block.settings.product.metafields.custom.product_tagline }}</span>
-                        </div>
-                      {% endif %}
-                    </figure>
-                  </a>
-                  <div>
-                    <div
-                      class="box__bottom"
-                    >
-                      <div class="box__bottom--container">
-                        <ajax-cart-product-form>
-                          {% form 'product', block.settings.product, novalidate: 'novalidate' %}
-                            {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
-                            <h3 class="product__title">{{ block.settings.product.title }}</h3>
+                        {% if block.settings.product.metafields.custom.product_tagline != null %}
+                          <div
+                            class="product__tag"
+                            style="background-color:{{ block.settings.product.metafields.custom.border_colour }};"
+                          >
+                            <span>{{ block.settings.product.metafields.custom.product_tagline }}</span>
+                          </div>
+                        {% endif %}
+                      </figure>
+                    </a>
+                    <div>
+                      <div
+                        class="box__bottom"
+                      >
+                        <div class="box__bottom--container">
+                          <ajax-cart-product-form>
+                            {% form 'product', block.settings.product, novalidate: 'novalidate' %}
+                              {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
+                              <h3 class="product__title">{{ block.settings.product.title }}</h3>
 
-                            <div
-                              class="dropdown__menu"
-                              {% if block.settings.product.variants.size == 1
-                                and block.settings.product.variants.first.title == 'Default Title'
-                              %}
-                                style="display: none;"
-                              {% endif %}
-                            >
-                              <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
-                                {% for variant in block.settings.product.variants %}
-                                  <div
-                                    class="color-swatch"
-                                    {% if variant.image %}
-                                      style="background-image: url('{{ variant.image.src | img_url: 'master' }}'); background-size: cover;"
-                                    {% else %}
-                                      style="background-color: {{ variant.metafields.custom.variantcolour }};"
-                                    {% endif %}
-                                    value="{{ variant.id }}"
-                                    original-price="{{ variant.compare_at_price | money }}"
-                                    data-price="{{ variant.price | money }}"
-                                    {% if variant == current_variant %}
-                                      selected="selected"
-                                    {% endif %}
-                                  ></div>
-                                {% endfor %}
-                              </div>
-                            </div>
-
-                            <div class="box__bottom--price">
-                              <div class="box__price--container">
-                                {% if block.settings.product.compare_at_price != null %}
-                                  <span class="product__price product__price--sale">
-                                    {{- block.settings.product.price | money }}
-                                  </span>
-                                  <span class="product__price--compare product__price--original">
-                                    {{- block.settings.product.compare_at_price | money }}
-                                  </span>
-                                {% else %}
-                                  <span class="product__price"></span>
-                                {% endif %}
-                              </div>
-                              <div class="error__container" data-ajax-cart-errors="form"></div>
-                            </div>
-                            <div class="buy__buttonscontainerCarousel">
-                              <input style="display: none;" type="number" name="quantity" value="1" min="1">
-                              <button
-                                class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
-                                type="submit"
-                                name="add"
-                                {% if current_variant.inventory_quantity <= 0 %}
-                                  disabled
+                              <div
+                                class="dropdown__menu"
+                                {% if block.settings.product.variants.size == 1
+                                  and block.settings.product.variants.first.title == 'Default Title'
+                                %}
+                                  style="display: none;"
                                 {% endif %}
                               >
-                                {% if current_variant.inventory_quantity > 0 %}
-                                  Add to Basket
-                                {% else %}
-                                  Out of Stock
-                                {% endif %}
-                              </button>
-                            </div>
-                          {% endform %}
-                        </ajax-cart-product-form>
+                                <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
+                                  {% for variant in block.settings.product.variants %}
+                                    <div
+                                      class="color-swatch"
+                                      {% if variant.image %}
+                                        style="background-image: url('{{ variant.image.src | img_url: 'master' }}'); background-size: cover;"
+                                      {% else %}
+                                        style="background-color: {{ variant.metafields.custom.variantcolour }};"
+                                      {% endif %}
+                                      value="{{ variant.id }}"
+                                      original-price="{{ variant.compare_at_price | money }}"
+                                      data-price="{{ variant.price | money }}"
+                                      {% if variant == current_variant %}
+                                        selected="selected"
+                                      {% endif %}
+                                    ></div>
+                                  {% endfor %}
+                                </div>
+                              </div>
+
+                              <div class="box__bottom--price">
+                                <div class="box__price--container">
+                                  {% if block.settings.product.compare_at_price != null %}
+                                    <span class="product__price product__price--sale">
+                                      {{- block.settings.product.price | money }}
+                                    </span>
+                                    <span class="product__price--compare product__price--original">
+                                      {{- block.settings.product.compare_at_price | money }}
+                                    </span>
+                                  {% else %}
+                                    <span class="product__price"></span>
+                                  {% endif %}
+                                </div>
+                                <div class="error__container" data-ajax-cart-errors="form"></div>
+                              </div>
+                              <div class="buy__buttonscontainerCarousel">
+                                <input style="display: none;" type="number" name="quantity" value="1" min="1">
+                                <button
+                                  class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
+                                  type="submit"
+                                  name="add"
+                                  {% if current_variant.inventory_quantity <= 0 %}
+                                    disabled
+                                  {% endif %}
+                                >
+                                  {% if current_variant.inventory_quantity > 0 %}
+                                    Add to Basket
+                                  {% else %}
+                                    Out of Stock
+                                  {% endif %}
+                                </button>
+                              </div>
+                            {% endform %}
+                          </ajax-cart-product-form>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          {% endif %}
-        {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
 
-        <div class="pagination__container"> 
-        <div class="swiper-pagination"></div>
-      </div>
+      <div class="swiper-pagination"></div>
       <!--
         <div class="navigation__arrows--container">
           <div
@@ -636,12 +636,10 @@
         </div>
       -->
     </div>
-     
   </div>
 </section>
 
 <script>
-
   document.addEventListener('DOMContentLoaded', function () {
     var addToCartButtons = document.querySelectorAll('.buy__button');
 
