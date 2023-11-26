@@ -535,6 +535,8 @@
                         <ajax-cart-product-form>
                           {% form 'product', block.settings.product, novalidate: 'novalidate' %}
                             {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
+                            <h3 class="product__title">{{ block.settings.product.title }}</h3>
+                            
                             <div
                               class="dropdown__menu"
                               {% if block.settings.product.variants.size == 1
@@ -559,7 +561,6 @@
                               </div>
                             </div>
 
-                            <h3 class="product__title">{{ block.settings.product.title }}</h3>
 
                             <div class="box__bottom--price">
                               <div class="box__price--container">
