@@ -450,29 +450,6 @@
     },
   });
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Function to equalize heights of all elements with the given class based on the tallest one
-  function equalizeContainerHeights(className) {
-    let containers = document.querySelectorAll(className);
-    let maxHeight = 0;
-
-    // First, find the tallest container
-    for (let container of containers) {
-      if (container.offsetHeight > maxHeight) {
-        maxHeight = container.offsetHeight;
-      }
-    }
-
-    // Then, set all containers to the height of the tallest one
-    for (let container of containers) {
-      container.style.minHeight = `${maxHeight}px`;
-    }
-  }
-
-  // Equalize heights for .box__bottom--container elements
-  equalizeContainerHeights('.box__bottom');
-});
-  
   document.addEventListener('DOMContentLoaded', function () {
     const colorSwatches = document.querySelectorAll('.color-swatch');
     const forms = document.querySelectorAll('.shopify-product-form');
@@ -671,5 +648,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
       });
     });
+  });
+</script>
+
+
+<script>
+  function equalizeContainerHeights(className) {
+    var containers = document.querySelectorAll(className);
+    var maxHeight = 0;
+
+    // First, find the tallest container
+    containers.forEach(function (container) {
+      if (container.offsetHeight > maxHeight) {
+        maxHeight = container.offsetHeight;
+      }
+    });
+
+    // Then, set all containers to the height of the tallest one
+    containers.forEach(function (container) {
+      container.style.minHeight = maxHeight + 'px';
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Equalize heights for .box__bottom--container elements
+    equalizeContainerHeights('.box__bottom--container');
   });
 </script>
