@@ -393,9 +393,9 @@
                 {% endfor %}
               </div>
             </div>
-                  {% if product.variants.size > 1 %}
+                  {% if product.variants.size < 1 %}
           <div class="product__page--description"> 
-            {{ product.description }}sssss
+            {{ product.description }} there isnt more
           </div>
         {% endif %}
             <div class="box__bottom--price product__price--box">
@@ -430,9 +430,9 @@
             </button>
           {% endform %}
         </ajax-cart-product-form>
-     {% if product.variants.size < 1 %}
+     {% if product.variants.size > 1 %}
   <div class="product__page--description"> 
-    {{ product.description }}
+    {{ product.description }} there is variants
   </div>
 {% endif %}
       </div>
