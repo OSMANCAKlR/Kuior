@@ -517,29 +517,30 @@
   });
 
 
-  document.addEventListener('DOMContentLoaded', function () {
-    // Function to update the variant title
-    function updateVariantTitle(variantTitle) {
-        var variantTitleElement = document.getElementById('variant-title');
-        if (variantTitleElement) {
-            variantTitleElement.textContent = ' - ' + variantTitle;
-        }
-    }
+ document.addEventListener('DOMContentLoaded', function () {
+  const productForms = document.querySelectorAll('.shopify-product-form');
 
-    // Attach click event listener to each color swatch
-    const colorSwatches = document.querySelectorAll('.color-swatch');
-    colorSwatches.forEach(function (swatch) {
-        swatch.addEventListener('click', function () {
-            const variantTitle = swatch.getAttribute('data-variant-title');
-            updateVariantTitle(variantTitle);
-        });
+  productForms.forEach(function(form) {
+    form.querySelectorAll('.color-swatch').forEach(function(swatch) {
+      swatch.addEventListener('click', function() {
+        const variantTitle = swatch.getAttribute('data-variant-title');
+        const variantTitleElement = form.querySelector('.variant-title');
+
+        if (variantTitleElement) {
+          variantTitleElement.textContent = ' - ' + variantTitle;
+        }
+      });
     });
 
-    // Set the default variant title on page load
-    var defaultVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
-    if (defaultVariantTitle && defaultVariantTitle !== 'Default Title') {
-        updateVariantTitle(defaultVariantTitle);
+    // Set the default variant title for each product on page load
+    const defaultVariantTitleElement = form.querySelector('.variant-title');
+    if (defaultVariantTitleElement) {
+      var defaultVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
+      if (defaultVariantTitle && defaultVariantTitle !== 'Default Title') {
+        defaultVariantTitleElement.textContent = ' - ' + defaultVariantTitle;
+      }
     }
+  });
 });
 {% endjavascript %}
 
