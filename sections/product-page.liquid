@@ -189,8 +189,11 @@
   .product__variant  {
     width: auto;
     height: auto;
-   border: 1px #e8faf7 solid;
+       border: 1px #bfd1ce solid;
     border-radius: 8px;
+  }
+  .color-swatch.selected-product {
+        border: 2px solid #a4a4a4;
   }
 
   
@@ -303,8 +306,8 @@
             originalDisplay.textContent = originalPrice;
           }
 
-          productContainer.querySelectorAll('.color-swatch').forEach((s) => s.classList.remove('selected'));
-          swatch.classList.add('selected');
+          productContainer.querySelectorAll('.color-swatch').forEach((s) => s.classList.remove('selected-product'));
+          swatch.classList.add('selected-product');
         });
       });
 
