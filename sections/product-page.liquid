@@ -13,249 +13,254 @@
 {% endschema %}
 
 {% stylesheet %}
-    .productpage__wrapper--top {
-      display: flex;
-      justify-content: space-between;
-    }
-
-      .productpage__figure {
-        width: 45%;
-        padding: 0;
-        margin: 0;
-      }
-
-      .productpage__img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-
-      .productpage__price--container {
-        width: 45%;
-      }
-
-      #product__page {
-        margin-top: 45px;
-      }
-
-      .productpage__title {
-        color: rgb(34, 32, 47);
-        font-family: Glorify;
-        font-size: 48px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 98.5%;
-        margin-bottom: 24px;
-      }
-
-      .productpage__buybuttons--container {
-        margin-top: 14px;
-      }
-
-      #product__page .custombutton{
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      color: white;
-      text-align: center;
-      font-family: Glorify;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 98.5%;
-      background-color: #036638;
-      border-radius: 4px;
-      border: none;
-      padding: 18px 0;
-      cursor: pointer;
-      width: 350px;
-      }
-
-      .tax__included{
-        font-size: 10px;
-        color: #036638;
-      }
-
-      .productpage__description--container {
-        width: 40%;
-      }
-
-      .productpage__figure2 {
-        width: 45%;
-        height: auto;
-        padding: 0;
-        margin: 0;
-      }
-
-      .productpage__figure2bundle {
-        width: 100%;
-        height: 220px;
-        padding: 0;
-        margin: 0;
-      }
-
-      .productpage__wrapper--bottom{
-        margin-top: 68px;
+      .productpage__wrapper--top {
         display: flex;
         justify-content: space-between;
-       align-items: flex-start;
       }
-
-    .custom-next-button, .custom-prev-button  {
-        width: 55px;
-        height: 55px;
-        border-radius: 99px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-        cursor: pointer;
-      }
-
-      .custom-prev-button {
-          background-color: #F7F5E3;
-        color: #036638;
-      }
-
-      .custom-next-button {
-        background-color: #21B24F;
-        color: white;
-      }
-
-  
-
-     #product__page h3 {
-      color: var(--Kale, #036638);
-      font-family: Open Sans;
-      font-size: 44.87px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 98.5%;
-      margin-bottom: 4px;
-       margin-top: 0px;
-      }
-
-    .swiper-container {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100vh;
-    min-height: 0;
-    min-width: 0;
-  }
-
-      #product__page p{
-        margin-bottom: 2px;
-        padding: 0;
-        color: var(--Kale, #036638);
-      font-family: Open Sans;
-      }
-
-      .bundle__img--container {
-        width: 45%;
-        min-width: 0;
-        min-height: 0;
-      }
-
-      .bundleimg__title {
-        color: var(--Kale, #036638);
-      font-family: JeanLuc;
-      font-size: 44.87px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 98.5%;
-      margin-bottom: 16px;
-      margin-top: 0px;
-      }
-
-    .swiperbundle {
-      width: 100%;
-    }
-
-.product__variant--selector {
-  flex-direction: column;
-  gap: 14px;
-}
-
-.variant__img {
-  width: 100%;
-  height: 100%;
-}
-
-  .variant__img--container {
-    width: 50px;
-    height: auto;
-  }
-
-
-  .product__variant  {
-    width: auto;
-    height: auto;
-       border: 1px #bfd1ce solid;
-    border-radius: 8px;
-    padding: 10px;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-  }
-  .color-swatch.selected-product {
-        border: 2px solid #a4a4a4;
-  }
-
-  .product__price--box {
-    justify-content: flex-start;
-        margin-top: 24px;
-  }
-  
-
-    .mySwiperBundleMenu {
-      margin-top: 14px;
-    }
-
-      @media screen and (max-width: 815px) {
-        .productpage__wrapper--top {
-          flex-direction: column;
-        }
-
-        .productpage__wrapper--bottom {
-          flex-direction: column;
-        }
-
-        .bundle__img--container {
-         width: 100%;
-        }
 
         .productpage__figure {
-          width: 100%;
+          width: 45%;
+          padding: 0;
+          margin: 0;
         }
 
-        .productpage__figure2bundle {
-          height: auto;
-        }
-        .productpage__price--container {
+        .productpage__img {
+          height: 100%;
           width: 100%;
+          object-fit: cover;
+        }
+
+        .productpage__price--container {
+          width: 45%;
+        }
+
+        #product__page {
+          margin-top: 45px;
         }
 
         .productpage__title {
-            max-width: none;
-          }
+          color: rgb(34, 32, 47);
+          font-family: Glorify;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 98.5%;
+          margin-bottom: 24px;
+        }
+
+        .productpage__buybuttons--container {
+          margin-top: 14px;
+        }
+
+        #product__page .custombutton{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        color: white;
+        text-align: center;
+        font-family: Glorify;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 98.5%;
+        background-color: #036638;
+        border-radius: 4px;
+        border: none;
+        padding: 18px 0;
+        cursor: pointer;
+        width: 350px;
+        }
+
+        .tax__included{
+          font-size: 10px;
+          color: #036638;
+        }
+
+        .productpage__description--container {
+          width: 40%;
+        }
 
         .productpage__figure2 {
-              display: none;
-          }
-
-            .productpage__description--container {
-          width: 100%;
-        }
-
-         #product__page p{
+          width: 45%;
+          height: auto;
+          padding: 0;
           margin: 0;
-           padding: 0;
         }
 
-        .productpage__wrapper--bottom {
-          margin-top: 48px;
-          }
+        .productpage__figure2bundle {
+          width: 100%;
+          height: 220px;
+          padding: 0;
+          margin: 0;
+        }
+
+        .productpage__wrapper--bottom{
+          margin-top: 68px;
+          display: flex;
+          justify-content: space-between;
+         align-items: flex-start;
+        }
+
+      .custom-next-button, .custom-prev-button  {
+          width: 55px;
+          height: 55px;
+          border-radius: 99px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          cursor: pointer;
+        }
+
+        .custom-prev-button {
+            background-color: #F7F5E3;
+          color: #036638;
+        }
+
+        .custom-next-button {
+          background-color: #21B24F;
+          color: white;
+        }
+
+
+
+       #product__page h3 {
+        color: var(--Kale, #036638);
+        font-family: Open Sans;
+        font-size: 44.87px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 98.5%;
+        margin-bottom: 4px;
+         margin-top: 0px;
+        }
+
+      .swiper-container {
+      width: 100%;
+      max-width: 100%;
+      max-height: 100vh;
+      min-height: 0;
+      min-width: 0;
+    }
+
+        #product__page p{
+          margin-bottom: 2px;
+          padding: 0;
+          color: var(--Kale, #036638);
+        font-family: Open Sans;
+        }
+
+        .bundle__img--container {
+          width: 45%;
+          min-width: 0;
+          min-height: 0;
+        }
+
+        .bundleimg__title {
+          color: var(--Kale, #036638);
+        font-family: JeanLuc;
+        font-size: 44.87px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 98.5%;
+        margin-bottom: 16px;
+        margin-top: 0px;
+        }
+
+      .swiperbundle {
+        width: 100%;
       }
+
+  .product__variant--selector {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .variant__img {
+    width: 100%;
+    height: 100%;
+  }
+
+    .variant__img--container {
+      width: 50px;
+      height: auto;
+    }
+
+
+    .product__variant  {
+      width: auto;
+      height: auto;
+         border: 1px #bfd1ce solid;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+    .color-swatch.selected-product {
+          border: 2px solid #a4a4a4;
+    }
+
+    .product__price--box {
+      justify-content: flex-start;
+          margin-top: 24px;
+    }
+
+  .product__page--price {
+      color: rgb(34, 32, 47);
+    font-weight: 400;
+    font-size: 16px;
+
+  }
+      .mySwiperBundleMenu {
+        margin-top: 14px;
+      }
+
+        @media screen and (max-width: 815px) {
+          .productpage__wrapper--top {
+            flex-direction: column;
+          }
+
+          .productpage__wrapper--bottom {
+            flex-direction: column;
+          }
+
+          .bundle__img--container {
+           width: 100%;
+          }
+
+          .productpage__figure {
+            width: 100%;
+          }
+
+          .productpage__figure2bundle {
+            height: auto;
+          }
+          .productpage__price--container {
+            width: 100%;
+          }
+
+          .productpage__title {
+              max-width: none;
+            }
+
+          .productpage__figure2 {
+                display: none;
+            }
+
+              .productpage__description--container {
+            width: 100%;
+          }
+
+           #product__page p{
+            margin: 0;
+             padding: 0;
+          }
+
+          .productpage__wrapper--bottom {
+            margin-top: 48px;
+            }
+        }
 {% endstylesheet %}
 
 {% javascript %}
@@ -280,7 +285,7 @@
       hiddenVariantInput.name = 'id';
       form.appendChild(hiddenVariantInput);
 
-  
+
 
       form.querySelectorAll('.color-swatch').forEach(function (swatch) {
         const productContainer = swatch.closest('.productpage__wrapper--top');
@@ -342,13 +347,15 @@
             {% assign current_variant = product.selected_or_first_available_variant %}
             <div
               class="dropdown__menu"
-              {% if product.variants.size == 1
-                and product.variants.first.title == 'Default Title'
-              %}
+              {% if product.variants.size == 1 and product.variants.first.title == 'Default Title' %}
                 style="display: none;"
               {% endif %}
             >
-              <div name="id" id="variant-dropdown-{{ product.id }}" class="variant__selector product__variant--selector">
+              <div
+                name="id"
+                id="variant-dropdown-{{ product.id }}"
+                class="variant__selector product__variant--selector"
+              >
                 {% for variant in product.variants %}
                   <div
                     class="color-swatch product__variant"
@@ -365,18 +372,20 @@
                       selected="selected"
                     {% endif %}
                   >
-                  {% if variant.image %}
-                    <div class="variant__img--container"> 
-                      <img class="variant__img" src='{{ variant.image.src | img_url: 'master' }}' />
-                    </div>
+                    {% if variant.image %}
+                      <div class="variant__img--container">
+                        <img class="variant__img" src="{{ variant.image.src | img_url: 'master' }}">
+                      </div>
                     {% else %}
-                    <div class="variant__img--colour" style="background-color: {{ variant.metafields.custom.variantcolour }};"> </div>
+                      <div
+                        class="variant__img--colour"
+                        style="background-color: {{ variant.metafields.custom.variantcolour }};"
+                      ></div>
                     {% endif %}
-                <span>{{ variant.title }}</span>
+                    <span>{{ variant.title }}</span>
                   </div>
                 {% endfor %}
               </div>
-                 
             </div>
             <div class="box__bottom--price product__price--box">
               <div class="box__price--container">
@@ -388,7 +397,7 @@
                     {{- product.compare_at_price | money }}
                   </span>
                 {% else %}
-                  <span class="product__price"></span>
+                  <span class="product__price product__page--price"></span>
                 {% endif %}
               </div>
               <div class="error__container" data-ajax-cart-errors="form"></div>
@@ -441,5 +450,3 @@
     });
   });
 </script>
-
-
