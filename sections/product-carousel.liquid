@@ -473,7 +473,13 @@
         const originalDisplay = productContainer.querySelector('.product__price--compare');
 
         swatch.addEventListener('click', function () {
+           const variantImageUrl = swatch.getAttribute('data-variant-image-url');
+          const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
+           if (productImage && variantImageUrl) {
+          productImage.src = variantImageUrl;
+        }
           const variantId = swatch.getAttribute('value');
+          
           hiddenVariantInput.value = variantId; // Update the hidden input with the selected variant ID
 
           const newPrice = swatch.getAttribute('data-price');
@@ -565,6 +571,7 @@
                                       {% else %}
                                         style="background-color: {{ variant.metafields.custom.variantcolour }};"
                                       {% endif %}
+                                     data-variant-image-url="{{ variant.image.src | img_url: 'master' }}"
                                       value="{{ variant.id }}"
                                       original-price="{{ variant.compare_at_price | money }}"
                                       data-price="{{ variant.price | money }}"
