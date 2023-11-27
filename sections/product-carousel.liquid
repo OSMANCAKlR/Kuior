@@ -101,7 +101,7 @@
     width: 100%;
     border-radius: 5.546px;
     object-fit: cover;
-     transition: opacity 0.1s ease; /* Transition effect */
+     transition: opacity 0.250s ease; /* Transition effect */
   opacity: 0; /* Initial opacity set to 0 */
   }
 
@@ -485,7 +485,7 @@
       productImage.src = variantImageUrl;
       // Fade in effect
       productImage.style.opacity = '1';
-    }, 100); // This timeout duration should match the CSS transition duration
+    }, 250); // This timeout duration should match the CSS transition duration
   }
           const variantId = swatch.getAttribute('value');
 
@@ -524,7 +524,7 @@
   <div class="page-width">
     <div class="menubox__title">
       <h2 class="productcarousel__title">Best Sellers</h2>
-      <p class="productcarousel__span">Shop the world’s most trusted beauty gadgetss.</p>
+      <p class="productcarousel__span">Shop the world’s most trusted beauty gadgets.</p>
     </div>
     <div class="wrapper__products">
       <div class="swiper mySwiper">
