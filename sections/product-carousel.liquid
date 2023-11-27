@@ -459,6 +459,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     const colorSwatches = document.querySelectorAll('.color-swatch');
     const forms = document.querySelectorAll('.shopify-product-form');
+     const noImagePlaceholderUrl = '//climbmountains.com.au/cdn/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif';
 
     forms.forEach(function (form) {
       // Create a hidden input field for each form
@@ -476,8 +477,8 @@
            const variantImageUrl = swatch.getAttribute('data-variant-image-url');
           const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
          if (productImage) {
-          // Use the variant image if it exists, otherwise use the default product image
-          productImage.src = variantImageUrl || defaultProductImage;
+          // Use the variant image if it exists and is not the placeholder, otherwise use the default product image
+          productImage.src = (variantImageUrl && variantImageUrl !== noImagePlaceholderUrl) ? variantImageUrl : defaultProductImage;
         }
           const variantId = swatch.getAttribute('value');
           
