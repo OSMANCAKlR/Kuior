@@ -76,7 +76,6 @@
     },
     "related-products": {
       "type": "related-products",
-      "disabled": true,
       "settings": {
         "heading": "Related products",
         "heading_size": "h2",
@@ -89,7 +88,7 @@
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 8,
+        "padding_top": 28,
         "padding_bottom": 28
       }
     }
