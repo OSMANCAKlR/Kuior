@@ -479,7 +479,7 @@
           productImage.src = variantImageUrl;
         }
           const variantId = swatch.getAttribute('value');
-          
+
           hiddenVariantInput.value = variantId; // Update the hidden input with the selected variant ID
 
           const newPrice = swatch.getAttribute('data-price');
@@ -571,7 +571,12 @@
                                       {% else %}
                                         style="background-color: {{ variant.metafields.custom.variantcolour }};"
                                       {% endif %}
-                                     data-variant-image-url="{{ variant.image.src | img_url: 'master' }}"
+                                      {% if variant.image %}
+                                        data-variant-image-url="{{ variant.image.src | img_url: 'master' }}"
+                                      {% else %}
+                                        data-variant-image-url="{{ block.settings.product.featured_image | image_url }}"
+                                      {% endif %}
+
                                       value="{{ variant.id }}"
                                       original-price="{{ variant.compare_at_price | money }}"
                                       data-price="{{ variant.price | money }}"
@@ -626,8 +631,7 @@
             {% endif %}
           {% endfor %}
         </div>
-              <!-- <div class="swiper-pagination"></div> -->
-
+        <!-- <div class="swiper-pagination"></div> -->
       </div>
 
       <!--
