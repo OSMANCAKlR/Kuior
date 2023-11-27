@@ -338,6 +338,21 @@
               {% endfor %}
             </div>
           </div>
+              <div class="box__bottom--price">
+                                <div class="box__price--container">
+                                  {% if block.settings.product.compare_at_price != null %}
+                                    <span class="product__price product__price--sale">
+                                      {{- block.settings.product.price | money }}
+                                    </span>
+                                    <span class="product__price--compare product__price--original">
+                                      {{- block.settings.product.compare_at_price | money }}
+                                    </span>
+                                  {% else %}
+                                    <span class="product__price"></span>
+                                  {% endif %}
+                                </div>
+                                <div class="error__container" data-ajax-cart-errors="form"></div>
+                              </div>
           <button
             class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
             type="submit"
