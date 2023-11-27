@@ -102,6 +102,7 @@
         "e75491de-fb20-4851-bf88-0be3efbe693c",
         "a008b3cd-ca6e-4697-944f-63148729dc4b"
       ],
+      "disabled": true,
       "custom_css": [
         ".menubox__title {display: none;}",
         ".box__img--figure {padding: 0px;}"
@@ -171,33 +172,11 @@
             "industry": "Lifestyle blogger",
             "image": "shopify:\/\/shop_images\/879467a300b64ab946a8d82fa37a8571.jpg"
           }
-        },
-        "7dd4fc5e-7a38-4996-8a04-152d9f79d7ad": {
-          "type": "testimonial",
-          "settings": {
-            "product": "facial-exfoliant",
-            "text": "I am absolutely in love! My skin has never felt so smooth and hydrated.",
-            "name": "Lisa W",
-            "industry": "Lifestyle blogger",
-            "image": "shopify:\/\/shop_images\/879467a300b64ab946a8d82fa37a8571.jpg"
-          }
-        },
-        "ddab4d35-cc62-4ef2-b13d-b3b1a7c22e4e": {
-          "type": "testimonial",
-          "settings": {
-            "product": "facial-exfoliant",
-            "text": "I am absolutely in love! My skin has never felt so smooth and hydrated.",
-            "name": "Lisa W",
-            "industry": "Lifestyle blogger",
-            "image": "shopify:\/\/shop_images\/879467a300b64ab946a8d82fa37a8571.jpg"
-          }
         }
       },
       "block_order": [
         "77e9d5fd-cfa9-457c-a28b-129a32847734",
-        "9b11bbd7-f597-4e3d-9a33-f0edc55523d0",
-        "7dd4fc5e-7a38-4996-8a04-152d9f79d7ad",
-        "ddab4d35-cc62-4ef2-b13d-b3b1a7c22e4e"
+        "9b11bbd7-f597-4e3d-9a33-f0edc55523d0"
       ],
       "settings": {
       }
