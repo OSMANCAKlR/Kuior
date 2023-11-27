@@ -16,7 +16,6 @@
     .productpage__wrapper--top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
     }
 
       .productpage__figure {
@@ -46,8 +45,7 @@
         font-style: normal;
         font-weight: 300;
         line-height: 98.5%;
-        margin-bottom: 4px;
-        max-width: 400px;
+        margin-bottom: 24px;
       }
 
       .productpage__buybuttons--container {
@@ -238,7 +236,7 @@
 
 
    document.addEventListener('DOMContentLoaded', function () {
-    const colorSwatches = document.querySelectorAll('.color-swatch');
+    const colorSwatches = document.querySelectorAll('.variant__container');
     const forms = document.querySelectorAll('.shopify-product-form');
 
     forms.forEach(function (form) {
@@ -250,7 +248,7 @@
 
   
 
-      form.querySelectorAll('.color-swatch').forEach(function (swatch) {
+      form.querySelectorAll('.variant__container').forEach(function (swatch) {
         const productContainer = swatch.closest('.productpage__wrapper--top');
         const priceDisplay = productContainer.querySelector('.product__price');
         const originalDisplay = productContainer.querySelector('.product__price--compare');
@@ -283,13 +281,13 @@
             originalDisplay.textContent = originalPrice;
           }
 
-          productContainer.querySelectorAll('.color-swatch').forEach((s) => s.classList.remove('selected'));
+          productContainer.querySelectorAll('.variant__container').forEach((s) => s.classList.remove('selected'));
           swatch.classList.add('selected');
         });
       });
 
       // Set the first variant as the default selected for each product
-      const firstSwatch = form.querySelector('.color-swatch');
+      const firstSwatch = form.querySelector('.variant__container');
       if (firstSwatch) {
         firstSwatch.click();
       }
@@ -304,7 +302,7 @@
         <img class="productpage__img" src="{{ product.featured_image | img_url: 'original' }}">
       </figure>
       <div class="productpage__price--container">
-        <h1 class="productpage__title">{{ product.title }}</h1>
+        <h1 class="productpage__title">{{ product.title }}s</h1>
         <ajax-cart-product-form>
           {% form 'product', product, novalidate: 'novalidate' %}
             {% assign current_variant = product.selected_or_first_available_variant %}
@@ -319,7 +317,7 @@
               <div name="id" id="variant-dropdown-{{ product.id }}" class="variant__selector">
                 {% for variant in product.variants %}
                   <div
-                    class="color-swatch"
+                    class="variant__container"
                     {% if variant.image %}
                       style="background-image: url('{{ variant.image.src | img_url: 'master' }}'); background-size: cover;"
                     {% else %}
