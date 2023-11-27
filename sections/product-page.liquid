@@ -379,37 +379,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="productpage__wrapper--bottom">
-      <div class="productpage__description--container">
-        {{ product.description }}
-      </div>
-      {% if product.metafields.custom.isbundle %}
-        <div class="bundle__img--container">
-              <h3 class="bundleimg__title">Whats Included!</h3>
-          <div class="swiper mySwiperBundleMenu">
-            <div class="swiper-wrapper">
-              {% for image in product.images %}
-                {% if forloop.first %}
-                  <!-- Skip the first image -->
-                  {% continue %}
-                {% endif %}
-                <div class="swiper-slide" style="display: flex;
-                    justify-content: center;">
-                <figure class="productpage__figure2bundle">
-                  <img class="productpage__img" src="{{ image | img_url: 'original' }}">
-                </figure>
-                </div>
-                
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      {% else %}
-        <figure class="productpage__figure2">
-          <img class="productpage__img" src="{{ product.images[1] | img_url: 'original' }}">
-        </figure>
-      {% endif %}
-    </div> -->
   </div>
 </section>
 
