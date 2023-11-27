@@ -201,6 +201,10 @@
         border: 2px solid #a4a4a4;
   }
 
+  .product__price--box {
+    justify-content: flex-start;
+        margin-top: 24px;
+  }
   
 
     .mySwiperBundleMenu {
@@ -304,7 +308,7 @@
           const originalPrice = swatch.getAttribute('original-price');
 
           if (newPrice) {
-            priceDisplay.textContent = 'from ' + newPrice;
+            priceDisplay.textContent =   newPrice;
           }
 
           if (originalPrice) {
@@ -374,7 +378,7 @@
               </div>
                  
             </div>
-            <div class="box__bottom--price">
+            <div class="box__bottom--price product__price--box">
               <div class="box__price--container">
                 {% if product.compare_at_price != null %}
                   <span class="product__price product__price--sale">
