@@ -478,7 +478,7 @@
           const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
          if (productImage) {
           // Use the variant image if it exists and is not the placeholder, otherwise use the default product image
-          productImage.src = (variantImageUrl && variantImageUrl !== noImagePlaceholderUrl) ? variantImageUrl : defaultProductImage;
+          productImage.src = (variantImageUrl || variantImageUrl !== noImagePlaceholderUrl) ? variantImageUrl : defaultProductImage;
         }
           const variantId = swatch.getAttribute('value');
           
