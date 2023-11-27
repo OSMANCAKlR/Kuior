@@ -303,7 +303,6 @@
       </figure>
       <div class="productpage__price--container">
         <h1 class="productpage__title">{{ product.title }}</h1>
-        <div class="productpage__buybuttons--container">
          <ajax-cart-product-form>
                             {% form 'product', product, novalidate: 'novalidate' %}
                               {% assign current_variant = product.selected_or_first_available_variant %}
@@ -375,7 +374,6 @@
                               </div>
                             {% endform %}
                           </ajax-cart-product-form>
-        </div>
       </div>
     </div>
   </div>
