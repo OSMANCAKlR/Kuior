@@ -393,6 +393,11 @@
                 {% endfor %}
               </div>
             </div>
+                  {% if product.variants.size > 1 %}
+          <div class="product__page--description"> 
+            {{ product.description }}
+          </div>
+        {% endif %}
             <div class="box__bottom--price product__price--box">
               <div class="box__price--container">
                 {% if product.compare_at_price != null %}
@@ -425,9 +430,11 @@
             </button>
           {% endform %}
         </ajax-cart-product-form>
-      <div class="product__page--description"> 
-        {{ product.description }}
-      </div>
+     {% if product.variants.size < 1 %}
+  <div class="product__page--description"> 
+    {{ product.description }}
+  </div>
+{% endif %}
       </div>
     </div>
   </div>
