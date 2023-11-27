@@ -251,7 +251,7 @@
   
 
       form.querySelectorAll('.color-swatch').forEach(function (swatch) {
-        const productContainer = swatch.closest('.carousel-box');
+        const productContainer = swatch.closest('.productpage__wrapper--top');
         const priceDisplay = productContainer.querySelector('.product__price');
         const originalDisplay = productContainer.querySelector('.product__price--compare');
 
@@ -406,18 +406,4 @@
   });
 </script>
 
-<script>
-  $(document).ready(function() {
-    // Variable to store the maximum height
-    var maxheight = 0;
 
-    // Iterate over each element with the class .box__bottom--container
-    $('.box__bottom').each(function() {
-      // Update maxheight with the height of the current element if it's larger
-      maxheight = Math.max(maxheight, $(this).height());
-    });
-
-    // Set the height of all .box__bottom--container elements to maxheight
-  $('.box__bottom').height(maxheight + 30);
-  });
-</script>
