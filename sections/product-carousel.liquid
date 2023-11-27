@@ -101,6 +101,8 @@
     width: 100%;
     border-radius: 5.546px;
     object-fit: cover;
+     transition: opacity 0.5s ease; /* Transition effect */
+  opacity: 0; /* Initial opacity set to 0 */
   }
 
   .box__bottom {
@@ -475,9 +477,16 @@
         swatch.addEventListener('click', function () {
            const variantImageUrl = swatch.getAttribute('data-variant-image-url');
           const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
-           if (productImage && variantImageUrl) {
-          productImage.src = variantImageUrl;
-        }
+         if (productImage && variantImageUrl) {
+    // Fade out effect
+    productImage.style.opacity = '0';
+    setTimeout(function() {
+      // Change image source
+      productImage.src = variantImageUrl;
+      // Fade in effect
+      productImage.style.opacity = '1';
+    }, 500); // This timeout duration should match the CSS transition duration
+  }
           const variantId = swatch.getAttribute('value');
 
           hiddenVariantInput.value = variantId; // Update the hidden input with the selected variant ID
