@@ -459,7 +459,7 @@
   });
 
   document.addEventListener('DOMContentLoaded', function () {
-    
+
     const colorSwatches = document.querySelectorAll('.color-swatch');
     const forms = document.querySelectorAll('.shopify-product-form');
 
@@ -476,6 +476,23 @@
         const originalDisplay = productContainer.querySelector('.product__price--compare');
 
         swatch.addEventListener('click', function () {
+                const variantTitle = swatch.getAttribute('data-variant-title');
+        const variantTitleElement = form.querySelector('.variant-title');
+
+        if (variantTitleElement) {
+          variantTitleElement.textContent = ' - ' + variantTitle;
+        }
+      });
+    });
+
+    // Set the default variant title for each product on page load
+    const defaultVariantTitleElement = form.querySelector('.variant-title');
+    if (defaultVariantTitleElement) {
+      var defaultVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
+      if (defaultVariantTitle && defaultVariantTitle !== 'Default Title') {
+        defaultVariantTitleElement.textContent = ' - ' + defaultVariantTitle;
+      }
+    }
            const variantImageUrl = swatch.getAttribute('data-variant-image-url');
           const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
          if (productImage && variantImageUrl) {
@@ -515,33 +532,6 @@
       }
     });
   });
-
-
- document.addEventListener('DOMContentLoaded', function () {
-  const productForms = document.querySelectorAll('.shopify-product-form');
-
-  productForms.forEach(function(form) {
-    form.querySelectorAll('.color-swatch').forEach(function(swatch) {
-      swatch.addEventListener('click', function() {
-        const variantTitle = swatch.getAttribute('data-variant-title');
-        const variantTitleElement = form.querySelector('.variant-title');
-
-        if (variantTitleElement) {
-          variantTitleElement.textContent = ' - ' + variantTitle;
-        }
-      });
-    });
-
-    // Set the default variant title for each product on page load
-    const defaultVariantTitleElement = form.querySelector('.variant-title');
-    if (defaultVariantTitleElement) {
-      var defaultVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
-      if (defaultVariantTitle && defaultVariantTitle !== 'Default Title') {
-        defaultVariantTitleElement.textContent = ' - ' + defaultVariantTitle;
-      }
-    }
-  });
-});
 {% endjavascript %}
 
 <section id="boxmenu__wrapper">
@@ -687,7 +677,6 @@
     </div>
   </div>
 </section>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
