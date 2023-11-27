@@ -459,7 +459,6 @@
   document.addEventListener('DOMContentLoaded', function () {
     const colorSwatches = document.querySelectorAll('.color-swatch');
     const forms = document.querySelectorAll('.shopify-product-form');
-     
 
     forms.forEach(function (form) {
       // Create a hidden input field for each form
@@ -467,8 +466,7 @@
       hiddenVariantInput.type = 'hidden';
       hiddenVariantInput.name = 'id';
       form.appendChild(hiddenVariantInput);
-     
-      
+
       form.querySelectorAll('.color-swatch').forEach(function (swatch) {
         const productContainer = swatch.closest('.carousel-box');
         const priceDisplay = productContainer.querySelector('.product__price');
@@ -477,19 +475,8 @@
         swatch.addEventListener('click', function () {
            const variantImageUrl = swatch.getAttribute('data-variant-image-url');
           const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
-           const productContainer = swatch.closest('.carousel-box');
-        const productImage = productContainer.querySelector('.box__img');
-        const variantImageUrl = swatch.getAttribute('data-variant-image-url');
-
-       const hasVariants = productContainer.querySelectorAll('.color-swatch').length > 1;
-        if (productImage) {
-          // Change the image only if there are variants and the variant has an image
-          if (hasVariants && variantImageUrl) {
-            productImage.src = variantImageUrl;
-          } else {
-            // Revert to the default product image if no variants or no variant image
-            productImage.src = defaultProductImage;
-          }
+           if (productImage && variantImageUrl) {
+          productImage.src = variantImageUrl;
         }
           const variantId = swatch.getAttribute('value');
           
@@ -673,7 +660,7 @@
         // Simulate an AJAX call with setTimeout
         setTimeout(function () {
           // Change the text to 'Added!' once the AJAX call is complete
-          button.textContent = 'Added';
+          button.textContent = 'Added!';
           button.classList.remove('processing');
           button.classList.add('added');
           // Change the text back to 'Add to order' after some time
