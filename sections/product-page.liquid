@@ -352,6 +352,7 @@
               </div>
               <div class="error__container" data-ajax-cart-errors="form"></div>
             </div>
+            <input style="display: none;" type="number" name="quantity" value="1" min="1">
             <button
               class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
               type="submit"
