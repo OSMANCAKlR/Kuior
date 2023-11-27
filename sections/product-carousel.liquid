@@ -475,8 +475,9 @@
         swatch.addEventListener('click', function () {
            const variantImageUrl = swatch.getAttribute('data-variant-image-url');
           const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
-         if (productImage && variantImageUrl) {
-          productImage.src = variantImageUrl;
+         if (productImage) {
+          // Use the variant image if it exists, otherwise use the default product image
+          productImage.src = variantImageUrl || defaultProductImage;
         }
           const variantId = swatch.getAttribute('value');
           
