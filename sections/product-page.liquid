@@ -252,20 +252,20 @@
         <p class="tax__included">Tax included</p>
         <div class="productpage__buybuttons--container">
          <ajax-cart-product-form>
-                            {% form 'product', block.settings.product, novalidate: 'novalidate' %}
-                              {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
-                              <h3 class="product__title">{{ block.settings.product.title }}</h3>
+                            {% form 'product', product, novalidate: 'novalidate' %}
+                              {% assign current_variant = product.selected_or_first_available_variant %}
+                              <h3 class="product__title">{{ product.title }}</h3>
 
                               <div
                                 class="dropdown__menu"
-                                {% if block.settings.product.variants.size == 1
-                                  and block.settings.product.variants.first.title == 'Default Title'
+                                {% if product.variants.size == 1
+                                  and product.variants.first.title == 'Default Title'
                                 %}
                                   style="display: none;"
                                 {% endif %}
                               >
                                 <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
-                                  {% for variant in block.settings.product.variants %}
+                                  {% for variant in product.variants %}
                                     <div
                                       class="color-swatch"
                                       {% if variant.image %}
@@ -276,7 +276,7 @@
                                       {% if variant.image %}
                                         data-variant-image-url="{{ variant.image.src | img_url: 'master' }}"
                                       {% else %}
-                                        data-variant-image-url="{{ block.settings.product.featured_image | image_url }}"
+                                        data-variant-image-url="{{ product.featured_image | image_url }}"
                                       {% endif %}
 
                                       value="{{ variant.id }}"
@@ -292,12 +292,12 @@
 
                               <div class="box__bottom--price">
                                 <div class="box__price--container">
-                                  {% if block.settings.product.compare_at_price != null %}
+                                  {% if product.compare_at_price != null %}
                                     <span class="product__price product__price--sale">
-                                      {{- block.settings.product.price | money }}
+                                      {{- product.price | money }}
                                     </span>
                                     <span class="product__price--compare product__price--original">
-                                      {{- block.settings.product.compare_at_price | money }}
+                                      {{- product.compare_at_price | money }}
                                     </span>
                                   {% else %}
                                     <span class="product__price"></span>
