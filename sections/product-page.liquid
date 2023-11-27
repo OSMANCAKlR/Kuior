@@ -393,7 +393,7 @@
                 {% endfor %}
               </div>
             </div>
-                  {% if product.variants.size < 1 %}
+                  {% if product.variants.size <= 1 %}
           <div class="product__page--description"> 
             {{ product.description }} there isnt more
           </div>
