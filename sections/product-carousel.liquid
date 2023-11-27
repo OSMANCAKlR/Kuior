@@ -459,16 +459,6 @@
   });
 
   document.addEventListener('DOMContentLoaded', function () {
-
-      function updateVariantTitle(variantTitle) {
-      document.getElementById('variant-title').textContent = ' - ' + variantTitle;
-  }
-
-  // Initial setup for the default variant
-  var defaultVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
-  if (defaultVariantTitle !== 'Default Title') {
-      updateVariantTitle(defaultVariantTitle);
-  }
     
     const colorSwatches = document.querySelectorAll('.color-swatch');
     const forms = document.querySelectorAll('.shopify-product-form');
@@ -525,6 +515,32 @@
       }
     });
   });
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Function to update the variant title
+    function updateVariantTitle(variantTitle) {
+        var variantTitleElement = document.getElementById('variant-title');
+        if (variantTitleElement) {
+            variantTitleElement.textContent = ' - ' + variantTitle;
+        }
+    }
+
+    // Attach click event listener to each color swatch
+    const colorSwatches = document.querySelectorAll('.color-swatch');
+    colorSwatches.forEach(function (swatch) {
+        swatch.addEventListener('click', function () {
+            const variantTitle = swatch.getAttribute('data-variant-title');
+            updateVariantTitle(variantTitle);
+        });
+    });
+
+    // Set the default variant title on page load
+    var defaultVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
+    if (defaultVariantTitle && defaultVariantTitle !== 'Default Title') {
+        updateVariantTitle(defaultVariantTitle);
+    }
+});
 {% endjavascript %}
 
 <section id="boxmenu__wrapper">
