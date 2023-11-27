@@ -302,7 +302,40 @@
       <div class="productpage__price--container">
         <h1 class="productpage__title">{{ product.title }}</h1>
         <ajax-cart-product-form>
-           {% assign current_variant = product.selected_or_first_available_variant %}
+          {% assign current_variant = product.selected_or_first_available_variant %}
+          <div
+            class="dropdown__menu"
+            {% if block.settings.product.variants.size == 1
+              and block.settings.product.variants.first.title == 'Default Title'
+            %}
+              style="display: none;"
+            {% endif %}
+          >
+            <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
+              {% for variant in block.settings.product.variants %}
+                <div
+                  class="color-swatch"
+                  {% if variant.image %}
+                    style="background-image: url('{{ variant.image.src | img_url: 'master' }}'); background-size: cover;"
+                  {% else %}
+                    style="background-color: {{ variant.metafields.custom.variantcolour }};"
+                  {% endif %}
+                  {% if variant.image %}
+                    data-variant-image-url="{{ variant.image.src | img_url: 'master' }}"
+                  {% else %}
+                    data-variant-image-url="{{ block.settings.product.featured_image | image_url }}"
+                  {% endif %}
+
+                  value="{{ variant.id }}"
+                  original-price="{{ variant.compare_at_price | money }}"
+                  data-price="{{ variant.price | money }}"
+                  {% if variant == current_variant %}
+                    selected="selected"
+                  {% endif %}
+                ></div>
+              {% endfor %}
+            </div>
+          </div>
           <button
             class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
             type="submit"
