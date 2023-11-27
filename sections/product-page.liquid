@@ -251,12 +251,79 @@
         <h1 class="productpage__title">{{ product.title }}</h1>
         <p class="tax__included">Tax included</p>
         <div class="productpage__buybuttons--container">
-          {%- render 'buy-buttons',
-            block: block,
-            product: product,
-            product_form_id: product_form_id,
-            section_id: section.id
-          -%}
+         <ajax-cart-product-form>
+                            {% form 'product', block.settings.product, novalidate: 'novalidate' %}
+                              {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
+                              <h3 class="product__title">{{ block.settings.product.title }}</h3>
+
+                              <div
+                                class="dropdown__menu"
+                                {% if block.settings.product.variants.size == 1
+                                  and block.settings.product.variants.first.title == 'Default Title'
+                                %}
+                                  style="display: none;"
+                                {% endif %}
+                              >
+                                <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
+                                  {% for variant in block.settings.product.variants %}
+                                    <div
+                                      class="color-swatch"
+                                      {% if variant.image %}
+                                        style="background-image: url('{{ variant.image.src | img_url: 'master' }}'); background-size: cover;"
+                                      {% else %}
+                                        style="background-color: {{ variant.metafields.custom.variantcolour }};"
+                                      {% endif %}
+                                      {% if variant.image %}
+                                        data-variant-image-url="{{ variant.image.src | img_url: 'master' }}"
+                                      {% else %}
+                                        data-variant-image-url="{{ block.settings.product.featured_image | image_url }}"
+                                      {% endif %}
+
+                                      value="{{ variant.id }}"
+                                      original-price="{{ variant.compare_at_price | money }}"
+                                      data-price="{{ variant.price | money }}"
+                                      {% if variant == current_variant %}
+                                        selected="selected"
+                                      {% endif %}
+                                    ></div>
+                                  {% endfor %}
+                                </div>
+                              </div>
+
+                              <div class="box__bottom--price">
+                                <div class="box__price--container">
+                                  {% if block.settings.product.compare_at_price != null %}
+                                    <span class="product__price product__price--sale">
+                                      {{- block.settings.product.price | money }}
+                                    </span>
+                                    <span class="product__price--compare product__price--original">
+                                      {{- block.settings.product.compare_at_price | money }}
+                                    </span>
+                                  {% else %}
+                                    <span class="product__price"></span>
+                                  {% endif %}
+                                </div>
+                                <div class="error__container" data-ajax-cart-errors="form"></div>
+                              </div>
+                              <div class="buy__buttonscontainerCarousel">
+                                <input style="display: none;" type="number" name="quantity" value="1" min="1">
+                                <button
+                                  class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
+                                  type="submit"
+                                  name="add"
+                                  {% if current_variant.inventory_quantity <= 0 %}
+                                    disabled
+                                  {% endif %}
+                                >
+                                  {% if current_variant.inventory_quantity > 0 %}
+                                    Add to Basket
+                                  {% else %}
+                                    Out of Stock
+                                  {% endif %}
+                                </button>
+                              </div>
+                            {% endform %}
+                          </ajax-cart-product-form>
         </div>
       </div>
     </div>
