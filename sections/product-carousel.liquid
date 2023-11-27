@@ -516,7 +516,6 @@
   });
 {% endjavascript %}
 
-
 <section id="boxmenu__wrapper">
   <div class="page-width">
     <div class="menubox__title">
@@ -558,7 +557,10 @@
                           <ajax-cart-product-form>
                             {% form 'product', block.settings.product, novalidate: 'novalidate' %}
                               {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
-                              <h3 class="product__title">{{ block.settings.product.title }}</h3>
+                              <h3 class="product__title">
+                                {{ block.settings.product.title }}
+                                <span id="variant-title"></span>
+                              </h3>
 
                               <div
                                 class="dropdown__menu"
@@ -586,6 +588,7 @@
                                       value="{{ variant.id }}"
                                       original-price="{{ variant.compare_at_price | money }}"
                                       data-price="{{ variant.price | money }}"
+                                      data-variant-title="{{ variant.title }}"
                                       {% if variant == current_variant %}
                                         selected="selected"
                                       {% endif %}
@@ -656,6 +659,18 @@
     </div>
   </div>
 </section>
+
+<script>
+  function updateVariantTitle(variantTitle) {
+      document.getElementById('variant-title').textContent = ' - ' + variantTitle;
+  }
+
+  // Initial setup for the default variant
+  var defaultVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
+  if (defaultVariantTitle !== 'Default Title') {
+      updateVariantTitle(defaultVariantTitle);
+  }
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
