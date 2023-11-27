@@ -171,7 +171,9 @@
       width: 100%;
     }
 
-
+.product__variant--selector {
+  flex-direction: column;
+}
 
     .mySwiperBundleMenu {
       margin-top: 14px;
@@ -314,7 +316,7 @@
                 style="display: none;"
               {% endif %}
             >
-              <div name="id" id="variant-dropdown-{{ product.id }}" class="variant__selector">
+              <div name="id" id="variant-dropdown-{{ product.id }}" class="variant__selector product__variant--selector">
                 {% for variant in product.variants %}
                   <div
                     class="color-swatch variant"
