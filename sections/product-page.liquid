@@ -302,6 +302,7 @@
       <div class="productpage__price--container">
         <h1 class="productpage__title">{{ product.title }}</h1>
         <ajax-cart-product-form>
+           {% assign current_variant = product.selected_or_first_available_variant %}
           <button
             class="buy__button {% if current_variant.inventory_quantity == 0 %}out-of-stock{% endif %}"
             type="submit"
