@@ -257,7 +257,7 @@
 
         swatch.addEventListener('click', function () {
            const variantImageUrl = swatch.getAttribute('data-variant-image-url');
-          const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
+          const productImage = swatch.closest('.productpage__wrapper--top').querySelector('.productpage__img');
          if (productImage && variantImageUrl) {
     // Fade out effect
     productImage.style.opacity = '0';
