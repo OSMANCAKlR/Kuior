@@ -302,6 +302,8 @@
       <div class="productpage__price--container">
         <h1 class="productpage__title">{{ product.title }}</h1>
         <ajax-cart-product-form>
+           {% form 'product', product, novalidate: 'novalidate' %}
+             
           {% assign current_variant = product.selected_or_first_available_variant %}
           <div
             class="dropdown__menu"
@@ -312,7 +314,7 @@
             {% endif %}
           >
             <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
-              {% for variant in block.settings.product.variants %}
+              {% for variant in product.variants %}
                 <div
                   class="color-swatch"
                   {% if variant.image %}
@@ -350,6 +352,7 @@
               Out of Stock
             {% endif %}
           </button>
+          {% endform %}
         </ajax-cart-product-form>
       </div>
     </div>
