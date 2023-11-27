@@ -175,6 +175,10 @@
   flex-direction: column;
 }
 
+  .product__variant {
+    
+  }
+
     .mySwiperBundleMenu {
       margin-top: 14px;
     }
@@ -319,12 +323,7 @@
               <div name="id" id="variant-dropdown-{{ product.id }}" class="variant__selector product__variant--selector">
                 {% for variant in product.variants %}
                   <div
-                    class="color-swatch variant"
-                    {% if variant.image %}
-                      style="background-image: url('{{ variant.image.src | img_url: 'master' }}'); background-size: cover;"
-                    {% else %}
-                      style="background-color: {{ variant.metafields.custom.variantcolour }};"
-                    {% endif %}
+                    class="color-swatch product__variant"
                     {% if variant.image %}
                       data-variant-image-url="{{ variant.image.src | img_url: 'master' }}"
                     {% else %}
@@ -337,7 +336,15 @@
                     {% if variant == current_variant %}
                       selected="selected"
                     {% endif %}
-                  ></div>
+                  >
+                  {% if variant.image %}
+                    <div class="variant__img--container"> 
+                      <img class="variant__img" src='{{ variant.image.src | img_url: 'master' }}' />
+                    </div>
+                    {% else %}
+                    <div class="variant__img--colour" style="background-color: {{ variant.metafields.custom.variantcolour }};"> </div>
+                    {% endif %}
+                  </div>
                 {% endfor %}
               </div>
             </div>
