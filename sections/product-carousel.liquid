@@ -478,6 +478,13 @@
         swatch.addEventListener('click', function () {
            const variantImageUrl = swatch.getAttribute('data-variant-image-url');
           const productImage = swatch.closest('.carousel-box').querySelector('.box__img');
+          const variantTitle = swatch.getAttribute('data-variant-title');
+        const variantTitleElement = form.querySelector('.variant-title');
+
+        if (variantTitleElement) {
+          variantTitleElement.textContent = ' - ' + variantTitle;
+        }
+          
          if (productImage && variantImageUrl) {
     // Fade out effect
     productImage.style.opacity = '0';
@@ -508,6 +515,13 @@
         });
       });
 
+      const defaultVariantTitleElement = form.querySelector('.variant-title');
+    if (defaultVariantTitleElement) {
+      var defaultVariantTitle = "{{ product.selected_or_first_available_variant.title }}";
+      if (defaultVariantTitle && defaultVariantTitle !== 'Default Title') {
+        defaultVariantTitleElement.textContent = ' - ' + defaultVariantTitle;
+      }
+    }
       // Set the first variant as the default selected for each product
       const firstSwatch = form.querySelector('.color-swatch');
       if (firstSwatch) {
