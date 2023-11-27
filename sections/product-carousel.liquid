@@ -574,7 +574,14 @@
                               {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
                               <h3 class="product__title">
                                 {{ block.settings.product.title }}
-                                <span class="variant-title">
+                                <span
+                                  {% if block.settings.product.variants.size == 1
+                                    and block.settings.product.variants.first.title == 'Default Title'
+                                  %}
+                                    style="display: none;"
+                                  {% endif %}
+                                  class="variant-title"
+                                >
                                   - {{ block.settings.product.selected_or_first_available_variant.title }}
                                 </span>
                               </h3>
@@ -678,58 +685,58 @@
 </section>
 
 <script>
- document.addEventListener('DOMContentLoaded', function () {
-  const productContainers = document.querySelectorAll('.carousel-box');
+   document.addEventListener('DOMContentLoaded', function () {
+    const productContainers = document.querySelectorAll('.carousel-box');
 
-  productContainers.forEach(function(container) {
-    container.querySelectorAll('.color-swatch').forEach(function(swatch) {
-      swatch.addEventListener('click', function() {
-        const variantTitle = swatch.getAttribute('data-variant-title');
-        const variantTitleElement = container.querySelector('.variant-title');
+    productContainers.forEach(function(container) {
+      container.querySelectorAll('.color-swatch').forEach(function(swatch) {
+        swatch.addEventListener('click', function() {
+          const variantTitle = swatch.getAttribute('data-variant-title');
+          const variantTitleElement = container.querySelector('.variant-title');
 
-        if (variantTitleElement) {
-          variantTitleElement.textContent = ' - ' + variantTitle;
-        }
+          if (variantTitleElement) {
+            variantTitleElement.textContent = ' - ' + variantTitle;
+          }
+        });
+      });
+
+      // Set the first variant as the default selected for each product
+      const firstSwatch = container.querySelector('.color-swatch');
+      if (firstSwatch) {
+        firstSwatch.click();
+      }
+    });
+
+    // Your existing addToCartButtons code
+    var addToCartButtons = document.querySelectorAll('.buy__button');
+    addToCartButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        // Add a class to indicate processing
+        button.classList.add('processing');
+        button.textContent = 'Adding...';
+
+        // Simulate an AJAX call with setTimeout
+        setTimeout(function () {
+          // Change the text to 'Added!' once the AJAX call is complete
+          button.textContent = 'Added';
+          button.classList.remove('processing');
+          button.classList.add('added');
+          // Change the text back to 'Add to order' after some time
+          setTimeout(function () {
+            button.textContent = 'Add to order';
+            button.classList.remove('added');
+          }, 2000);
+        }, 1000);
       });
     });
 
-    // Set the first variant as the default selected for each product
-    const firstSwatch = container.querySelector('.color-swatch');
-    if (firstSwatch) {
-      firstSwatch.click();
-    }
-  });
-
-  // Your existing addToCartButtons code
-  var addToCartButtons = document.querySelectorAll('.buy__button');
-  addToCartButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      // Add a class to indicate processing
-      button.classList.add('processing');
-      button.textContent = 'Adding...';
-
-      // Simulate an AJAX call with setTimeout
-      setTimeout(function () {
-        // Change the text to 'Added!' once the AJAX call is complete
-        button.textContent = 'Added';
-        button.classList.remove('processing');
-        button.classList.add('added');
-        // Change the text back to 'Add to order' after some time
-        setTimeout(function () {
-          button.textContent = 'Add to order';
-          button.classList.remove('added');
-        }, 2000);
-      }, 1000);
+    // Your existing jQuery code for equalizing the height of .box__bottom elements
+    $(document).ready(function() {
+      var maxheight = 0;
+      $('.box__bottom').each(function() {
+        maxheight = Math.max(maxheight, $(this).height());
+      });
+      $('.box__bottom').height(maxheight + 43);
     });
   });
-
-  // Your existing jQuery code for equalizing the height of .box__bottom elements
-  $(document).ready(function() {
-    var maxheight = 0;
-    $('.box__bottom').each(function() {
-      maxheight = Math.max(maxheight, $(this).height());
-    });
-    $('.box__bottom').height(maxheight + 43);
-  });
-});
 </script>
