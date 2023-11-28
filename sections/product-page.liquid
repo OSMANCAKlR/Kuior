@@ -496,30 +496,24 @@
         {% endif %}
       </div>
     </div>
+    {% for block in section.blocks %}
     <div class="product__description--bottom">
       <div class="product__description__wrapper">
         <figure class="description__figure">
           <img
             class="description_img"
-            src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/Sa3c198986f1c464083c0717db62480c2b.webp?v=1701044613"
+            src="{{ block.settings.image | img_url:'master' }}"
           >
         </figure>
         <div class="product__description--text">
-          <h2 class="production__description--h2">Protect Your Most Valuable Asset</h2>
+          <h2 class="production__description--h2">{{ block.settings.header }}</h2>
           <p class="product__description--p">
-            Aging and sun exposure can create unwanted effects on our skin – from wrinkles and pigmentation to redness
-            and uneven texture. Advanced light therapy by Omnilux allows you to treat the visible signs of aging and
-            damaged skin with professional grade technology right from home.
+           {{ block.settings.para }}
           </p>
-          <ul>
-            <li>Stimulate collagen production for firmer, more youthful-looking skin</li>
-            <li>Refine skin texture and tone for an effortless glow</li>
-            <li>A non-invasive and natural option</li>
-            <li>Maintain and improve in-clinic treatments</li>
-          </ul>
         </div>
       </div>
     </div>
+      {% endfor %}
   </div>
 </section>
 
