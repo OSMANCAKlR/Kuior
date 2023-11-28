@@ -400,7 +400,7 @@
             </div>
                   {% if product.variants.size <= 1 %}
           <div class="product__page--description"> 
-            <p>{{ product.metafields.custom.maindescription }}</p> 
+            {{ product.metafields.custom.maindescription  | metafield_tag }}s
           </div>
         {% endif %}
             <div class="box__bottom--price product__price--box">
