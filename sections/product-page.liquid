@@ -221,6 +221,10 @@
         margin-top: 14px;
       }
 
+  .product__description--bottom {
+    width: 100%;
+  }
+
         @media screen and (max-width: 815px) {
           .productpage__wrapper--top {
             flex-direction: column;
@@ -396,7 +400,7 @@
             </div>
                   {% if product.variants.size <= 1 %}
           <div class="product__page--description"> 
-            {{ product.metafields.custom.maindescription }}
+            <p>{{ product.metafields.custom.maindescription }}</p> 
           </div>
         {% endif %}
             <div class="box__bottom--price product__price--box">
@@ -439,11 +443,75 @@
       </div>
     </div>
     <div class="product__description--bottom"> 
-        {{ product.description }}
+      <div class="product__description__wrapper">
+      <figure class="description__figure">
+      <img class="description_img" src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/Sa3c198986f1c464083c0717db62480c2b.webp?v=1701044613" />
+      </figure>  
+        <div class="product__description--text">
+          <h2 class="production__description--h2"> Protect Your Most Valuable Asset  </h2>
+          <p class="product__description--p">
+            Aging and sun exposure can create unwanted effects on our skin – from wrinkles and pigmentation to redness and uneven texture. Advanced light therapy by Omnilux allows you to treat the visible signs of aging and damaged skin with professional grade technology right from home.
+          </p>
+          <li>
+          <ul>
+            Stimulate collagen production for firmer, more youthful-looking skin
+          </ul>
+          <ul>
+          Refine skin texture and tone for an effortless glow
+          </ul>
+          <ul>
+          A non-invasive and natural option
+          </ul>
+          <ul>
+Maintain and improve in-clinic treatments
+          </ul>
+          </li>
+        </div>
+      </div>
+      
+      
     </div>
   </div>
 </section>
 
+<style>
+  .product__description--bottom {
+    width: 100%;
+  }
+
+  .product__description__wrapper {
+    display: flex;
+    gap: 20px;
+  }
+
+  .description__figure {
+    width: 30%;
+    height: auto;
+  }
+
+  .description_img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product__description--text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .production__description--h2 {
+    color: #22202f;
+    font-family: Glorify;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 98.5%;
+    margin-bottom: 24px;
+    }
+  
+  
+</style>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var addToCartButtons = document.querySelectorAll('.buy__button');
