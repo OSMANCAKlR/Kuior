@@ -396,7 +396,7 @@
             </div>
                   {% if product.variants.size <= 1 %}
           <div class="product__page--description"> 
-            {{ product.description }}
+            {{ product.metafields.custom.maindescription }}
           </div>
         {% endif %}
             <div class="box__bottom--price product__price--box">
@@ -433,10 +433,13 @@
         </ajax-cart-product-form>
      {% if product.variants.size > 1 %}
   <div class="product__page--description"> 
-    {{ product.description }} 
+    {{ product.metafields.custom.maindescription }} 
   </div>
 {% endif %}
       </div>
+    </div>
+    <div class="product__description--bottom"> 
+        {{ product.description }}
     </div>
   </div>
 </section>
