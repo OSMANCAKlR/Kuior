@@ -2,6 +2,19 @@
   "sections": {
     "152822e6-6046-4bbf-ab09-b8c92d6bc0f4": {
       "type": "product-page",
+      "blocks": {
+        "cc3b75fb-5f50-41b6-80eb-d8209e3a22dc": {
+          "type": "rich-text",
+          "settings": {
+            "header": "<p>Protect Your Most Valuable Asset<\/p>",
+            "image": "shopify:\/\/shop_images\/Sa3c198986f1c464083c0717db62480c2b.webp",
+            "para": "<p>Aging and sun exposure can create unwanted effects on our skin – from <br\/>wrinkles and pigmentation to redness and uneven texture. Advanced light <br\/>therapy by Omnilux allows you to treat the visible signs of aging and <br\/>damaged skin with professional grade technology right from home.<\/p><ul><li>Stimulate collagen production for firmer, more youthful-looking skin<\/li><li>Refine skin texture and tone for an effortless glow<\/li><li>A non-invasive and natural option<\/li><li>Maintain and improve in-clinic treatments<\/li><\/ul><p><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "cc3b75fb-5f50-41b6-80eb-d8209e3a22dc"
+      ],
       "settings": {
       }
     },
