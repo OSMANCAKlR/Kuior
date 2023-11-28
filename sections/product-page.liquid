@@ -1,12 +1,29 @@
 {% schema %}
 {
   "name": "Product page",
-  "settings": [
-
+  "settings": [],
+  "blocks": [
+    {
+      "type": "rich-text",
+      "name": "Image with text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Enter header"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Pick Image"
+        }
+      ]
+    }
   ],
   "presets": [
     {
-      "name": "Product Page"
+      "name": "Product Page",
+      "category": "Custom"
     }
   ]
 }
@@ -16,7 +33,7 @@
       .productpage__wrapper--top {
         display: flex;
         justify-content: space-between;
-        
+
       }
 
         .productpage__figure {
@@ -221,9 +238,41 @@
         margin-top: 14px;
       }
 
-  .product__description--bottom {
+.product__description--bottom {
     width: 100%;
+  margin-top: 24px;
   }
+
+  .product__description__wrapper {
+    display: flex;
+  justify-content: space-between;
+  }
+
+  .description__figure {
+    width: 30%;
+    height: auto;
+  }
+
+  .description_img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product__description--text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .production__description--h2 {
+    color: #22202f;
+    font-family: Glorify;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 98.5%;
+    margin-bottom: 24px;
+    }
 
         @media screen and (max-width: 815px) {
           .productpage__wrapper--top {
@@ -398,11 +447,11 @@
                 {% endfor %}
               </div>
             </div>
-                  {% if product.variants.size <= 1 %}
-          <div class="product__page--description"> 
-            {{ product.metafields.custom.maindescription  | metafield_tag }}
-          </div>
-        {% endif %}
+            {% if product.variants.size <= 1 %}
+              <div class="product__page--description">
+                {{ product.metafields.custom.maindescription | metafield_tag }}
+              </div>
+            {% endif %}
             <div class="box__bottom--price product__price--box">
               <div class="box__price--container">
                 {% if product.compare_at_price != null %}
@@ -435,14 +484,40 @@
             </button>
           {% endform %}
         </ajax-cart-product-form>
-     {% if product.variants.size > 1 %}
-  <div class="product__page--description"> 
-      {{ product.metafields.custom.maindescription  | metafield_tag }}
-  </div>
-{% endif %}
+        {% if product.variants.size > 1 %}
+          <div class="product__page--description">
+            {{ product.metafields.custom.maindescription | metafield_tag }}
+          </div>
+        {% endif %}
       </div>
     </div>
-    {{ product.description }}
+    <div class="product__description--bottom">
+      <br>
+      <ul></ul>
+      <ul></ul>
+      <div class="product__description__wrapper">
+        <figure class="description__figure">
+          <img
+            class="description_img"
+            src="https://cdn.shopify.com/s/files/1/0550/8261/4884/files/Sa3c198986f1c464083c0717db62480c2b.webp?v=1701044613"
+          >
+        </figure>
+        <div class="product__description--text">
+          <h2 class="production__description--h2">Protect Your Most Valuable Asset</h2>
+          <p class="product__description--p">
+            Aging and sun exposure can create unwanted effects on our skin – from wrinkles and pigmentation to redness
+            and uneven texture. Advanced light therapy by Omnilux allows you to treat the visible signs of aging and
+            damaged skin with professional grade technology right from home.
+          </p>
+          <ul>
+            <li>Stimulate collagen production for firmer, more youthful-looking skin</li>
+            <li>Refine skin texture and tone for an effortless glow</li>
+            <li>A non-invasive and natural option</li>
+            <li>Maintain and improve in-clinic treatments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
