@@ -2,18 +2,47 @@
   "sections": {
     "152822e6-6046-4bbf-ab09-b8c92d6bc0f4": {
       "type": "product-page",
+      "settings": {
+      }
+    },
+    "ffdb9a2f-aaad-4e6d-8b14-0415fcab0652": {
+      "type": "testimonials",
       "blocks": {
-        "cc3b75fb-5f50-41b6-80eb-d8209e3a22dc": {
-          "type": "rich-text",
+        "e7be520b-c218-4dc6-bf3b-3d79886810b4": {
+          "type": "testimonial",
           "settings": {
-            "header": "<p>Protect Your Most Valuable Asset<\/p>",
-            "image": "shopify:\/\/shop_images\/Sa3c198986f1c464083c0717db62480c2b.webp",
-            "para": "<p>Aging and sun exposure can create unwanted effects on our skin – from <br\/>wrinkles and pigmentation to redness and uneven texture. Advanced light <br\/>therapy by Omnilux allows you to treat the visible signs of aging and <br\/>damaged skin with professional grade technology right from home.<\/p><ul><li>Stimulate collagen production for firmer, more youthful-looking skin<\/li><li>Refine skin texture and tone for an effortless glow<\/li><li>A non-invasive and natural option<\/li><li>Maintain and improve in-clinic treatments<\/li><\/ul><p><\/p>"
+            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
+            "text": "Great LED mask many options seems to be working great! Super Fast delivery thank you 🙏",
+            "name": "Bethany",
+            "industry": "",
+            "image": "shopify:\/\/shop_images\/Ae54915e1b229473dbe29672ad2da3ccaK.jpg_220x220_82e94be9-945d-4a6c-ad5d-7f26ce55e468.webp"
+          }
+        },
+        "75d11304-6f20-43af-917a-ce075f1e4ed6": {
+          "type": "testimonial",
+          "settings": {
+            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
+            "text": "amazing mask - exactly as described, the pieces are separate. my head is a bit big and the straps are a bit snug\/tight but other than that everything else is great. good communication with seller about questions. I highly highly recommend this!",
+            "name": "Grace M",
+            "industry": "Beauty",
+            "image": "shopify:\/\/shop_images\/benefit2.png"
+          }
+        },
+        "a60a98dd-3d0a-4a05-a85a-02926732e348": {
+          "type": "testimonial",
+          "settings": {
+            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
+            "text": "I 've been using it for 3 days and I can say that the brightest skin is noticeable. The seller is excellent, send the product fast and the communication was great",
+            "name": "Petra",
+            "industry": "",
+            "image": "shopify:\/\/shop_images\/Af3f530a64a704d05b3ec3a0fcdf5fd13D.webp"
           }
         }
       },
       "block_order": [
-        "cc3b75fb-5f50-41b6-80eb-d8209e3a22dc"
+        "e7be520b-c218-4dc6-bf3b-3d79886810b4",
+        "75d11304-6f20-43af-917a-ce075f1e4ed6",
+        "a60a98dd-3d0a-4a05-a85a-02926732e348"
       ],
       "settings": {
       }
@@ -111,6 +140,7 @@
   },
   "order": [
     "152822e6-6046-4bbf-ab09-b8c92d6bc0f4",
+    "ffdb9a2f-aaad-4e6d-8b14-0415fcab0652",
     "main",
     "related-products"
   ]
