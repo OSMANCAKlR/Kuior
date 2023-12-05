@@ -34,6 +34,9 @@
         "322b7477-7ccd-4b66-abf7-795cef965f54",
         "918f73c1-f32b-4173-9365-07a58c29acb6"
       ],
+      "custom_css": [
+        ".footer {margin-top: 0px;}"
+      ],
       "settings": {
         "insta_link": "",
         "facebook_link": "",
