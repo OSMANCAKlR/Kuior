@@ -132,7 +132,7 @@
       ],
       "custom_css": [
         "#amplifysection {margin-top: 80px;}",
-        "@media screen and (max-width:550px) {#amplifysection {margin-top: 50px;}}"
+        "@media screen and (max-width: 550px) {#amplifysection {margin-top: 50px; }}"
       ],
       "settings": {
       }
@@ -154,16 +154,6 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "77e9d5fd-cfa9-457c-a28b-129a32847734": {
-          "type": "testimonial",
-          "settings": {
-            "product": "facial-exfoliant",
-            "text": "This is honestly amazing, I was a bit worried that all the hype would make me disappointed but it has helped smooth fine lines and shrink my pores!",
-            "name": "Daina Durdin",
-            "industry": "Lifestyle blogger",
-            "image": "shopify:\/\/shop_images\/3a57e3eb-4371-40bc-b1f3-8e2a0f50716c._CR0_0_768_768_SX460.jpg"
-          }
-        },
         "9b11bbd7-f597-4e3d-9a33-f0edc55523d0": {
           "type": "testimonial",
           "settings": {
@@ -173,11 +163,21 @@
             "industry": "Lifestyle blogger",
             "image": "shopify:\/\/shop_images\/879467a300b64ab946a8d82fa37a8571.jpg"
           }
+        },
+        "77e9d5fd-cfa9-457c-a28b-129a32847734": {
+          "type": "testimonial",
+          "settings": {
+            "product": "facial-exfoliant",
+            "text": "This is honestly amazing, I was a bit worried that all the hype would make me disappointed but it has helped smooth fine lines and shrink my pores!",
+            "name": "Daina Durdin",
+            "industry": "Lifestyle blogger",
+            "image": "shopify:\/\/shop_images\/3a57e3eb-4371-40bc-b1f3-8e2a0f50716c._CR0_0_768_768_SX460.jpg"
+          }
         }
       },
       "block_order": [
-        "77e9d5fd-cfa9-457c-a28b-129a32847734",
-        "9b11bbd7-f597-4e3d-9a33-f0edc55523d0"
+        "9b11bbd7-f597-4e3d-9a33-f0edc55523d0",
+        "77e9d5fd-cfa9-457c-a28b-129a32847734"
       ],
       "settings": {
       }
