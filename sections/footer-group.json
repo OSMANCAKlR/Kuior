@@ -2,6 +2,11 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "79fbdd27-8b24-4bf4-82b2-da1c02ed85fa": {
+      "type": "announcement-bar2",
+      "settings": {
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -37,6 +42,7 @@
     }
   },
   "order": [
+    "79fbdd27-8b24-4bf4-82b2-da1c02ed85fa",
     "footer"
   ]
 }
