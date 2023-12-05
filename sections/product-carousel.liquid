@@ -572,21 +572,7 @@
                           <ajax-cart-product-form>
                             {% form 'product', block.settings.product, novalidate: 'novalidate' %}
                               {% assign current_variant = block.settings.product.selected_or_first_available_variant %}
-                              <h3 class="product__title">
-                                {{ block.settings.product.title }}
-                                <span
-                                  {% if block.settings.product.variants.size == 1
-                                    and block.settings.product.variants.first.title == 'Default Title'
-                                  %}
-                                    style="display: none;"
-                                  {% endif %}
-                                  class="variant-title"
-                                >
-                                  - {{ block.settings.product.selected_or_first_available_variant.title }}
-                                </span>
-                              </h3>
-
-                              <div
+                                <div
                                 class="dropdown__menu"
                                 {% if block.settings.product.variants.size == 1
                                   and block.settings.product.variants.first.title == 'Default Title'
@@ -620,6 +606,21 @@
                                   {% endfor %}
                                 </div>
                               </div>
+                              <h3 class="product__title">
+                                {{ block.settings.product.title }}
+                                <span
+                                  {% if block.settings.product.variants.size == 1
+                                    and block.settings.product.variants.first.title == 'Default Title'
+                                  %}
+                                    style="display: none;"
+                                  {% endif %}
+                                  class="variant-title"
+                                >
+                                  - {{ block.settings.product.selected_or_first_available_variant.title }}
+                                </span>
+                              </h3>
+
+                            
 
                               <div class="box__bottom--price">
                                 <div class="box__price--container">
