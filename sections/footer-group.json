@@ -4,6 +4,9 @@
   "sections": {
     "79fbdd27-8b24-4bf4-82b2-da1c02ed85fa": {
       "type": "announcement-bar2",
+      "custom_css": [
+        ".announcement__container {margin-top: 80px; border: 1.5px solid white; border-left: none; border-right: none;}"
+      ],
       "settings": {
       }
     },
