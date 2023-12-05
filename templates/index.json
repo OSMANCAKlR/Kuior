@@ -131,7 +131,8 @@
         "a001fbf8-a233-4d00-8836-f32432697abe"
       ],
       "custom_css": [
-        "#amplifysection {margin-top: 80px;}"
+        "#amplifysection {margin-top: 80px;}",
+        "@media screen and (max-width:550px) {#amplifysection {margin-top: 50px;}}"
       ],
       "settings": {
       }
