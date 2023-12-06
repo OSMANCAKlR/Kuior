@@ -382,6 +382,12 @@
     border: 0.407px solid #242424; /* Example style for selected swatch */
   }
 
+  .star__containerProducts {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-bottom: 7px;
+  }
   .variant__selector {
     display: flex;
     gap: 2.85px;
@@ -620,7 +626,11 @@
                                 </span>
                               </h3>
 
-                            
+                              <div class="star__containerProducts">
+                                  {% for i in (1..5) %}
+                                    {% render 'star' %}
+                                  {% endfor %}
+                                </div>
 
                               <div class="box__bottom--price">
                                 <div class="box__price--container">
