@@ -12,22 +12,7 @@
 {% endschema %}
 
 {% javascript %}
-function adjustImageHeight() {
-  if (window.innerWidth > 550) {
-    const kuoirLeftImage = new Image();
-    kuoirLeftImage.onload = function () {
-      const height = this.height;
-      document.getElementById('benefit-left').style.height = height + 'px';
-    };
-    kuoirLeftImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/kuoir-green.jpg?v=1700628922';
-  }
-}
 
-// Run the function on initial load
-adjustImageHeight();
-
-// Add event listener for window resize
-window.addEventListener('resize', adjustImageHeight);
 {% endjavascript %}
 
 {% stylesheet %}
@@ -62,6 +47,7 @@ window.addEventListener('resize', adjustImageHeight);
     flex-direction: column;
     justify-content: space-between;
     padding: 16px;
+    height: 391px;
   }
 
   .benefit-right,
@@ -176,6 +162,7 @@ window.addEventListener('resize', adjustImageHeight);
       flex-direction: column;
       justify-content: space-between;
       padding: 33px;
+          height: 215px;
     }
 
     .number__container {
