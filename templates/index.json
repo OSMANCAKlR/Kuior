@@ -17,35 +17,40 @@
           "type": "product",
           "settings": {
             "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": "28 Reviews"
           }
         },
         "da6b7a15-48f3-4781-8b4f-710676234425": {
           "type": "product",
           "settings": {
             "product": "nova-microcurrent-face-toner",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": ""
           }
         },
         "fd0a674b-99f3-487a-921e-b5dc667ad6cc": {
           "type": "product",
           "settings": {
             "product": "acne-pimple-invisible-patch",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": ""
           }
         },
         "e1389cd0-a0b7-49bd-9e8b-639b6429fa24": {
           "type": "product",
           "settings": {
             "product": "facial-exfoliant",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": ""
           }
         },
         "586ade53-e2ce-4250-b1a6-af19d09d4f08": {
           "type": "product",
           "settings": {
             "product": "led-gua-sha",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": ""
           }
         }
       },
@@ -71,28 +76,32 @@
           "type": "product",
           "settings": {
             "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": ""
           }
         },
         "0ff764db-672e-4065-b28e-fdef9a836b6f": {
           "type": "product",
           "settings": {
             "product": "acne-pimple-invisible-patch",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": ""
           }
         },
         "e75491de-fb20-4851-bf88-0be3efbe693c": {
           "type": "product",
           "settings": {
             "product": "facial-exfoliant",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": ""
           }
         },
         "a008b3cd-ca6e-4697-944f-63148729dc4b": {
           "type": "product",
           "settings": {
             "product": "led-gua-sha",
-            "picker_type": "button"
+            "picker_type": "button",
+            "product__rating": ""
           }
         }
       },
