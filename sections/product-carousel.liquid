@@ -393,6 +393,17 @@
       margin-bottom: 7px;
       justify-content: center;
   }
+
+
+  .product__rating--number {
+    color: var(--Text, #242424);
+    font-family: Open Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
   .variant__selector {
     display: flex;
     gap: 2.85px;
@@ -635,6 +646,7 @@
                                   {% for i in (1..5) %}
                                     {% render 'star-black' %}
                                   {% endfor %}
+                              <span class="product__rating--number">{{ block.settings.product__rating }}</span>
                                 </div>
 
                               <div class="box__bottom--price">
