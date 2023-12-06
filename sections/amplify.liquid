@@ -25,14 +25,6 @@
 {% endschema %}
 
 {% javascript %}
-  if (window.innerWidth > 930) {
-    const amplifyImage = new Image();
-    amplifyImage.onload = function () {
-      const height = this.height;
-      document.getElementById('amplify').style.height = height + 'px';
-    };
-    amplifyImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify_1_-min.jpg?v=1700975940';
-  }
 
   var mySwiperAmplify = new Swiper('.mySwiperAmplify', {
     watchSlidesProgress: true,
@@ -53,6 +45,7 @@
     background: url('https://cdn.shopify.com/s/files/1/0550/8261/4884/files/amplify_1_-min.jpg?v=1700975940') no-repeat center
       center;
     background-size: cover;
+    height: 560px;
   }
 
   .amplify__header--container {
@@ -202,6 +195,7 @@
 
     #amplify {
       background: url(none);
+      height: 100%;
     }
 
     .amplify__container {
