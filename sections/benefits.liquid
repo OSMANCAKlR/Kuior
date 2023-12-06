@@ -12,6 +12,7 @@
 {% endschema %}
 
 {% javascript %}
+function adjustImageHeight() {
   if (window.innerWidth > 550) {
     const kuoirLeftImage = new Image();
     kuoirLeftImage.onload = function () {
@@ -20,6 +21,13 @@
     };
     kuoirLeftImage.src = 'https://cdn.shopify.com/s/files/1/0550/8261/4884/files/kuoir-green.jpg?v=1700628922';
   }
+}
+
+// Run the function on initial load
+adjustImageHeight();
+
+// Add event listener for window resize
+window.addEventListener('resize', adjustImageHeight);
 {% endjavascript %}
 
 {% stylesheet %}
