@@ -5,6 +5,23 @@
       "settings": {
       }
     },
+    "1706403348ac0706ea": {
+      "type": "apps",
+      "blocks": {
+        "recharge_subscriptions_subscription_widget_UtpKth": {
+          "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget\/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "recharge_subscriptions_subscription_widget_UtpKth"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "ffdb9a2f-aaad-4e6d-8b14-0415fcab0652": {
       "type": "testimonials",
       "blocks": {
@@ -140,6 +157,7 @@
   },
   "order": [
     "152822e6-6046-4bbf-ab09-b8c92d6bc0f4",
+    "1706403348ac0706ea",
     "ffdb9a2f-aaad-4e6d-8b14-0415fcab0652",
     "main",
     "related-products"
