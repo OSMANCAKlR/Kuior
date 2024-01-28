@@ -10,38 +10,6 @@
       "settings": {
       }
     },
-    "product-carousel": {
-      "type": "product-carousel",
-      "blocks": {
-        "product_PJRDLV": {
-          "type": "product",
-          "settings": {
-            "product": "500g-grass-fed-premium-thin-sausages",
-            "picker_type": "button",
-            "product__rating": ""
-          }
-        },
-        "product_NhV4rK": {
-          "type": "product",
-          "settings": {
-            "product": "family-favourite-pack",
-            "picker_type": "button",
-            "product__rating": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_PJRDLV",
-        "product_NhV4rK"
-      ],
-      "settings": {
-      }
-    },
-    "benefits": {
-      "type": "benefits",
-      "settings": {
-      }
-    },
     "f18ed5df-ba19-43ad-94ef-3002ffbcd9f4": {
       "type": "product-carousel",
       "blocks": {
@@ -84,11 +52,21 @@
         "e75491de-fb20-4851-bf88-0be3efbe693c",
         "a008b3cd-ca6e-4697-944f-63148729dc4b"
       ],
-      "disabled": true,
       "custom_css": [
         ".menubox__title {display: none;}",
         ".box__img--figure {padding: 0px;}"
       ],
+      "settings": {
+      }
+    },
+    "product-carousel": {
+      "type": "product-carousel",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "benefits": {
+      "type": "benefits",
       "settings": {
       }
     },
@@ -173,9 +151,9 @@
   "order": [
     "landing-hero",
     "call-to-action",
+    "f18ed5df-ba19-43ad-94ef-3002ffbcd9f4",
     "product-carousel",
     "benefits",
-    "f18ed5df-ba19-43ad-94ef-3002ffbcd9f4",
     "amplify",
     "results",
     "percentages",
