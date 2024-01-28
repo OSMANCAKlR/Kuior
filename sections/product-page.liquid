@@ -359,7 +359,7 @@
       <div class="productpage__price--container">
         <h1 class="productpage__title">{{ product.title }}</h1>
         <ajax-cart-product-form>
-          {% form 'product', product, novalidate: 'novalidate' %}
+          {% form 'product', product, data-productid: product.id, novalidate: 'novalidate' %}
             {% assign current_variant = product.selected_or_first_available_variant %}
             <div
               class="dropdown__menu"
@@ -368,7 +368,7 @@
               {% endif %}
             >
               <div
-                name="id"
+                name="id" data-productid="{{ product.id }}"
                 id="variant-dropdown-{{ product.id }}"
                 class="variant__selector product__variant--selector"
               >
@@ -448,7 +448,7 @@
       </div>
     </div>
     <div class="product__description--bottom">
- 
+       {{ product.description }}
     </div>
   </div>
 </section>

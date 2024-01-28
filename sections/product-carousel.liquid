@@ -603,7 +603,7 @@
                                   style="display: none;"
                                 {% endif %}
                               >
-                                <div name="id" id="variant-dropdown-{{ block.id }}" class="variant__selector">
+                                <div name="id" data-productid="{{ product.id }}" id="variant-dropdown-{{ block.id }}" class="variant__selector">
                                   {% for variant in block.settings.product.variants %}
                                     <div
                                       class="color-swatch"
