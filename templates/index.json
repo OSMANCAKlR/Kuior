@@ -13,53 +13,26 @@
     "product-carousel": {
       "type": "product-carousel",
       "blocks": {
-        "0b6003c4-cf01-415f-87e3-026c088ec7f1": {
+        "product_PJRDLV": {
           "type": "product",
           "settings": {
-            "product": "4-colors-led-face-mask-silicone-gel-spa-red-light-therapy-for-face-neck-photon-nir-light-skin-rejuvenation-anti-wrinkle-acne",
-            "picker_type": "button",
-            "product__rating": "28 Reviews"
-          }
-        },
-        "da6b7a15-48f3-4781-8b4f-710676234425": {
-          "type": "product",
-          "settings": {
-            "product": "nova-microcurrent-face-toner",
+            "product": "500g-grass-fed-premium-thin-sausages",
             "picker_type": "button",
             "product__rating": ""
           }
         },
-        "fd0a674b-99f3-487a-921e-b5dc667ad6cc": {
+        "product_NhV4rK": {
           "type": "product",
           "settings": {
-            "product": "acne-pimple-invisible-patch",
-            "picker_type": "button",
-            "product__rating": ""
-          }
-        },
-        "e1389cd0-a0b7-49bd-9e8b-639b6429fa24": {
-          "type": "product",
-          "settings": {
-            "product": "facial-exfoliant",
-            "picker_type": "button",
-            "product__rating": ""
-          }
-        },
-        "586ade53-e2ce-4250-b1a6-af19d09d4f08": {
-          "type": "product",
-          "settings": {
-            "product": "led-gua-sha",
+            "product": "family-favourite-pack",
             "picker_type": "button",
             "product__rating": ""
           }
         }
       },
       "block_order": [
-        "0b6003c4-cf01-415f-87e3-026c088ec7f1",
-        "da6b7a15-48f3-4781-8b4f-710676234425",
-        "fd0a674b-99f3-487a-921e-b5dc667ad6cc",
-        "e1389cd0-a0b7-49bd-9e8b-639b6429fa24",
-        "586ade53-e2ce-4250-b1a6-af19d09d4f08"
+        "product_PJRDLV",
+        "product_NhV4rK"
       ],
       "settings": {
       }
